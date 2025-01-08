@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51885b1dc0d7a641b5d23e07a25af23, type: 3}
   m_Name: ElementProperties
   m_EditorClassIdentifier: 
-  properties: []
+  properties:
+  - element: 1
+    level: 1
+  - element: 2
+    level: 1
+  - element: 3
+    level: 1
+  - element: 4
+    level: 2

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GameConfiguration
   m_EditorClassIdentifier: 
   bufferSize: 3
+  elementProperties: {fileID: 11400000, guid: 3e00747ff38097843b0c7ff0b2e5efe7, type: 2}

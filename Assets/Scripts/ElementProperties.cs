@@ -21,6 +21,6 @@ public class ElementProperties : ScriptableObject
                 return data;
         }
 
-        return null;
+        return new ElementData();
     }
 }
