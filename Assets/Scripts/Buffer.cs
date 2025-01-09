@@ -128,5 +128,15 @@ namespace InzGame {
                 return false;
             return buffer.Contains(element);
         }
+
+        public static int Count(List<Element> buffer) {
+            return buffer.FindAll(element => element != Element.NONE).Count;
+        }
+
+        public static int ForceRecount(Buffer buffer) {
+            int cnt = buffer.buffer.FindAll(element => element != Element.NONE).Count;
+            buffer.count = cnt;
+            return cnt;
+        }
     }
 }

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: ElementProperties
   m_EditorClassIdentifier: 
   properties:
-  - element: 1
-    level: 1
   - element: 2
     level: 1
   - element: 3
     level: 1
   - element: 4
+    level: 1
+  - element: 5
     level: 2

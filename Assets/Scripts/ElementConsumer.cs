@@ -10,6 +10,7 @@ public class ElementConsumer : MonoBehaviour
     public enum REQUIREMENT_MODE {
         ONE,
         ALL,
+        NONE,
         CUSTOM
     }
     public enum CONSUMPTION_MODE {
@@ -31,7 +32,7 @@ public class ElementConsumer : MonoBehaviour
     public event Func<Element, CONSUMPTION_RESULT> CustomConsumption;
     public event Action<List<Element>> OnElementsConsumed;
 
-    private static Buffer _buffer;
+    public static Buffer _buffer;
 
     private void Awake() {
         if (_buffer == null)
@@ -39,6 +40,9 @@ public class ElementConsumer : MonoBehaviour
     }
 
     public void AcceptBuffer() {
+        if ( requirementMode == REQUIREMENT_MODE.NONE )
+            return;
+
         List<Element> elementsToRemove = new List<Element>();
         if ( requirementMode == REQUIREMENT_MODE.ALL ) {
             if (!elements.All(elem => _buffer.Contains(elem)))

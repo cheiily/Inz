@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using InzGame;
 using UnityEngine;
@@ -8,4 +9,13 @@ public class CookingAction : ScriptableObject {
     public Element output;
     public float duration;
     public float expiryDuration;
+
+    public HashSet<Element> inputSet;
+    // public List<Element> preview;
+
+    public HashSet<Element> GetInputSet() {
+        if (inputSet == null)
+            inputSet = new HashSet<Element>(input);
+        return inputSet;
+    }
 }

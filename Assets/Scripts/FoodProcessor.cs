@@ -1,20 +1,137 @@
+using System.Collections.Generic;
+using System.Linq;
+using InzGame;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FoodProcessor : MonoBehaviour
 {
+    public enum Status {
+        FREE,
+        ACTIVE,
+        EXPIRING,
+        DONE
+    }
+    public Status _status;
+
+    public Status status {
+        get {
+            return _status;
+        }
+        set {
+            _status = value;
+            switch (value) {
+                case Status.FREE:
+                    _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.CUSTOM;
+                    break;
+                case Status.ACTIVE:
+                    progress = 0;
+                    _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.NONE;
+                    _buffer.Clear();
+                    break;
+                case Status.EXPIRING:
+                    progress = 0;
+                    _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.CUSTOM;
+                    break;
+                case Status.DONE:
+                    _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.CUSTOM;
+                    break;
+            }
+        }
+    }
+
+
+    public GameConfiguration config;
+    public Buffer mainBuffer;
     public FoodProcessorPreset preset;
     public CookingAction currentAction;
     public float progress;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+    public List<Element> _buffer;
+    public ElementConsumer _consumer;
+    public List<Element> moveToMainBuffer = new List<Element>();
+
+    void Start() {
+        mainBuffer = GameObject.FindWithTag("Manager").GetComponent<Buffer>();
+        config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
+        _consumer = GetComponent<ElementConsumer>();
+
+        _consumer.elements = preset.actions.SelectMany(action => action.input).ToList();
+        _consumer.CustomRequirementCheck += delegate(List<Element> required, List<Element> bufferState) {
+            if ( status == Status.DONE || status == Status.EXPIRING ) {
+                moveToMainBuffer.Add(_buffer[0]); // change to action.output if errors?
+                _buffer.RemoveAt(0);
+                status = Status.FREE;
+                currentAction = null;
+            }
+
+            if (Buffer.Count(bufferState) == 0)
+                return new List<Element>();
+
+            if ( currentAction != null ) {
+                HashSet<Element> actionIn = currentAction.GetInputSet();
+                HashSet<Element> compare = new HashSet<Element>(_buffer);
+                List<Element> matchingInput = new List<Element>(bufferState.FindAll(element => actionIn.Contains(element)));
+                compare.AddRange(matchingInput);
+
+                if ( actionIn == compare ) {
+                    return matchingInput;
+                }
+            }
+
+            CookingAction maxCompletionAction = currentAction;
+            HashSet<Element> maxCompletionElements = new HashSet<Element>();
+            HashSet<Element> matchingIn = new HashSet<Element>();
+            HashSet<Element> matchingTotal = new HashSet<Element>(); // buffer + matchingIn, kept separate for easy return of only contained elements
+            float maxCompletion = 0;
+            foreach ( var action in preset.actions ) {
+                matchingIn = new HashSet<Element>(bufferState.FindAll(element => action.GetInputSet().Contains(element)));
+                matchingTotal = new HashSet<Element>(matchingIn);
+                matchingTotal.AddRange(_buffer.FindAll(element => action.GetInputSet().Contains(element)));
+                float completion = (float) matchingTotal.Count / action.input.Count;
+                if ( completion > maxCompletion || (maxCompletionAction != null && completion - maxCompletion < 0.00001 && config.elementProperties.GetFor(action.output).level > config.elementProperties.GetFor(maxCompletionAction.output).level) ) {
+                    maxCompletion = completion;
+                    maxCompletionAction = action;
+                    maxCompletionElements = matchingIn;
+                }
+
+                if (completion >= 1) {
+                    currentAction = action;
+                    return new List<Element>(maxCompletionElements);
+                }
+            }
+
+            if ( _buffer.Count > 0 && currentAction != maxCompletionAction ) {
+                moveToMainBuffer.AddRange(_buffer.FindAll(element => !maxCompletionAction.input.Contains(element)));
+            }
+
+            currentAction = maxCompletionAction;
+            return new List<Element>(maxCompletionElements);
+        };
+        _consumer.OnElementsConsumed += delegate(List<Element> consumed) {
+            _buffer.AddRange(consumed);
+            if ( currentAction != null && currentAction.input.SequenceEqual(_buffer) ) {
+                status = Status.ACTIVE;
+            }
+
+            foreach (var element in moveToMainBuffer) {
+                mainBuffer.Submit(element);
+            }
+            moveToMainBuffer.Clear();
+        };
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        if (status is Status.ACTIVE or Status.EXPIRING) {
+            progress += Time.deltaTime;
+            if (status == Status.ACTIVE && progress >= currentAction.duration) {
+                status = currentAction.expiryDuration > 0 ? Status.EXPIRING : Status.DONE;
+                _buffer.Add(currentAction.output);
+            } else if (status == Status.EXPIRING && progress >= currentAction.expiryDuration) {
+                status = Status.DONE;
+                _buffer[ 0 ] = Element.SPALONE;
+            }
+        }
     }
 }
