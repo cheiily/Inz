@@ -11,6 +11,7 @@ public class ElementConsumer : MonoBehaviour
         ONE,
         ALL,
         NONE,
+        FAIL,
         CUSTOM
     }
     public enum CONSUMPTION_MODE {
@@ -40,7 +41,7 @@ public class ElementConsumer : MonoBehaviour
     }
 
     public void AcceptBuffer() {
-        if ( requirementMode == REQUIREMENT_MODE.NONE )
+        if ( requirementMode == REQUIREMENT_MODE.FAIL )
             return;
 
         List<Element> elementsToRemove = new List<Element>();
@@ -53,6 +54,8 @@ public class ElementConsumer : MonoBehaviour
             elementsToRemove = elements.FindAll(element => _buffer.Contains(element));
         } else if ( requirementMode == REQUIREMENT_MODE.CUSTOM ) {
             elementsToRemove = CustomRequirementCheck?.Invoke(elements, _buffer.buffer);
+        } else if ( requirementMode == REQUIREMENT_MODE.NONE ) {
+            elementsToRemove = elements;
         }
 
         foreach (var element in elementsToRemove) {

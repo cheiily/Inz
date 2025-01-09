@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25578ea49e11c5045989a975d7a70bc7, type: 3}
   m_Name: Pot_Potato
   m_EditorClassIdentifier: 
-  input: 02000000
-  output: 6
+  input: 05000000
+  output: 9
   duration: 10
   expiryDuration: 5

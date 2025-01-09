@@ -14,7 +14,7 @@ namespace InzGame {
 
         private void Awake() {
             for (int i = 0; i < size; i++)
-                buffer.Add(Element.NONE);
+                buffer.Add(Element.INVALID);
         }
 
         public void Submit(Element elem) {
@@ -28,7 +28,7 @@ namespace InzGame {
 
         public Element RemoveFirst() {
             if ( count == 0 )
-                return Element.NONE;
+                return Element.INVALID;
 
             int index = FindFirstLowestLevel();
 
@@ -37,7 +37,7 @@ namespace InzGame {
 
             for (int i = index; i < size - 1; i++)
                 buffer[ i ] = buffer[ i + 1 ];
-            buffer[ size - 1 ] = Element.NONE;
+            buffer[ size - 1 ] = Element.INVALID;
 
             count--;
             return ret;
@@ -45,12 +45,12 @@ namespace InzGame {
 
         public Element RemoveLast() {
             if ( count == 0 )
-                return Element.NONE;
+                return Element.INVALID;
 
             int index = FindLastLowestLevel();
 
             Element ret = buffer[ index ];
-            buffer[ index ] = Element.NONE;
+            buffer[ index ] = Element.INVALID;
             count--;
             return ret;
         }
@@ -62,7 +62,7 @@ namespace InzGame {
             for (int i = index; i < size - 1; i++) {
                 buffer[ i ] = buffer[ i - 1 ];
             }
-            buffer[ size - 1 ] = Element.NONE;
+            buffer[ size - 1 ] = Element.INVALID;
             count--;
             return ret;
         }
@@ -81,14 +81,14 @@ namespace InzGame {
                 return;
             for (int i = idx; i < count - 1; i++)
                 buffer[ i ] = buffer[ i + 1 ];
-            buffer[ count - 1 ] = Element.NONE;
+            buffer[ count - 1 ] = Element.INVALID;
             count--;
         }
 
         public void Trash() {
             count = 0;
             for (int i = 0; i < size; i++) {
-                buffer[ i ] = Element.NONE;
+                buffer[ i ] = Element.INVALID;
             }
         }
 
@@ -99,7 +99,7 @@ namespace InzGame {
             int mini = 0;
             int minlevel = 100;
             for (int i = 0; i < count; i++) {
-                if ( buffer[ i ] != Element.NONE && config.elementProperties.GetFor(buffer[i]).level < config.elementProperties.GetFor(buffer[mini]).level )
+                if ( buffer[ i ] != Element.INVALID && config.elementProperties.GetFor(buffer[i]).level < config.elementProperties.GetFor(buffer[mini]).level )
                     mini = i;
             }
 
@@ -112,7 +112,7 @@ namespace InzGame {
 
             int mini = count;
             for (int i = count - 1; i > -1; i--) {
-                if ( buffer[ i ] != Element.NONE && config.elementProperties.GetFor(buffer[i]).level < config.elementProperties.GetFor(buffer[mini]).level )
+                if ( buffer[ i ] != Element.INVALID && config.elementProperties.GetFor(buffer[i]).level < config.elementProperties.GetFor(buffer[mini]).level )
                     mini = i;
             }
 
@@ -125,16 +125,18 @@ namespace InzGame {
             if ( element == Element.ALL )
                 return true;
             if ( element == Element.NONE )
+                return count == 0;
+            if ( element == Element.INVALID )
                 return false;
             return buffer.Contains(element);
         }
 
         public static int Count(List<Element> buffer) {
-            return buffer.FindAll(element => element != Element.NONE).Count;
+            return buffer.FindAll(element => element != Element.INVALID).Count;
         }
 
         public static int ForceRecount(Buffer buffer) {
-            int cnt = buffer.buffer.FindAll(element => element != Element.NONE).Count;
+            int cnt = buffer.buffer.FindAll(element => element != Element.INVALID).Count;
             buffer.count = cnt;
             return cnt;
         }

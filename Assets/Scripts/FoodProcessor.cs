@@ -26,7 +26,7 @@ public class FoodProcessor : MonoBehaviour
                     break;
                 case Status.ACTIVE:
                     progress = 0;
-                    _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.NONE;
+                    _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.FAIL;
                     _buffer.Clear();
                     break;
                 case Status.EXPIRING:

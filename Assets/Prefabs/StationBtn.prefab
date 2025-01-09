@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elements: 
-  requirementMode: 3
+  requirementMode: 4
   consumptionMode: 0
 --- !u!114 &7491712381197789460
 MonoBehaviour:

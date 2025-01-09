@@ -1,6 +1,9 @@
 ﻿namespace InzGame {
     public enum Element : int {
-        NONE = 0,
+        INVALID = 0,
+        ANY,
+        ALL,
+        NONE,
 
         SPALONE,
 
@@ -12,8 +15,5 @@
 
         // Level 2
         ZIEMNIAKI_GOTOWANE,
-
-        ANY,
-        ALL
     }
 }
