@@ -1,16 +1,67 @@
+using System.Collections.Generic;
+using Data;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    public GameConfiguration config;
-
-
-    void Start()
-    {
-        
+    public enum GameState {
+        TITLE_SCREEN,
+        LEVEL_SELECT,
+        PLAYING,
+        PAUSED,
+        SUMMARY,
+        CREDITS_SCREEN
     }
 
-    void Update()
-    {
-        
+    public Counter counter;
+    public GameConfiguration config;
+    public LevelData currentLevel;
+    public float currentLevelTime;
+    public List<CustomerSpawningPattern.SpawnPoint> currentLevelSpawns = new List<CustomerSpawningPattern.SpawnPoint>();
+
+    public GameState _gameState;
+    public GameState gameState {
+        get {
+            return _gameState;
+        }
+        set {
+            _gameState = value;
+            switch (value) {
+                case GameState.TITLE_SCREEN:
+                    break;
+                case GameState.LEVEL_SELECT:
+                    break;
+                case GameState.PLAYING:
+                    currentLevelTime = 0;
+                    break;
+                case GameState.PAUSED:
+                    break;
+                case GameState.SUMMARY:
+                    break;
+                case GameState.CREDITS_SCREEN:
+                    break;
+            }
+        }
+    }
+
+    void Start() {
+        foreach (var spawnPoint in currentLevel.customerSpawningPattern.regular_spawnPoints) {
+            currentLevelSpawns.Add(new CustomerSpawningPattern.SpawnPoint(spawnPoint.timeSinceStart + Random.Range(-spawnPoint.randomVariance, spawnPoint.randomVariance), spawnPoint.customer));
+        }
+    }
+
+    void Update() {
+        if (gameState == GameState.PLAYING) {
+            currentLevelTime += Time.deltaTime;
+
+            List<CustomerSpawningPattern.SpawnPoint> toRemove = new List<CustomerSpawningPattern.SpawnPoint>();
+            foreach (var spawn in currentLevelSpawns) {
+                if ( counter.CanAdd() && currentLevelTime >= spawn.timeSinceStart ) {
+                    counter.AddCustomer(spawn.customer);
+                    toRemove.Add(spawn);
+                }
+            }
+            toRemove.ForEach(elem => currentLevelSpawns.Remove(elem));
+        }
     }
 }
