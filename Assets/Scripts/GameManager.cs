@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Data;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public enum GameState {
@@ -44,10 +45,23 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    void Start() {
+    public void OnStartLevel(Button button) {
         foreach (var spawnPoint in currentLevel.customerSpawningPattern.regular_spawnPoints) {
             currentLevelSpawns.Add(new CustomerSpawningPattern.SpawnPoint(spawnPoint.timeSinceStart + Random.Range(-spawnPoint.randomVariance, spawnPoint.randomVariance), spawnPoint.customer));
         }
+
+        var processors = GameObject.FindWithTag("Processors").GetComponentsInChildren<FoodProcessor>();
+        foreach (var preset in currentLevel.availableProcessors) {
+            foreach (var processor in processors) {
+                if ( processor.type == preset.type ) {
+                    processor.Initialize(preset);
+                    break;
+                }
+            }
+        }
+
+        button.gameObject.SetActive(false);
+        gameState = GameState.PLAYING;
     }
 
     void Update() {

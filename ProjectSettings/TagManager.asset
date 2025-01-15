@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Manager
+  - Processors
+  - Buffer Display
   layers:
   - Default
   - TransparentFX

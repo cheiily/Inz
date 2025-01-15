@@ -12,8 +12,10 @@ public class Counter : MonoBehaviour {
     public List<Sprite> customerSprites;
 
     public CustomerInstance[] customers;
+    public GameConfiguration _config;
 
     private void Awake() {
+        _config = GetComponent<GameManager>().config;
         customers = new CustomerInstance[size];
     }
 
@@ -26,8 +28,10 @@ public class Counter : MonoBehaviour {
         var customer = Instantiate(customerPrefab, anchors[ index ].transform);
         var customerInstance = customer.GetComponent<CustomerInstance>();
         customerInstance.preset = preset;
-        customerInstance.sprite = customerSprites[Random.Range(0, customerSprites.Count)];
-        customers[index] = customer.GetComponent<CustomerInstance>();
+        // TODO CHANGE TO CUSTOMER SPRITE
+        customerInstance.sprite = _config.elementProperties.GetFor(preset.order).sprite_element;
+        // customerInstance.sprite = customerSprites[Random.Range(0, customerSprites.Count)];
+        customers[index] = customerInstance;
         numCustomers++;
     }
 

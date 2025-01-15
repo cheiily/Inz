@@ -9,11 +9,28 @@
 
         // Level 1
         ZIEMNIAKI,
-        MARCHEW,
+        CEBULA,
+        BARSZCZ,
+        ZAPRAWKA_DO_ZALEWAJKI,
+
         PIETRUSZKA,
-        MASA_ZIEMNIACZANA,
+        MARCHEW,
+        POR,
+        SELER,
+        MASŁO,
+
+        LEBERKA,
+        JAJKO,
 
         // Level 2
-        ZIEMNIAKI_GOTOWANE,
+
+        PIETRUSZKA_KROJONA,
+        CEBULA_KROJONA,
+
+        // Elementy końcowe
+
+        ZALEWAJKA,
+        FIFKA,
+        LEBERKA_Z_CEBULA
     }
 }

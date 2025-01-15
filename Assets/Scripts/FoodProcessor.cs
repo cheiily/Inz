@@ -1,12 +1,17 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
 using InzGame;
 using Unity.VisualScripting;
 using UnityEngine;
+using Buffer = InzGame.Buffer;
 
-public class FoodProcessor : MonoBehaviour
-{
+public class FoodProcessor : MonoBehaviour {
+
+    public event EventHandler<Tuple<float, bool>> OnProgressChange;
+    public event EventHandler<List<Element>> OnBufferChange;
+
     public enum Status {
         FREE,
         ACTIVE,
@@ -41,6 +46,7 @@ public class FoodProcessor : MonoBehaviour
         }
     }
 
+    public FoodProcessorPreset.FoodProcessorType type;
 
     public GameConfiguration config;
     public Buffer mainBuffer;
@@ -56,6 +62,10 @@ public class FoodProcessor : MonoBehaviour
         mainBuffer = GameObject.FindWithTag("Manager").GetComponent<Buffer>();
         config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
         _consumer = GetComponent<ElementConsumer>();
+    }
+
+    public void Initialize(FoodProcessorPreset preset) {
+        this.preset = preset;
 
         _consumer.elements = preset.actions.SelectMany(action => action.input).ToList();
         _consumer.CustomRequirementCheck += delegate(List<Element> required, List<Element> bufferState) {
@@ -64,6 +74,10 @@ public class FoodProcessor : MonoBehaviour
                 _buffer.RemoveAt(0);
                 status = Status.FREE;
                 currentAction = null;
+
+                progress = 0;
+                OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress, false));
+                OnBufferChange?.Invoke(this, _buffer);
             }
 
             if (Buffer.Count(bufferState) == 0)
@@ -98,7 +112,7 @@ public class FoodProcessor : MonoBehaviour
 
                 if (completion >= 1) {
                     currentAction = action;
-                    return new List<Element>(maxCompletionElements);
+                    return new List<Element>(matchingTotal);
                 }
             }
 
@@ -111,9 +125,14 @@ public class FoodProcessor : MonoBehaviour
         };
         _consumer.OnElementsConsumed += delegate(List<Element> consumed) {
             _buffer.AddRange(consumed);
-            if ( currentAction != null && currentAction.input.SequenceEqual(_buffer) ) {
+            if ( currentAction != null && currentAction.input.All(element => _buffer.Contains(element)) ) {
                 status = Status.ACTIVE;
+                _buffer.Clear();
             }
+
+            OnBufferChange?.Invoke(this, _buffer);
+            progress = 0;
+            OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress, false));
 
             foreach (var element in moveToMainBuffer) {
                 mainBuffer.Submit(element);
@@ -129,10 +148,13 @@ public class FoodProcessor : MonoBehaviour
             if (status == Status.ACTIVE && progress >= currentAction.duration) {
                 status = currentAction.expiryDuration > 0 ? Status.EXPIRING : Status.DONE;
                 _buffer.Add(currentAction.output);
+                OnBufferChange?.Invoke(this, _buffer);
             } else if (status == Status.EXPIRING && progress >= currentAction.expiryDuration) {
                 status = Status.DONE;
                 _buffer[ 0 ] = Element.SPALONE;
+                OnBufferChange?.Invoke(this, _buffer);
             }
+            OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress / currentAction.duration, status == Status.EXPIRING));
         }
     }
 }

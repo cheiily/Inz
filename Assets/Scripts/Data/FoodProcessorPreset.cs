@@ -5,12 +5,13 @@ namespace Data {
     [CreateAssetMenu(fileName = "FoodProcessorPreset", menuName = "Scriptable Objects/FoodProcessorPreset")]
     public class FoodProcessorPreset : ScriptableObject {
         public enum FoodProcessorType {
-            POT,
-            PAN,
-            CUTTING_BOARD,
+            GARNEK,
+            PATELNIA,
+            DESKA_DO_KROJENIA,
         }
 
         public List<CookingAction> actions;
         public FoodProcessorType type;
+        public Sprite sprite;
     }
 }

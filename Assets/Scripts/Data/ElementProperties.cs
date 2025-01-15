@@ -11,6 +11,8 @@ namespace Data {
         public class ElementData {
             public Element element;
             public int level;
+            public Sprite sprite_element;
+            public List<Sprite> sprites_cooking_progress;
         }
 
         public List<ElementData> properties;

@@ -1,10 +1,14 @@
+using System;
 using System.Collections.Generic;
 using Data;
 using InzGame;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class CustomerInstance : MonoBehaviour {
+    public event EventHandler<Tuple<float, int>> OnPatienceChange;
+
     public CustomerPreset preset;
     public List<float> thresholds;
     public float timeInThreshold = 0;
@@ -51,5 +55,7 @@ public class CustomerInstance : MonoBehaviour {
                 // todo short wait to show angry face then leave
             }
         }
+
+        OnPatienceChange?.Invoke(this, new Tuple<float, int>(1 - timeInThreshold / thresholds[currentThreshold], currentThreshold));
     }
 }

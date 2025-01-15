@@ -13,6 +13,8 @@ namespace InzGame {
         public int count = 0;
         public List<Element> buffer;
 
+        public event EventHandler<List<Element>> OnBufferChange;
+
         private void Awake() {
             for (int i = 0; i < size; i++)
                 buffer.Add(Element.INVALID);
@@ -25,9 +27,10 @@ namespace InzGame {
 
             buffer[ count ] = elem;
             count++;
+            OnBufferChange?.Invoke(this, buffer);
         }
 
-        public Element RemoveFirst() {
+        private Element RemoveFirst() {
             if ( count == 0 )
                 return Element.INVALID;
 
@@ -44,7 +47,7 @@ namespace InzGame {
             return ret;
         }
 
-        public Element RemoveLast() {
+        private Element RemoveLast() {
             if ( count == 0 )
                 return Element.INVALID;
 
@@ -65,6 +68,7 @@ namespace InzGame {
             }
             buffer[ size - 1 ] = Element.INVALID;
             count--;
+            OnBufferChange?.Invoke(this, buffer);
             return ret;
         }
 
@@ -84,6 +88,7 @@ namespace InzGame {
                 buffer[ i ] = buffer[ i + 1 ];
             buffer[ count - 1 ] = Element.INVALID;
             count--;
+            OnBufferChange?.Invoke(this, buffer);
         }
 
         public void Trash() {
@@ -91,6 +96,7 @@ namespace InzGame {
             for (int i = 0; i < size; i++) {
                 buffer[ i ] = Element.INVALID;
             }
+            OnBufferChange?.Invoke(this, buffer);
         }
 
         public int FindFirstLowestLevel() {
