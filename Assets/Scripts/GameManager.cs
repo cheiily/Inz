@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public float points = 0;
+
     public void OnStartLevel(Button button) {
         foreach (var spawnPoint in currentLevel.customerSpawningPattern.regular_spawnPoints) {
             currentLevelSpawns.Add(new CustomerSpawningPattern.SpawnPoint(spawnPoint.timeSinceStart + Random.Range(-spawnPoint.randomVariance, spawnPoint.randomVariance), spawnPoint.customer));
@@ -61,6 +63,7 @@ public class GameManager : MonoBehaviour {
         }
 
         button.gameObject.SetActive(false);
+        points = 0;
         gameState = GameState.PLAYING;
     }
 

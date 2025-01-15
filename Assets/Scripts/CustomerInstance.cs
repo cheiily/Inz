@@ -38,8 +38,11 @@ public class CustomerInstance : MonoBehaviour {
         // _elementConsumer = GetComponent<ElementConsumer>();
         _elementConsumer.elements = new List<Element> {preset.order};
         _elementConsumer.OnElementsConsumed += delegate(List<Element> list) {
-            if (list.Count == 1 && list[0] == preset.order)
+            if (list.Count == 1 && list[0] == preset.order) {
+                GameObject.FindWithTag("Manager").GetComponent<GameManager>().points +=
+                    100 - currentThreshold * (100.0f / thresholds.Count);
                 Destroy(gameObject);
+            }
         };
     }
 
