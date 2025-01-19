@@ -112,7 +112,7 @@ public class FoodProcessor : MonoBehaviour {
 
                 if (completion >= 1) {
                     currentAction = action;
-                    return new List<Element>(matchingTotal);
+                    return new List<Element>(matchingIn);
                 }
             }
 

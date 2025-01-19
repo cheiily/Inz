@@ -27,18 +27,23 @@ public class Counter : MonoBehaviour {
         int index = FindFreeSeat();
         var customer = Instantiate(customerPrefab, anchors[ index ].transform);
         var customerInstance = customer.GetComponent<CustomerInstance>();
+        customerInstance.OnCustomerRemove += RemoveCustomer;
         customerInstance.preset = preset;
         // TODO CHANGE TO CUSTOMER SPRITE
         customerInstance.sprite = _config.elementProperties.GetFor(preset.order).sprite_element;
         // customerInstance.sprite = customerSprites[Random.Range(0, customerSprites.Count)];
         customers[index] = customerInstance;
         numCustomers++;
+
+        Debug.Log("Customer added; numCustomers: " + numCustomers);
     }
 
     public void RemoveCustomer(CustomerInstance customer) {
         int idx = Array.IndexOf(customers, customer);
         customers[idx] = null;
         numCustomers--;
+
+        Debug.Log("Customer removed; numCustomers: " + numCustomers);
     }
 
     public int FindFreeSeat() {
@@ -48,5 +53,9 @@ public class Counter : MonoBehaviour {
             }
         }
         return -1;
+    }
+
+    public void RemoveCustomer(object sender, EventArgs _) {
+        RemoveCustomer((CustomerInstance) sender);
     }
 }

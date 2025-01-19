@@ -1,3 +1,4 @@
+using InzGame;
 using UnityEngine;
 
 namespace Data {
@@ -5,5 +6,6 @@ namespace Data {
     public class GameConfiguration : ScriptableObject {
         public int bufferSize = 3;
         public ElementProperties elementProperties;
+        public CustomerEvaluation.Method evaluationMethod;
     }
 }

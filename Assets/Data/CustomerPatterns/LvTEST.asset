@@ -32,3 +32,6 @@ MonoBehaviour:
   - timeSinceStart: 45
     randomVariance: 0
     customer: {fileID: 11400000, guid: 41d9692e48d52b34496b0baec8797b4c, type: 2}
+  - timeSinceStart: 55
+    randomVariance: 0
+    customer: {fileID: 11400000, guid: 3e58e662800f6f444b4f056b67166b3e, type: 2}

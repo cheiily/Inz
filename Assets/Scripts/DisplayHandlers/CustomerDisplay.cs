@@ -7,7 +7,7 @@ namespace InzGame.DisplayHandlers {
         public Slider _slider;
         public CustomerInstance _customer;
         private Color[] colors = new Color[] {
-            Color.green, Color.yellow, Color.red
+            Color.green, Color.yellow, Color.red, Color.clear
         };
 
         private void Awake() {
