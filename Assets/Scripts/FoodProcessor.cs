@@ -100,7 +100,7 @@ public class FoodProcessor : MonoBehaviour {
             HashSet<Element> matchingTotal = new HashSet<Element>(); // buffer + matchingIn, kept separate for easy return of only contained elements
             float maxCompletion = 0;
             foreach ( var action in preset.actions ) {
-                matchingIn = new HashSet<Element>(bufferState.FindAll(element => action.GetInputSet().Contains(element)));
+                matchingIn = new HashSet<Element>(bufferState.FindAll(element => action.GetInputSet().Contains(element) && !_buffer.Contains(element)));
                 matchingTotal = new HashSet<Element>(matchingIn);
                 matchingTotal.AddRange(_buffer.FindAll(element => action.GetInputSet().Contains(element)));
                 float completion = (float) matchingTotal.Count / action.input.Count;
