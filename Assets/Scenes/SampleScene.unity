@@ -1271,6 +1271,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3691733708452068560, guid: 84f4e56f4ce26bd478a8767c73df36bb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5139388343864919942, guid: ac9a6cc8244ad834c951bd8601fb5b6c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4787,7 +4791,8 @@ MonoBehaviour:
   - {fileID: 2101956366}
   customerPrefab: {fileID: 6407587608515311338, guid: 3910c64bde1898e428f04b6a154092f9, type: 3}
   customerSprites:
-  - {fileID: -1592845275352430884, guid: a7ed22a3f5132c14a8a8672813027e34, type: 3}
+  - {fileID: -5139388343864919942, guid: ac9a6cc8244ad834c951bd8601fb5b6c, type: 3}
+  - {fileID: 6755086663454874219, guid: 8d0f6afe6d28b9a40bbd40579dc25bd1, type: 3}
   customers: []
   _config: {fileID: 0}
 --- !u!114 &1931313118
@@ -5399,6 +5404,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3691733708452068560, guid: 84f4e56f4ce26bd478a8767c73df36bb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5139388343864919942, guid: ac9a6cc8244ad834c951bd8601fb5b6c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

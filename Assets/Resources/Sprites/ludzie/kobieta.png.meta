@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -5139388343864919942
-    second: "Untitled 101 \u2013 Copy_202501141050_42380_0"
+    second: kobieta_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Untitled 101 \u2013 Copy_202501141050_42380_0"
+      name: kobieta_0
       rect:
         serializedVersion: 2
         x: 19
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kobieta_0: -5139388343864919942
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

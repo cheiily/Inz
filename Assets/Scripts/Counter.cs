@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Data;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Counter : MonoBehaviour {
@@ -34,9 +35,8 @@ public class Counter : MonoBehaviour {
         var customerInstance = customer.GetComponent<CustomerInstance>();
         customerInstance.OnCustomerRemove += RemoveCustomer;
         customerInstance.preset = preset;
-        // TODO CHANGE TO CUSTOMER SPRITE
         customerInstance.sprite = _config.elementProperties.GetFor(preset.order).sprite_element;
-        // customerInstance.sprite = customerSprites[Random.Range(0, customerSprites.Count)];
+        customer.transform.parent.GetComponent<Image>().sprite = customerSprites[Random.Range(0, customerSprites.Count)];
         customers[index] = customerInstance;
         numCustomers++;
         customer.transform.parent.gameObject.SetActive(true);
