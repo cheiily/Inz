@@ -11,6 +11,7 @@ public class FoodProcessor : MonoBehaviour {
 
     public event EventHandler<Tuple<float, bool>> OnProgressChange;
     public event EventHandler<List<Element>> OnBufferChange;
+    public event EventHandler<Status> OnStatusChange;
 
     public enum Status {
         FREE,
@@ -43,6 +44,7 @@ public class FoodProcessor : MonoBehaviour {
                     _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.CUSTOM;
                     break;
             }
+            OnStatusChange?.Invoke(this, value);
         }
     }
 

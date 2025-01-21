@@ -11,11 +11,16 @@ namespace InzGame.DisplayHandlers {
         public FoodProcessor _processor;
         public Slider _progressSlider;
         public List<Image> _bufferImages;
+        public Animator _animator;
+        public int _stateParam;
 
         private void Awake() {
             _config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
             _processor = GetComponent<FoodProcessor>();
             _progressSlider = transform.GetChild(0).GetComponent<Slider>();
+            _animator = GetComponent<Animator>();
+            _stateParam = Animator.StringToHash("Status");
+
             var anchor = transform.GetChild(1);
             foreach (Transform child in anchor.transform) {
                 _bufferImages.Add(child.GetComponent<Image>());
@@ -23,6 +28,7 @@ namespace InzGame.DisplayHandlers {
 
             _processor.OnBufferChange += SetBufferImages;
             _processor.OnProgressChange += SetSliderProgress;
+            _processor.OnStatusChange += SetAnimatorState;
         }
 
         public void SetSliderProgress(object sender, Tuple<float, bool> progressTuple) {
@@ -40,6 +46,10 @@ namespace InzGame.DisplayHandlers {
                     _bufferImages[i].color = Color.white;
                 }
             }
+        }
+
+        public void SetAnimatorState(object sender, FoodProcessor.Status state) {
+            _animator.SetInteger(_stateParam, (int)state);
         }
     }
 }
