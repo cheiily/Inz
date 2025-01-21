@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Data;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -17,6 +18,10 @@ public class Counter : MonoBehaviour {
     private void Awake() {
         _config = GetComponent<GameManager>().config;
         customers = new CustomerInstance[size];
+
+        foreach (var anchor in anchors) {
+            anchor.gameObject.SetActive(false);
+        }
     }
 
     public bool CanAdd() {
@@ -34,6 +39,7 @@ public class Counter : MonoBehaviour {
         // customerInstance.sprite = customerSprites[Random.Range(0, customerSprites.Count)];
         customers[index] = customerInstance;
         numCustomers++;
+        customer.transform.parent.gameObject.SetActive(true);
 
         Debug.Log("Customer added; numCustomers: " + numCustomers);
     }
@@ -42,6 +48,8 @@ public class Counter : MonoBehaviour {
         int idx = Array.IndexOf(customers, customer);
         customers[idx] = null;
         numCustomers--;
+
+        anchors[idx].gameObject.SetActive(false);
 
         Debug.Log("Customer removed; numCustomers: " + numCustomers);
     }
