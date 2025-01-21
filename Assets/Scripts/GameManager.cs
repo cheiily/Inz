@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using Data;
-using InzGame;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -57,13 +55,20 @@ public class GameManager : MonoBehaviour {
         }
 
         var processors = GameObject.FindWithTag("Processors").GetComponentsInChildren<FoodProcessor>();
-        foreach (var preset in currentLevel.availableProcessors) {
-            foreach (var processor in processors) {
-                if ( processor.type == preset.type ) {
-                    processor.Initialize(preset);
-                    break;
-                }
-            }
+        var levelPresets = currentLevel.availableProcessors.Select(preset => preset.type).ToList();
+        foreach (var processor in processors) {
+            var idx = 0;
+            if ( (idx = levelPresets.IndexOf(processor.type)) != -1 )
+                processor.Initialize(currentLevel.availableProcessors[idx]);
+            else processor.gameObject.SetActive(false);
+        }
+
+        var inputs = LinqUtility.ToHashSet(currentLevel.availableProcessors.SelectMany(preset => preset.actions.SelectMany(action => action.GetInputSet())));
+        var sources = GameObject.FindWithTag("Sources").GetComponentsInChildren<ElementSource>();
+
+        foreach (var source in sources) {
+            if ( !inputs.Contains(source.element) )
+                source.gameObject.SetActive(false);
         }
 
         button.gameObject.SetActive(false);

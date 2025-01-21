@@ -8,6 +8,8 @@ namespace Data {
             GARNEK,
             PATELNIA,
             DESKA_DO_KROJENIA,
+            DESKA_DO_OBIERANIA,
+            MISKA,
         }
 
         public List<CookingAction> actions;

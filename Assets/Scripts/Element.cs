@@ -7,30 +7,65 @@
 
         SPALONE,
 
-        // Level 1
         ZIEMNIAKI,
         CEBULA,
         BARSZCZ,
         ZAPRAWKA_DO_ZALEWAJKI,
-
         PIETRUSZKA,
         MARCHEW,
         POR,
         SELER,
         MASŁO,
-
         LEBERKA,
         JAJKO,
-
-        // Level 2
 
         PIETRUSZKA_KROJONA,
         CEBULA_KROJONA,
 
-        // Elementy końcowe
-
         ZALEWAJKA,
         FIFKA,
-        LEBERKA_Z_CEBULA
+        LEBERKA_Z_CEBULA,
+
+        SMIETANA,
+        BULKA,
+        MAKARON,
+        JABLKO,
+        KAWA,
+        MELASA,
+        ZACZYN,
+        BULKA_KROJONA,
+        TWAROG,
+        MAKARON_GOTOWANY,
+        JABLKO_SUROWE,
+        CEBULA_SUROWA,
+        OGORKI_KISZONE,
+        WARZYWA_SUROWE,
+        RODZYNKI,
+        KLUSKI_Z_SEREM,
+        SLONINA_KROJONA,
+        SUROWKA,
+        SLEDZIE_W_MARYNACIE,
+        SOS_CHRZANOWY,
+        ZULIK,
+        KAPUSTA_KISZONA,
+        SLEDZIE_POD_PIERZYNKA,
+        MLODA_KAPUSTA,
+        PRAZOKI,
+        PRAZOKI_Z_KAPUSTA,
+        KLUSKI_ZELAZNE,
+        KLUSKI_ZELAZNE_Z_KAPUSTA,
+
+        MAKA,
+        BULION,
+        BULKA_Z_MLEKIEM,
+        ZIEMNIAKI_GOTOWANE,
+        SLONINA,
+        CIASTO,
+        MASA_ZIEMNIACZANA,
+        SLIWKA,
+        SLIWKA_KROJONA,
+        KNEDLE,
+        KNEDLE_ZE_SLIWKAMI,
+
     }
 }
