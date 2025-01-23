@@ -31,7 +31,10 @@ public class Counter : MonoBehaviour {
 
     public void AddCustomer(CustomerPreset preset) {
         int index = FindFreeSeat();
+        var orderPreviewAnchor = anchors[ index ].transform.GetChild(0);
         var customer = Instantiate(customerPrefab, anchors[ index ].transform);
+        customer.transform.localPosition = orderPreviewAnchor.localPosition - new Vector3(0, 15, 0);
+
         var customerInstance = customer.GetComponent<CustomerInstance>();
         customerInstance.OnCustomerRemove += RemoveCustomer;
         customerInstance.preset = preset;

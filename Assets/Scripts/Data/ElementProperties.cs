@@ -25,5 +25,23 @@ namespace Data {
 
             return new ElementData();
         }
+
+        public Element filter;
+        public int _indexPreview;
+
+        public ElementData found;
+
+        private void OnValidate() {
+            foreach (var data in properties) {
+                if ( data.element == filter ) {
+                    found = data;
+                    _indexPreview = properties.IndexOf(data);
+
+                    return;
+                }
+            }
+
+            found = null;
+        }
     }
 }

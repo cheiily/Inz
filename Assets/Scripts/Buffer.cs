@@ -22,7 +22,7 @@ namespace InzGame {
 
         public void Submit(Element elem) {
             if ( count >= size ) {
-                RemoveFirst();
+                RemoveLast();
             }
 
             buffer[ count ] = elem;
@@ -117,7 +117,7 @@ namespace InzGame {
             if (count == 0)
                 return size - 1;
 
-            int mini = count;
+            int mini = count - 1;
             for (int i = count - 1; i > -1; i--) {
                 if ( buffer[ i ] != Element.INVALID && config.elementProperties.GetFor(buffer[i]).level < config.elementProperties.GetFor(buffer[mini]).level )
                     mini = i;
