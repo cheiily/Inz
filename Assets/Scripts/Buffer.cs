@@ -22,7 +22,7 @@ namespace InzGame {
 
         public void Submit(Element elem) {
             if ( count >= size ) {
-                RemoveLast();
+                RemoveFirst();
             }
 
             buffer[ count ] = elem;
