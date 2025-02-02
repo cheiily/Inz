@@ -22,7 +22,11 @@ namespace InzGame {
 
         public void Submit(Element elem) {
             if ( count >= size ) {
-                RemoveFirst();
+                var removed = RemoveFirst(elem);
+                if ( removed == Element.NONE ) {
+                    Debug.Log("Buffer is full and all elements are of higher level. Cannot submit.");
+                    return;
+                }
             }
 
             buffer[ count ] = elem;
@@ -30,13 +34,15 @@ namespace InzGame {
             OnBufferChange?.Invoke(this, buffer);
         }
 
-        private Element RemoveFirst() {
+        private Element RemoveFirst(Element newElem) {
             if ( count == 0 )
                 return Element.INVALID;
 
             int index = FindFirstLowestLevel();
 
             Element ret = buffer[ index ];
+            if ( config.elementProperties.GetFor(ret).level > config.elementProperties.GetFor(newElem).level )
+                return Element.NONE;
             // buffer[ index ] = Element.NONE;
 
             for (int i = index; i < size - 1; i++)
