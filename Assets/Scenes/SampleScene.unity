@@ -2174,7 +2174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123d5d4d0f0d4cad8606313873e9971e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bufferDisplay: {fileID: 0}
+  bufferDisplay: {fileID: 1931313118}
   _config: {fileID: 0}
   itemPool: []
 --- !u!1 &606266727
