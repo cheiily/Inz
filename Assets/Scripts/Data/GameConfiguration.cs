@@ -7,5 +7,6 @@ namespace Data {
         public int bufferSize = 3;
         public ElementProperties elementProperties;
         public CustomerEvaluation.Method evaluationMethod;
+        public float itemJumpDuration = 0.5f;
     }
 }

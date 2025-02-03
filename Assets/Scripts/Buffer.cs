@@ -20,18 +20,19 @@ namespace InzGame {
                 buffer.Add(Element.INVALID);
         }
 
-        public void Submit(Element elem) {
+        public bool Submit(Element elem) {
             if ( count >= size ) {
                 var removed = RemoveFirst(elem);
                 if ( removed == Element.NONE ) {
                     Debug.Log("Buffer is full and all elements are of higher level. Cannot submit.");
-                    return;
+                    return false;
                 }
             }
 
             buffer[ count ] = elem;
             count++;
             OnBufferChange?.Invoke(this, buffer);
+            return true;
         }
 
         private Element RemoveFirst(Element newElem) {

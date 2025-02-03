@@ -8,6 +8,7 @@ TagManager:
   - Processors
   - Buffer Display
   - Sources
+  - ItemJumpTweener
   layers:
   - Default
   - TransparentFX
