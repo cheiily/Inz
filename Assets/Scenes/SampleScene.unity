@@ -6596,7 +6596,7 @@ MonoBehaviour:
   currentLevel: {fileID: 11400000, guid: 44dec6993bc6f494ba3e0baf75b481a5, type: 2}
   currentLevelTime: 0
   _gameState: 0
-  points: 0
+  _points: 0
 --- !u!4 &1931313115
 Transform:
   m_ObjectHideFlags: 0
@@ -7337,6 +7337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2106735509}
   - component: {fileID: 2106735510}
+  - component: {fileID: 2106735511}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -7412,10 +7413,24 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.8
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2106735511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106735508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b61396158db4926a1d65f31bac7419c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 0}
+  _manager: {fileID: 0}
 --- !u!1 &2135064027
 GameObject:
   m_ObjectHideFlags: 0
