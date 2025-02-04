@@ -292,9 +292,11 @@ MonoBehaviour:
   thresholds: []
   timeInThreshold: 0
   currentThreshold: 0
+  doCountdown: 1
   sprite: {fileID: 0}
   _image: {fileID: 6176565743519483039}
   _elementConsumer: {fileID: 6830554278890658426}
+  _config: {fileID: 0}
 --- !u!114 &1341611300032809578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +311,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 0}
   _customer: {fileID: 0}
+  _animator: {fileID: 0}
+  _thresholdParam: 0
 --- !u!1 &8354692969063297714
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 2686795930990171874, guid: 271091ecad8a5e34187757c7e3c8fcd1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

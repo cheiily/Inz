@@ -17,6 +17,7 @@ public class CustomerInstance : MonoBehaviour {
     public List<float> thresholds;
     public float timeInThreshold = 0;
     public int currentThreshold = 0;
+    public bool doCountdown = true;
 
     public Sprite sprite;
     public Image _image;
@@ -57,7 +58,8 @@ public class CustomerInstance : MonoBehaviour {
     void Update() {
         bool do_destroy = false;
 
-        timeInThreshold += Time.deltaTime;
+        if (doCountdown)
+            timeInThreshold += Time.deltaTime;
         if (currentThreshold < thresholds.Count && timeInThreshold >= thresholds[currentThreshold]) {
             currentThreshold++;
             timeInThreshold = 0;
@@ -81,14 +83,16 @@ public class CustomerInstance : MonoBehaviour {
         OnCustomerRemove?.Invoke(this, EventArgs.Empty);
         var manager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
         var points = CustomerEvaluation.methods[ manager.config.evaluationMethod ](this);
-        manager.points += points;
+        manager.AddPoints(points);
         Debug.Log("Adding points: " + points);
         Destroy(gameObject);
     }
 
     public EventHandler PolicyModification_Delay(EventHandler policy, float seconds) {
-        return (sender, args) =>
+        return (sender, args) => {
+            doCountdown = false;
             StartCoroutine(PolicyExecutor_Delay(policy, sender, args, seconds));
+        };
     }
 
     private IEnumerator PolicyExecutor_Delay(EventHandler policy, object sender, EventArgs args, float seconds) {

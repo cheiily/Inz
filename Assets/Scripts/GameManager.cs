@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -21,6 +23,8 @@ public class GameManager : MonoBehaviour {
     public LevelData currentLevel;
     public float currentLevelTime;
     public List<CustomerSpawningPattern.SpawnPoint> currentLevelSpawns = new List<CustomerSpawningPattern.SpawnPoint>();
+
+    public event EventHandler<Tuple<float /* current */, float /* max */>> OnPointsAdded;
 
     public GameState _gameState;
     public GameState gameState {
@@ -47,7 +51,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public float points = 0;
+    public float _points = 0;
 
     public void OnStartLevel(Button button) {
         foreach (var spawnPoint in currentLevel.customerSpawningPattern.regular_spawnPoints) {
@@ -72,7 +76,7 @@ public class GameManager : MonoBehaviour {
         }
 
         button.gameObject.SetActive(false);
-        points = 0;
+        _points = 0;
         gameState = GameState.PLAYING;
     }
 
@@ -89,5 +93,10 @@ public class GameManager : MonoBehaviour {
             }
             toRemove.ForEach(elem => currentLevelSpawns.Remove(elem));
         }
+    }
+
+    public void AddPoints(float pointsToAdd) {
+        _points += pointsToAdd;
+        OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
     }
 }
