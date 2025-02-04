@@ -14,6 +14,7 @@ namespace InzGame {
         public List<Element> buffer;
 
         public event EventHandler<List<Element>> OnBufferChange;
+        public event EventHandler<Tuple<Element, int>> OnSubmit;
 
         private void Awake() {
             for (int i = 0; i < size; i++)
@@ -32,6 +33,7 @@ namespace InzGame {
             buffer[ count ] = elem;
             count++;
             OnBufferChange?.Invoke(this, buffer);
+            OnSubmit?.Invoke(this, new Tuple<Element, int>(elem, count - 1));
             return true;
         }
 

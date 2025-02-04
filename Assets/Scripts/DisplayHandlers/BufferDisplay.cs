@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,7 @@ namespace InzGame.DisplayHandlers {
             }
 
             _buffer.OnBufferChange += SetSprites;
+            _buffer.OnSubmit += DelayShowSubmitted;
 
             foreach (var anchor in anchors) {
                 anchor.sprite = null;
@@ -101,6 +103,15 @@ namespace InzGame.DisplayHandlers {
 
                 m_displayBuffer[ i ] = new Tuple<Element, int>(bufferState[ i ], i);
             }
+        }
+
+        public void DelayShowSubmitted(object sender, Tuple<Element, int> elem) {
+            var anchor = anchors[ elem.Item2 ];
+            anchor.DOKill();
+            anchor.DOColor(Color.clear, _config.itemJumpDuration).From(Color.clear).OnComplete(() => {
+                anchor.sprite = _config.elementProperties.GetFor(elem.Item1).sprite_element;
+                anchor.color = Color.white;
+            });
         }
 
         private int FindFreeSeat(Element elem) {
