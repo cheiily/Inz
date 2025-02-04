@@ -12,6 +12,7 @@ public class FoodProcessor : MonoBehaviour {
     public event EventHandler<Tuple<float, bool>> OnProgressChange;
     public event EventHandler<List<Element>> OnBufferChange;
     public event EventHandler<Status> OnStatusChange;
+    public event Action<List<Element> /*elements*/, List<int> /*indices*/> OnMoveToMainBuffer;
 
     public enum Status {
         FREE,
@@ -59,6 +60,7 @@ public class FoodProcessor : MonoBehaviour {
     public List<Element> _buffer;
     public ElementConsumer _consumer;
     public List<Element> moveToMainBuffer = new List<Element>();
+    public List<int> moveToMainBufferIndices = new List<int>();
 
     void Start() {
         mainBuffer = GameObject.FindWithTag("Manager").GetComponent<Buffer>();
@@ -73,6 +75,7 @@ public class FoodProcessor : MonoBehaviour {
         _consumer.CustomRequirementCheck += delegate(List<Element> required, List<Element> bufferState) {
             if ( status == Status.DONE || status == Status.EXPIRING ) {
                 moveToMainBuffer.Add(_buffer[0]); // change to action.output if errors?
+                moveToMainBufferIndices.Add(0);
                 _buffer.RemoveAt(0);
                 status = Status.FREE;
                 currentAction = null;
@@ -120,6 +123,7 @@ public class FoodProcessor : MonoBehaviour {
 
             if ( _buffer.Count > 0 && currentAction != maxCompletionAction ) {
                 moveToMainBuffer.AddRange(_buffer.FindAll(element => !maxCompletionAction.input.Contains(element)));
+                moveToMainBufferIndices.AddRange(_buffer.FindAll(element => !maxCompletionAction.input.Contains(element)).Select(element => _buffer.IndexOf(element)));
             }
 
             currentAction = maxCompletionAction;
@@ -139,7 +143,9 @@ public class FoodProcessor : MonoBehaviour {
             foreach (var element in moveToMainBuffer) {
                 mainBuffer.Submit(element);
             }
+            OnMoveToMainBuffer?.Invoke(moveToMainBuffer, moveToMainBufferIndices);
             moveToMainBuffer.Clear();
+            moveToMainBufferIndices.Clear();
         };
     }
 

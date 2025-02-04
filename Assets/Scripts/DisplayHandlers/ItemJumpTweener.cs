@@ -49,5 +49,14 @@ namespace InzGame.DisplayHandlers {
                 }
             }
         }
+
+        public void Processor(List<Element> elements, List<int> indices, FoodProcessorDisplay processorDisplay) {
+            for (int i = 0; i < elements.Count; i++) {
+                var elem = elements[i];
+                var idx = bufferDisplay._buffer.buffer.LastIndexOf(elem);
+
+                StartWith(elem, processorDisplay._bufferImages[idx].transform, bufferDisplay.anchors[idx].transform);
+            }
+        }
     }
 }

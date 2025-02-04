@@ -29,6 +29,7 @@ namespace InzGame.DisplayHandlers {
             _processor.OnBufferChange += SetBufferImages;
             _processor.OnProgressChange += SetSliderProgress;
             _processor.OnStatusChange += SetAnimatorState;
+            _processor.OnMoveToMainBuffer += TweenItems;
         }
 
         public void SetSliderProgress(object sender, Tuple<float, bool> progressTuple) {
@@ -50,6 +51,10 @@ namespace InzGame.DisplayHandlers {
 
         public void SetAnimatorState(object sender, FoodProcessor.Status state) {
             _animator.SetInteger(_stateParam, (int)state);
+        }
+
+        public void TweenItems(List<Element> elements, List<int> indices) {
+            GameObject.FindWithTag("ItemJumpTweener").GetComponent<ItemJumpTweener>().Processor(elements, indices, this);
         }
     }
 }
