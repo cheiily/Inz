@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Data;
 using InzGame;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using Random = UnityEngine.Random;
 
 public class CustomerInstance : MonoBehaviour {
@@ -21,10 +23,14 @@ public class CustomerInstance : MonoBehaviour {
     public Sprite sprite;
     public Image _image;
     public ElementConsumer _elementConsumer;
+    public GameConfiguration _config;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
-        CustomerRemovePolicy += Policy_AddPointsThenDestroy;
+        _config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
+
+        // CustomerRemovePolicy += Policy_AddPointsThenDestroy;
+        CustomerRemovePolicy += Policy_DelayForTweenThenExecute(Policy_AddPointsThenDestroy);
 
         thresholds = new List<float>();
         if (preset.ratingDropMode == CustomerPreset.RatingDropMode.REGULAR) {
@@ -81,5 +87,15 @@ public class CustomerInstance : MonoBehaviour {
         manager.points += points;
         Debug.Log("Adding points: " + points);
         Destroy(gameObject);
+    }
+
+    public EventHandler Policy_DelayForTweenThenExecute(EventHandler policy) {
+        return (sender, args) =>
+            StartCoroutine(PolicyExecutor_Delay(policy, sender, args, _config.itemJumpDuration));
+    }
+
+    private IEnumerator PolicyExecutor_Delay(EventHandler policy, object sender, EventArgs args, float seconds) {
+        yield return new WaitForSeconds(seconds);
+        policy(sender, args);
     }
 }
