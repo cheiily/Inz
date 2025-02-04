@@ -1,3 +1,4 @@
+using DG.Tweening;
 using InzGame;
 using UnityEngine;
 
@@ -8,5 +9,6 @@ namespace Data {
         public ElementProperties elementProperties;
         public CustomerEvaluation.Method evaluationMethod;
         public float itemJumpDuration = 0.5f;
+        public Ease itemJumpEase = Ease.OutExpo;
     }
 }

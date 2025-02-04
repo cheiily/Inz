@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Data;
 using DG.Tweening;
 using UnityEngine;
@@ -30,7 +31,7 @@ namespace InzGame.DisplayHandlers {
 
             item.GetComponent<Image>().sprite = _config.elementProperties.GetFor(elem).sprite_element;
 
-            item.transform.DOMove(to.position, _config.itemJumpDuration).From(from.position).OnComplete(() => {
+            item.transform.DOMove(to.position, _config.itemJumpDuration).SetEase(_config.itemJumpEase).From(from.position).OnComplete(() => {
                 item.gameObject.SetActive(false);
                 item.GetComponent<Image>().sprite = null;
             });
@@ -38,19 +39,15 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void Source(ElementSource source, int slot) {
-            GameObject item = itemPool.Find(obj => !obj.activeSelf);
-            if (item == null) {
-                Debug.Log("No available items in pool");
-                return;
+            StartWith(source.element, source.transform, bufferDisplay.anchors[slot].transform);
+        }
+
+        public void Consumer(ElementConsumer consumer, List<Element> elements) {
+            foreach (var displayTuple in bufferDisplay.m_displayBuffer) {
+                if (elements.Contains(displayTuple.Item1)) {
+                    StartWith(displayTuple.Item1, bufferDisplay.anchors[displayTuple.Item2].transform, consumer.transform);
+                }
             }
-
-            item.GetComponent<Image>().sprite = _config.elementProperties.GetFor(source.element).sprite_element;
-
-            item.transform.DOMove(bufferDisplay.anchors[slot].transform.position, _config.itemJumpDuration).From(source.transform.position).OnComplete(() => {
-                item.gameObject.SetActive(false);
-                item.GetComponent<Image>().sprite = null;
-            });
-            item.SetActive(true);
         }
     }
 }

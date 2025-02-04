@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using InzGame;
+using InzGame.DisplayHandlers;
 using UnityEngine;
 using Buffer = InzGame.Buffer;
 
@@ -32,12 +33,15 @@ public class ElementConsumer : MonoBehaviour
     public event Func<List<Element> /*required*/, List<Element> /*buffer state*/, List<Element> /*RETURN: accepted elements, contained by the buffer*/> CustomRequirementCheck;
     public event Func<Element, CONSUMPTION_RESULT> CustomConsumption;
     public event Action<List<Element>> OnElementsConsumed;
+    public event Action<List<Element>> BeforeElementsConsumed;
 
     public static Buffer _buffer;
 
     private void Awake() {
         if (_buffer == null)
             _buffer = GameObject.FindWithTag("Manager").GetComponent<Buffer>();
+
+        BeforeElementsConsumed += TweenJumpItems;
     }
 
     public void AcceptBuffer() {
@@ -58,6 +62,7 @@ public class ElementConsumer : MonoBehaviour
             elementsToRemove = elements;
         }
 
+        BeforeElementsConsumed?.Invoke(elementsToRemove);
         foreach (var element in elementsToRemove) {
             _buffer.Remove(element);
             var result = consumptionMode == CONSUMPTION_MODE.CUSTOM ? CustomConsumption?.Invoke(element) : (CONSUMPTION_RESULT) consumptionMode;
@@ -65,5 +70,9 @@ public class ElementConsumer : MonoBehaviour
                 elements.Remove(element);
         }
         OnElementsConsumed?.Invoke(elementsToRemove);
+    }
+
+    public void TweenJumpItems(List<Element> elements) {
+        GameObject.FindWithTag("ItemJumpTweener").GetComponent<ItemJumpTweener>().Consumer(this, elements);
     }
 }

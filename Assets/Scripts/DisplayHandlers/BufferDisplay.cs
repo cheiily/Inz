@@ -98,6 +98,8 @@ namespace InzGame.DisplayHandlers {
                     anchors[ i ].sprite = _config.elementProperties.GetFor(bufferState[ i ]).sprite_element;
                     anchors[ i ].color = Color.white;
                 }
+
+                m_displayBuffer[ i ] = new Tuple<Element, int>(bufferState[ i ], i);
             }
         }
 
