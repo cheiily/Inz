@@ -1025,6 +1025,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 256374544}
     m_Modifications:
+    - target: {fileID: 245806997431395602, guid: bae5e7e80aae81a4294eff419849376e, type: 3}
+      propertyPath: 'elements.Array.data[0]'
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1424738020984299016, guid: bae5e7e80aae81a4294eff419849376e, type: 3}
       propertyPath: m_Type
       value: 0
@@ -1036,14 +1040,14 @@ PrefabInstance:
     - target: {fileID: 3949057801458759925, guid: bae5e7e80aae81a4294eff419849376e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1931313113}
+      objectReference: {fileID: 2023462186}
     - target: {fileID: 3949057801458759925, guid: bae5e7e80aae81a4294eff419849376e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Trash
+      value: AcceptBuffer
       objectReference: {fileID: 0}
     - target: {fileID: 3949057801458759925, guid: bae5e7e80aae81a4294eff419849376e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InzGame.Buffer, Assembly-CSharp
+      value: ElementConsumer, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5108523023134516804, guid: bae5e7e80aae81a4294eff419849376e, type: 3}
       propertyPath: m_text
@@ -6136,6 +6140,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013451321}
   m_CullTransparentMesh: 1
+--- !u!114 &2023462186 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 245806997431395602, guid: bae5e7e80aae81a4294eff419849376e, type: 3}
+  m_PrefabInstance: {fileID: 315989008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ee3a917be36f642b39ee03bb66e161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2032870033 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1557214542862281042, guid: 84f4e56f4ce26bd478a8767c73df36bb, type: 3}
