@@ -29,7 +29,7 @@ namespace InzGame.DisplayHandlers {
 
             m_displayBuffer = new List<Tuple<Element, int>>(_buffer.size);
             for (int i = 0; i < _buffer.size; i++) {
-                m_displayBuffer.Add(new Tuple<Element, int>(Element.NONE, i));
+                m_displayBuffer.Add(new Tuple<Element, int>(Element.INVALID, i));
             }
         }
 

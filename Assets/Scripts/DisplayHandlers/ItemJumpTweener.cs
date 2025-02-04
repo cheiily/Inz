@@ -6,6 +6,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using static Misc.Extensions;
 
 namespace InzGame.DisplayHandlers {
     public class ItemJumpTweener : MonoBehaviour {
@@ -44,7 +45,7 @@ namespace InzGame.DisplayHandlers {
 
         public void Consumer(ElementConsumer consumer, List<Element> elements) {
             foreach (var displayTuple in bufferDisplay.m_displayBuffer) {
-                if (elements.Contains(displayTuple.Item1)) {
+                if (displayTuple.Item1 != Element.INVALID && Misc.Extensions.Contains(elements, displayTuple.Item1)) {
                     StartWith(displayTuple.Item1, bufferDisplay.anchors[displayTuple.Item2].transform, consumer.transform);
                 }
             }

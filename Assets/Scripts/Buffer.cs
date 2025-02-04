@@ -70,10 +70,10 @@ namespace InzGame {
             Element ret = buffer[ index ];
 
             // buffer[ index ] = Element.NONE;
-            for (int i = index; i < size - 1; i++) {
-                buffer[ i ] = buffer[ i - 1 ];
+            for (int i = index; i < count - 1; i++) {
+                buffer[ i ] = buffer[ i + 1 ];
             }
-            buffer[ size - 1 ] = Element.INVALID;
+            buffer[ count - 1 ] = Element.INVALID;
             count--;
             OnBufferChange?.Invoke(this, buffer);
             return ret;
@@ -91,11 +91,12 @@ namespace InzGame {
             int idx = buffer.IndexOf(element);
             if (idx == -1)
                 return;
-            for (int i = idx; i < count - 1; i++)
-                buffer[ i ] = buffer[ i + 1 ];
-            buffer[ count - 1 ] = Element.INVALID;
-            count--;
-            OnBufferChange?.Invoke(this, buffer);
+            Remove(idx);
+            // for (int i = idx; i < count - 1; i++)
+            //     buffer[ i ] = buffer[ i + 1 ];
+            // buffer[ count - 1 ] = Element.INVALID;
+            // count--;
+            // OnBufferChange?.Invoke(this, buffer);
         }
 
         public void Trash() {
