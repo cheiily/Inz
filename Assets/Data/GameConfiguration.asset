@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bufferSize: 3
   elementProperties: {fileID: 11400000, guid: 3e00747ff38097843b0c7ff0b2e5efe7, type: 2}
-  evaluationMethod: 2
+  evaluationMethod: 1
   moodSprites:
   - {fileID: 2686795930990171874, guid: 271091ecad8a5e34187757c7e3c8fcd1, type: 3}
   - {fileID: -1469292499312139711, guid: b1f420ba3edf4f245b120b8822ac4ba3, type: 3}
