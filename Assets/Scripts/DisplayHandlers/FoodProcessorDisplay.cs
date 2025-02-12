@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 namespace InzGame.DisplayHandlers {
     public class FoodProcessorDisplay : MonoBehaviour {
+        public GameObject prop;
+
         public GameConfiguration _config;
         public FoodProcessor _processor;
         public Slider _progressSlider;
@@ -30,6 +32,8 @@ namespace InzGame.DisplayHandlers {
             _processor.OnProgressChange += SetSliderProgress;
             _processor.OnStatusChange += SetAnimatorState;
             _processor.OnMoveToMainBuffer += TweenItems;
+            if (prop != null)
+                _processor.OnStatusChange += ToggleProp;
         }
 
         public void SetSliderProgress(object sender, Tuple<float, bool> progressTuple) {
@@ -51,6 +55,19 @@ namespace InzGame.DisplayHandlers {
 
         public void SetAnimatorState(object sender, FoodProcessor.Status state) {
             _animator.SetInteger(_stateParam, (int)state);
+        }
+
+        public void ToggleProp(object sender, FoodProcessor.Status state) {
+            switch (state) {
+                case FoodProcessor.Status.ACTIVE:
+                case FoodProcessor.Status.EXPIRING:
+                    prop.SetActive(false);
+                    break;
+                case FoodProcessor.Status.DONE:
+                case FoodProcessor.Status.FREE:
+                    prop.SetActive(true);
+                    break;
+            }
         }
 
         public void TweenItems(List<Element> elements, List<int> indices) {

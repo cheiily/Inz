@@ -16,9 +16,9 @@ MonoBehaviour:
   elementProperties: {fileID: 11400000, guid: 3e00747ff38097843b0c7ff0b2e5efe7, type: 2}
   evaluationMethod: 1
   moodSprites:
-  - {fileID: -7854911812349493676, guid: 61a7eaeb271a20540b8d76c08b0ae7da, type: 3}
-  - {fileID: -2227123987940053681, guid: 7388e8f1a9172a64b8f3cf3062f81ffc, type: 3}
-  - {fileID: -3772907141724194759, guid: 0f1a1c6e58c171a4597456a8eef0ebf3, type: 3}
-  - {fileID: -3772907141724194759, guid: 0f1a1c6e58c171a4597456a8eef0ebf3, type: 3}
+  - {fileID: 2686795930990171874, guid: 271091ecad8a5e34187757c7e3c8fcd1, type: 3}
+  - {fileID: -1469292499312139711, guid: b1f420ba3edf4f245b120b8822ac4ba3, type: 3}
+  - {fileID: -8301523043961844586, guid: 2c951853bc37d6f4887c6fd078b23e42, type: 3}
+  - {fileID: -8301523043961844586, guid: 2c951853bc37d6f4887c6fd078b23e42, type: 3}
   itemJumpDuration: 0.25
   itemJumpEase: 19
