@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 
 public class Counter : MonoBehaviour {
     public int size = 4;
+    public int gatekeepSize = 2;
     public int numCustomers = 0;
     public List<GameObject> anchors;
     public GameObject customerPrefab;
@@ -27,7 +28,9 @@ public class Counter : MonoBehaviour {
     }
 
     public bool CanAdd() {
-        return numCustomers < size;
+        return gatekeepSize > 0
+            ? numCustomers < gatekeepSize
+            : numCustomers < size;
     }
 
     public void AddCustomer(CustomerPreset preset) {
@@ -58,7 +61,14 @@ public class Counter : MonoBehaviour {
         Debug.Log("Customer removed; numCustomers: " + numCustomers);
     }
 
-    public int FindFreeSeat() {
+    public int FindFreeSeat(bool randomized = true) {
+        // List<int> indices = new List<int>(size);
+        // for (int i = 0; i < size; i++) {
+        //     indices.Add(i);
+        // }
+        // if (randomized)
+        //     indices = indices.OrderBy(_ => Random.value).ToList();
+
         for (int i = 0; i < size; i++) {
             if (customers[i] == null) {
                 return i;
