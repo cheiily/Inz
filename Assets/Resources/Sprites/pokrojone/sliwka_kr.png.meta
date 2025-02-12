@@ -109,12 +109,12 @@ TextureImporter:
       name: sliwka_kr_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 20
-        width: 44
-        height: 37
+        x: 2
+        y: 8
+        width: 89
+        height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -127,55 +127,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: sliwka_kr_1
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 7
-        width: 39
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b0efa126cee6ed920800000000000000
-      internalID: 3016970761922084363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sliwka_kr_2
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 36
-        width: 43
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9099ab41dab2f8950800000000000000
-      internalID: 6453424813422319881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 74c393ca187bdc242a5715a4d4d35e84
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +140,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sliwka_kr_0: 4876830818343511398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

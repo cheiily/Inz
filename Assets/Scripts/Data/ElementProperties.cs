@@ -12,6 +12,7 @@ namespace Data {
             public Element element;
             public int level;
             public Sprite sprite_element;
+            public Sprite sprite_order_bubble;
             public List<Sprite> sprites_cooking_progress;
         }
 

@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 namespace InzGame.DisplayHandlers {
     public class CustomerDisplay : MonoBehaviour {
+        public Image personImage;
+        public Image orderImage;
+
         public Slider _slider;
         public CustomerInstance _customer;
         public Animator _animator;

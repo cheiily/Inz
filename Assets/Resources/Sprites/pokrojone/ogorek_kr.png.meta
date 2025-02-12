@@ -112,12 +112,12 @@ TextureImporter:
       name: ogorek_kr_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 12
-        width: 85
-        height: 52
+        x: 6
+        y: 8
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -130,77 +130,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: ogorek_kr_1
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 38
-        width: 20
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 64c91832c4cea58e0800000000000000
-      internalID: -1703789697248945082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ogorek_kr_2
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 13
-        width: 17
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 995d0b7ccef704580800000000000000
-      internalID: -8844929013216389735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ogorek_kr_3
-      rect:
-        serializedVersion: 2
-        x: 46
-        y: 7
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e67afad271bfbaa30800000000000000
-      internalID: 4227748752186648430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 849a353dd3995a84dbaf79eb05db2364
     internalID: 0
     vertices: []
     indices: 
@@ -209,7 +143,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ogorek_kr_0: 3875832967031262097
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

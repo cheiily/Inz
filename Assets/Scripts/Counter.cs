@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
+using InzGame.DisplayHandlers;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -31,15 +32,15 @@ public class Counter : MonoBehaviour {
 
     public void AddCustomer(CustomerPreset preset) {
         int index = FindFreeSeat();
-        var orderPreviewAnchor = anchors[ index ].transform.GetChild(0);
         var customer = Instantiate(customerPrefab, anchors[ index ].transform);
-        customer.transform.localPosition = orderPreviewAnchor.localPosition - new Vector3(0, 15, 0);
 
         var customerInstance = customer.GetComponent<CustomerInstance>();
         customerInstance.OnCustomerRemove += RemoveCustomer;
         customerInstance.preset = preset;
-        customerInstance.sprite = _config.elementProperties.GetFor(preset.order).sprite_element;
-        customer.transform.parent.GetComponent<Image>().sprite = customerSprites[Random.Range(0, customerSprites.Count)];
+
+        var customerDisplay = customer.GetComponent<CustomerDisplay>();
+        customerDisplay.personImage.sprite = customerSprites[Random.Range(0, customerSprites.Count)];
+        customerDisplay.orderImage.sprite = _config.elementProperties.GetFor(preset.order).sprite_order_bubble;
         customers[index] = customerInstance;
         numCustomers++;
         customer.transform.parent.gameObject.SetActive(true);

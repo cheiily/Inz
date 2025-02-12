@@ -121,12 +121,12 @@ TextureImporter:
       name: slonina_kr_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 40
-        width: 38
-        height: 40
+        x: 6
+        y: 24
+        width: 88
+        height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -139,143 +139,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: slonina_kr_1
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 79
-        width: 27
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d9db7c37707c17e0800000000000000
-      internalID: -1793434894182131240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_kr_2
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 15
-        width: 21
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ffa32a4b527c01d0800000000000000
-      internalID: -3383203483650641928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_kr_3
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 58
-        width: 20
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8cd7a90463b9e4280800000000000000
-      internalID: -9057131143281082936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_kr_4
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 33
-        width: 42
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d5350cc9a58caac0800000000000000
-      internalID: -3842549417735014958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_kr_5
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 29
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f23a9588fa110ec70800000000000000
-      internalID: 8998211501090775855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_kr_6
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 28
-        width: 22
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 74f07a243a0ef5280800000000000000
-      internalID: -9052269734188871865
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6105eb71fc3deff449cda7774f8f0d27
     internalID: 0
     vertices: []
     indices: 
@@ -284,7 +152,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slonina_kr_7: 1041425539
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

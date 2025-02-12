@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Data;
 using InzGame;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -19,8 +20,6 @@ public class CustomerInstance : MonoBehaviour {
     public int currentThreshold = 0;
     public bool doCountdown = true;
 
-    public Sprite sprite;
-    public Image _image;
     public ElementConsumer _elementConsumer;
     public GameConfiguration _config;
 
@@ -41,9 +40,6 @@ public class CustomerInstance : MonoBehaviour {
                 thresholds.Add(Random.Range(data.min, data.max));
             }
         }
-
-        // _image = GetComponent<Image>();
-        _image.sprite = sprite;
 
         // _elementConsumer = GetComponent<ElementConsumer>();
         _elementConsumer.elements = new List<Element> {preset.order};

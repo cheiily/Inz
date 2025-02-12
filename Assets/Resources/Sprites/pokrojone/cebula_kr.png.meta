@@ -110,63 +110,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4
-        y: 11
-        width: 88
-        height: 61
+        y: 9
+        width: 91
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cc7c9b74b32d0fc20800000000000000
-      internalID: 3238319284127647692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cebula_kr_1
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 63
-        width: 20
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6293eeb557a312060800000000000000
-      internalID: 6926881977600456998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cebula_kr_2
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 10
-        width: 17
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 12b3668f0886b0e40800000000000000
-      internalID: 5623703462834748193
+      spriteID: b93e7aa12dc6df846bf823499ab1b2ab
+      internalID: -1408731718
       vertices: []
       indices: 
       edges: []
@@ -175,7 +131,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8015cb4c426bbf242bdc663812882101
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +140,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cebula_kr_0: -1408731718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
