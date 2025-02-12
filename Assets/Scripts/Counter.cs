@@ -62,16 +62,16 @@ public class Counter : MonoBehaviour {
     }
 
     public int FindFreeSeat(bool randomized = true) {
-        // List<int> indices = new List<int>(size);
-        // for (int i = 0; i < size; i++) {
-        //     indices.Add(i);
-        // }
-        // if (randomized)
-        //     indices = indices.OrderBy(_ => Random.value).ToList();
+        List<int> indices = new List<int>(size);
+        for (int i = 0; i < size; i++) {
+            indices.Add(i);
+        }
+        if (randomized)
+            indices = indices.OrderBy(_ => Random.value).ToList();
 
         for (int i = 0; i < size; i++) {
-            if (customers[i] == null) {
-                return i;
+            if (customers[indices[i]] == null) {
+                return indices[i];
             }
         }
         return -1;

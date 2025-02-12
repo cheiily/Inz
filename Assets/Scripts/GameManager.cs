@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour {
     public List<CustomerSpawningPattern.SpawnPoint> currentLevelSpawns = new List<CustomerSpawningPattern.SpawnPoint>();
     public Image recipeImage;
 
+    public int _waitingCustomers = 0;
+
     public event EventHandler<Tuple<float /* current */, float /* max */>> OnPointsAdded;
 
     public GameState _gameState;
@@ -88,11 +90,14 @@ public class GameManager : MonoBehaviour {
         if (gameState == GameState.PLAYING) {
             currentLevelTime += Time.deltaTime;
 
+            _waitingCustomers = 0;
             List<CustomerSpawningPattern.SpawnPoint> toRemove = new List<CustomerSpawningPattern.SpawnPoint>();
             foreach (var spawn in currentLevelSpawns) {
                 if ( counter.CanAdd() && currentLevelTime >= spawn.timeSinceStart ) {
                     counter.AddCustomer(spawn.customer);
                     toRemove.Add(spawn);
+                } else if ( currentLevelTime >= spawn.timeSinceStart ) {
+                    _waitingCustomers++;
                 }
             }
             toRemove.ForEach(elem => currentLevelSpawns.Remove(elem));
