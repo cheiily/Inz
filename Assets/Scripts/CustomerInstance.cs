@@ -32,8 +32,9 @@ public class CustomerInstance : MonoBehaviour {
         thresholds = new List<float>();
         if (preset.ratingDropMode == CustomerPreset.RatingDropMode.REGULAR) {
             foreach (var threshold in preset.regular_ratingDropTimeThresholds) {
-                float variance = Random.Range(-threshold, threshold);
-                thresholds.Add(threshold + variance);
+                thresholds.Add(threshold);
+                // float variance = Random.Range(-threshold, threshold);
+                // thresholds.Add(threshold + variance);
             }
         } else {
             foreach (var data in preset.random_ratingDropTimeThresholds) {

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676dc1eb76b4acb4887ec9bc1b3d09a3, type: 3}
+  m_Name: Lv1_W2
+  m_EditorClassIdentifier: 
+  spawningMode: 0
+  regular_spawnPoints:
+  - timeSinceStart: 5
+    randomVariance: 0
+    customer: {fileID: 11400000, guid: 952104c6d049c75439eecf13095fc40d, type: 2}
+  - timeSinceStart: 10
+    randomVariance: 0
+    customer: {fileID: 11400000, guid: 7254b4a0a115d8b4aa3830fc7ab2e27c, type: 2}
+  - timeSinceStart: 15
+    randomVariance: 0
+    customer: {fileID: 11400000, guid: 952104c6d049c75439eecf13095fc40d, type: 2}
+  - timeSinceStart: 20
+    randomVariance: 0
+    customer: {fileID: 11400000, guid: 190f60557fc5da3448897f2c887e0596, type: 2}
+  - timeSinceStart: 25
+    randomVariance: 0
+    customer: {fileID: 11400000, guid: 190f60557fc5da3448897f2c887e0596, type: 2}
+  - timeSinceStart: 30
+    randomVariance: 0
+    customer: {fileID: 11400000, guid: 7254b4a0a115d8b4aa3830fc7ab2e27c, type: 2}
+  - timeSinceStart: 35
+    randomVariance: 0
+    customer: {fileID: 11400000, guid: 7254b4a0a115d8b4aa3830fc7ab2e27c, type: 2}
+  - timeSinceStart: 40
+    randomVariance: 0
+    customer: {fileID: 11400000, guid: 998fa6f5d2dfc2542a65ad70a66f1a80, type: 2}
+  - timeSinceStart: 45
+    randomVariance: 0
+    customer: {fileID: 11400000, guid: 952104c6d049c75439eecf13095fc40d, type: 2}

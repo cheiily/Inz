@@ -67,5 +67,8 @@
         KNEDLE,
         KNEDLE_ZE_SLIWKAMI,
 
+        MLEKO,
+
+
     }
 }
