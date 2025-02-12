@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
     public LevelData currentLevel;
     public float currentLevelTime;
     public List<CustomerSpawningPattern.SpawnPoint> currentLevelSpawns = new List<CustomerSpawningPattern.SpawnPoint>();
+    public Image recipeImage;
 
     public event EventHandler<Tuple<float /* current */, float /* max */>> OnPointsAdded;
 
@@ -74,6 +75,9 @@ public class GameManager : MonoBehaviour {
             if ( !inputs.Contains(source.element) )
                 source.gameObject.SetActive(false);
         }
+
+        recipeImage.sprite = currentLevel.recipeBook;
+        recipeImage.SetNativeSize();
 
         button.gameObject.SetActive(false);
         _points = 0;

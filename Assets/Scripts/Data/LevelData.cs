@@ -6,5 +6,6 @@ namespace Data {
     public class LevelData : ScriptableObject {
         public CustomerSpawningPattern customerSpawningPattern;
         public List<FoodProcessorPreset> availableProcessors;
+        public Sprite recipeBook;
     }
 }
