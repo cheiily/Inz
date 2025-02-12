@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour {
     public List<CustomerSpawningPattern.SpawnPoint> currentLevelSpawns = new List<CustomerSpawningPattern.SpawnPoint>();
     public Image recipeImage;
 
-    public int _waitingCustomers = 0;
+    public GameObject summaryUI;
 
     public event EventHandler<Tuple<float /* current */, float /* max */>> OnPointsAdded;
 
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public float _points = 0;
+    public int _waitingCustomers = 0;
 
     public void OnStartLevel(Button button) {
         foreach (var spawnPoint in currentLevel.customerSpawningPattern.regular_spawnPoints) {
@@ -101,11 +103,23 @@ public class GameManager : MonoBehaviour {
                 }
             }
             toRemove.ForEach(elem => currentLevelSpawns.Remove(elem));
+
+            if ( currentLevelSpawns.Count == 0 && counter.numCustomers == 0 ) {
+                StartCoroutine(WaitThenOpenSummary());
+            }
         }
     }
 
     public void AddPoints(float pointsToAdd) {
         _points += pointsToAdd;
         OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
+    }
+
+
+    public IEnumerator WaitThenOpenSummary() {
+        gameState = GameState.PAUSED;
+        yield return new WaitForSeconds(1);
+        gameState = GameState.SUMMARY;
+        summaryUI.SetActive(true);
     }
 }

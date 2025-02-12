@@ -18,6 +18,7 @@ namespace Data {
             public CustomerPreset customer;
         }
 
+        [Serializable]
         public struct SpawnPoint {
             public float timeSinceStart;
             public CustomerPreset customer;
