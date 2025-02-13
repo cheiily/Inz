@@ -6,6 +6,11 @@ using UnityEngine;
 namespace Data {
     [CreateAssetMenu(fileName = "GameConfiguration", menuName = "Scriptable Objects/GameConfiguration")]
     public class GameConfiguration : ScriptableObject {
+        [Header("Levels")]
+        public LevelData level1;
+        public LevelData level2;
+
+        [Header("System")]
         public int bufferSize = 3;
         public ElementProperties elementProperties;
 
@@ -16,6 +21,7 @@ namespace Data {
         [Header("Summary")]
         public List<float> totalMoodThresholds;
         public List<Sprite> totalMoodSprites;
+        public Sprite buzkaPusta;
 
         [Header("Item Jump Tweener")]
         public float itemJumpDuration = 0.5f;

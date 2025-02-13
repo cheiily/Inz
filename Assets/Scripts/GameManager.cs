@@ -23,11 +23,13 @@ public class GameManager : MonoBehaviour {
     public Counter counter;
     public GameConfiguration config;
     public LevelData currentLevel;
+    public int currentLevelID;
     public float currentLevelTime;
     public List<CustomerSpawningPattern.SpawnPoint> currentLevelSpawns = new List<CustomerSpawningPattern.SpawnPoint>();
     public Image recipeImage;
 
     public GameObject summaryUI;
+    public GameObject levelSelectUI;
 
     public event EventHandler<Tuple<float /* current */, float /* max */>> OnPointsAdded;
 
@@ -60,7 +62,7 @@ public class GameManager : MonoBehaviour {
     public List<int> _currentLevel_thresholdToAmount;
     public int _waitingCustomers = 0;
 
-    public void OnStartLevel(Button button) {
+    public void StartLevel() {
         foreach (var spawnPoint in currentLevel.customerSpawningPattern.regular_spawnPoints) {
             currentLevelSpawns.Add(new CustomerSpawningPattern.SpawnPoint(spawnPoint.timeSinceStart + Random.Range(-spawnPoint.randomVariance, spawnPoint.randomVariance), spawnPoint.customer));
         }
@@ -85,7 +87,7 @@ public class GameManager : MonoBehaviour {
         recipeImage.sprite = currentLevel.recipeBook;
         recipeImage.SetNativeSize();
 
-        button.gameObject.SetActive(false);
+        // button.gameObject.SetActive(false);
         _points = 0;
         _currentLevel_thresholdToAmount = new List<int>(4) {0, 0, 0, 0};
         gameState = GameState.PLAYING;
@@ -126,6 +128,11 @@ public class GameManager : MonoBehaviour {
         // Debug.Log("Customer logged: " + customer);
     }
 
+    public void ExitGame() {
+        // todo log?
+        Application.Quit();
+    }
+
 
     public IEnumerator WaitThenOpenSummary() {
         gameState = GameState.PAUSED;
@@ -133,5 +140,12 @@ public class GameManager : MonoBehaviour {
         gameState = GameState.SUMMARY;
         summaryUI.SetActive(true);
         summaryUI.GetComponent<SummaryUIManager>().SetFor(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100, _currentLevel_thresholdToAmount);
+        float scorePercentage = _points / (currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100);
+        int scoreThreshold =
+            scorePercentage >= config.totalMoodThresholds[0] ? 0
+            : scorePercentage >= config.totalMoodThresholds[1] ? 1
+            : scorePercentage >= config.totalMoodThresholds[2] ? 2
+            : 3;
+        levelSelectUI.GetComponent<LevelSelectUIManager>().SetDisplaysFor(currentLevelID, _points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100, scoreThreshold);
     }
 }

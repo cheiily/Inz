@@ -25,6 +25,9 @@ public class SummaryUIManager : MonoBehaviour {
 
     public void OnEnable() {
         transform.DOMove(posInside.position, 0.5f).From(posOutside.position);
+        for (int i = 0; i < buzkiImages.Count; i++) {
+            buzkiImages[i].sprite = _config.buzkaPusta;
+        }
     }
 
     public void SetFor(float pts, float maxPts, List<int> amounts) {
@@ -35,7 +38,7 @@ public class SummaryUIManager : MonoBehaviour {
             }
         }
 
-        pointsText.text = $"{pts:.} / {maxPts}";
+        pointsText.text = $"{pts:0.} / {maxPts}";
 
         for (int i = 0; i < amountsTextsInThresholdOrder.Count; i++) {
             amountsTextsInThresholdOrder[i].text = i >= amounts.Count ? "0" : amounts[i].ToString();
