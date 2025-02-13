@@ -91,6 +91,8 @@ public class GameManager : MonoBehaviour {
         _points = 0;
         _currentLevel_thresholdToAmount = new List<int>(4) {0, 0, 0, 0};
         gameState = GameState.PLAYING;
+
+        OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
     }
 
     private void Awake() {

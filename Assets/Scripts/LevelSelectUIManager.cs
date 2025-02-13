@@ -24,7 +24,7 @@ namespace InzGame {
             Image buzka = level == 1 ? lvl1Buzka : lvl2Buzka;
             TextMeshProUGUI wynik = level == 1 ? lvl1Wynik : lvl2Wynik;
 
-            buzka.sprite = threshold == 3 ? gameManager.config.buzkaPusta : gameManager.config.totalMoodSprites[Math.Abs(threshold - 2)];
+            buzka.sprite = threshold == 3 ? gameManager.config.buzkaPusta : gameManager.config.totalMoodSprites[threshold];
             wynik.text = $"{pts:0.} / {ptsMax}";
         }
 
