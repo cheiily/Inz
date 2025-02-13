@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
+using InzGame;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public float _points = 0;
+    public List<int> _currentLevel_thresholdToAmount;
     public int _waitingCustomers = 0;
 
     public void OnStartLevel(Button button) {
@@ -85,6 +87,7 @@ public class GameManager : MonoBehaviour {
 
         button.gameObject.SetActive(false);
         _points = 0;
+        _currentLevel_thresholdToAmount = new List<int>(4) {0, 0, 0, 0};
         gameState = GameState.PLAYING;
     }
 
@@ -115,11 +118,20 @@ public class GameManager : MonoBehaviour {
         OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
     }
 
+    public void LogCustomer(CustomerInstance customer) {
+        _points += CustomerEvaluation.Invoke(config.evaluationMethod, customer);
+        _currentLevel_thresholdToAmount[customer.currentThreshold]++;
+
+        OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
+        // Debug.Log("Customer logged: " + customer);
+    }
+
 
     public IEnumerator WaitThenOpenSummary() {
         gameState = GameState.PAUSED;
         yield return new WaitForSeconds(1);
         gameState = GameState.SUMMARY;
         summaryUI.SetActive(true);
+        summaryUI.GetComponent<SummaryUIManager>().SetFor(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100, _currentLevel_thresholdToAmount);
     }
 }

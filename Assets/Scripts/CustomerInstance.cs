@@ -80,7 +80,8 @@ public class CustomerInstance : MonoBehaviour {
         OnCustomerRemove?.Invoke(this, EventArgs.Empty);
         var manager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
         var points = CustomerEvaluation.methods[ manager.config.evaluationMethod ](this);
-        manager.AddPoints(points);
+        // manager.AddPoints(points);
+        manager.LogCustomer(this);
         Debug.Log("Adding points: " + points);
         Destroy(gameObject);
     }

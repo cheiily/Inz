@@ -13,6 +13,10 @@ namespace Data {
         public CustomerEvaluation.Method evaluationMethod;
         public List<Sprite> moodSprites;
 
+        [Header("Summary")]
+        public List<float> totalMoodThresholds;
+        public List<Sprite> totalMoodSprites;
+
         [Header("Item Jump Tweener")]
         public float itemJumpDuration = 0.5f;
         public Ease itemJumpEase = Ease.OutExpo;
