@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7162ec96b668d534fa0f6dbf09ace1ba
+guid: 1d08a62b8725f8a438ddf1a03af24cd0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5676465950263534665
-    second: kobieta_3_0
+      213: 4582157156680732431
+    second: opis_poziom1_pusty_NOWY_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kobieta_3_0
+      name: opis_poziom1_pusty_NOWY_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 177
+        x: 7
+        y: 38
+        width: 403
+        height: 644
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 944ee01e4bbd6ce40800000000000000
-      internalID: 5676465950263534665
+      spriteID: f0f08fc18a7179f30800000000000000
+      internalID: 4582157156680732431
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      kobieta_3_0: 5676465950263534665
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
