@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 732416c768bfe004cbf9fc37f02430ce
+guid: f8caf4d786c4270478ca19e52a9f273c
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mezczyzna_3_0: -4907741177078464089
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

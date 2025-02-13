@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9663aca7494d3de4db2ff01deae6d917
+guid: b3084adae7e2c4241bc27c340942d41f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7755962068610667602
-    second: opis_poziom1_NAPISY_0
+      213: 664362791331862716
+    second: cebula_plus_jablko_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: opis_poziom1_NAPISY_0
+      name: cebula_plus_jablko_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 19
-        width: 398
-        height: 569
+        x: 44
+        y: 7
+        width: 97
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25451f69866b2ab60800000000000000
-      internalID: 7755962068610667602
+      spriteID: cb89253507a483900800000000000000
+      internalID: 664362791331862716
       vertices: []
       indices: 
       edges: []

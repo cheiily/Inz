@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: beaea2c94525f414b8448914ec7a6a3e
+guid: ddfcb96aaf48e6544b5b092bd33f22b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6755086663454874219
-    second: mezczyzna_0
+      213: -1195876923773205378
+    second: poziom2_przepisnik_NAPISY_NOWE_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mezczyzna_0
+      name: poziom2_przepisnik_NAPISY_NOWE_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 226
-        height: 177
+        x: 321
+        y: 15
+        width: 1328
+        height: 1018
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6ad43ac783eebd50800000000000000
-      internalID: 6755086663454874219
+      spriteID: e74496b1644676fe0800000000000000
+      internalID: -1195876923773205378
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      mezczyzna_0: 6755086663454874219
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

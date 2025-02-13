@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8134b25481fe8e744bf1904f413fea8d
+guid: b4ae588006c664e43aafa1fe5b68df05
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4723927250392105250
-    second: PODSUMOWANIE_0
+      213: 4188929171595874706
+    second: garnek_spalony_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PODSUMOWANIE_0
+      name: garnek_spalony_2_0
       rect:
         serializedVersion: 2
-        x: 599
-        y: 148
-        width: 718
-        height: 810
+        x: 99
+        y: 38
+        width: 402
+        height: 362
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 221c8684ec2ce8140800000000000000
-      internalID: 4723927250392105250
+      spriteID: 2915e3e33e0122a30800000000000000
+      internalID: 4188929171595874706
       vertices: []
       indices: 
       edges: []

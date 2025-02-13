@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: beaea2c94525f414b8448914ec7a6a3e
+guid: 1aab5bc6c7f956648a29fd52cdf7f612
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6755086663454874219
-    second: mezczyzna_0
+      213: -1644609453409763784
+    second: patelnia_spalona_1_0
+  - first:
+      213: -5751606774779616103
+    second: patelnia_spalona_1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mezczyzna_0
+      name: patelnia_spalona_1_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 226
-        height: 177
+        x: 17
+        y: 51
+        width: 539
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6ad43ac783eebd50800000000000000
-      internalID: 6755086663454874219
+      spriteID: 83ef2476a6c2d29e0800000000000000
+      internalID: -1644609453409763784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patelnia_spalona_1_1
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 357
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 994e7859c103e20b0800000000000000
+      internalID: -5751606774779616103
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      mezczyzna_0: 6755086663454874219
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

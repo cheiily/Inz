@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c3b3c0a0cf9e6e447b8c83481a1e9be3
+guid: d0cc6b782b0c9e549ba354ed0ba3b0ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8933276159292916095
-    second: opis_pusty_0
+      213: 6591335605006174064
+    second: opis_poziom1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: opis_pusty_0
+      name: opis_poziom1_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 25
-        width: 398
-        height: 568
+        x: 7
+        y: 38
+        width: 403
+        height: 644
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18e31e4e9a0a60480800000000000000
-      internalID: -8933276159292916095
+      spriteID: 07707c37fc0297b50800000000000000
+      internalID: 6591335605006174064
       vertices: []
       indices: 
       edges: []

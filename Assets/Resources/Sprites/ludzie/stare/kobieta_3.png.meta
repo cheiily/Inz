@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7162ec96b668d534fa0f6dbf09ace1ba
+guid: 890fb72081ac2334388cb188174142d6
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kobieta_3_0: 5676465950263534665
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

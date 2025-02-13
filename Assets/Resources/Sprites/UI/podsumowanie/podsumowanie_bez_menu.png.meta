@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: beaea2c94525f414b8448914ec7a6a3e
+guid: 4478c1dacef00014fb880afc9e51dfab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6755086663454874219
-    second: mezczyzna_0
+      213: -2197027265082570821
+    second: podsumowanie_bez_menu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mezczyzna_0
+      name: podsumowanie_bez_menu_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 226
-        height: 177
+        x: 599
+        y: 228
+        width: 718
+        height: 730
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6ad43ac783eebd50800000000000000
-      internalID: 6755086663454874219
+      spriteID: bb7c7eeb7579281e0800000000000000
+      internalID: -2197027265082570821
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      mezczyzna_0: 6755086663454874219
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

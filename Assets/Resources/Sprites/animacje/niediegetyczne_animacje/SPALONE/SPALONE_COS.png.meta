@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: beaea2c94525f414b8448914ec7a6a3e
+guid: 72d0f17b191507f489c7f9ee8dc8f1c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6755086663454874219
-    second: mezczyzna_0
+      213: -7135836193941119997
+    second: SPALONE_COS_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mezczyzna_0
+      name: SPALONE_COS_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 226
-        height: 177
+        x: 148
+        y: 118
+        width: 211
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6ad43ac783eebd50800000000000000
-      internalID: 6755086663454874219
+      spriteID: 30c93c4f9ca68fc90800000000000000
+      internalID: -7135836193941119997
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      mezczyzna_0: 6755086663454874219
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
