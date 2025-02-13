@@ -162,7 +162,7 @@ public class FoodProcessor : MonoBehaviour {
                 _buffer[ 0 ] = Element.SPALONE;
                 OnBufferChange?.Invoke(this, _buffer);
             }
-            OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress / currentAction.duration, status == Status.EXPIRING));
+            OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress / (status == Status.EXPIRING ? currentAction.expiryDuration : currentAction.duration), status == Status.EXPIRING));
         }
     }
 }

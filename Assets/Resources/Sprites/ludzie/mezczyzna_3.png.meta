@@ -103,10 +103,10 @@ TextureImporter:
       name: mezczyzna_3_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 0
-        width: 226
-        height: 177
+        width: 256
+        height: 264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cd98e6f260f24e74080829c57c55e2ed
     internalID: 0
     vertices: []
     indices: 

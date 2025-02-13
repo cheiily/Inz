@@ -103,10 +103,10 @@ TextureImporter:
       name: kobieta_2_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 0
         y: 0
-        width: 232
-        height: 177
+        width: 256
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 031cdcd97b174e248b3c1cd8264d047e
     internalID: 0
     vertices: []
     indices: 

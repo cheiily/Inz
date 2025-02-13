@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f451624e65fc3824c82e779df38804ad, type: 3}
-  m_Name: Lv1_W2_Zalewajka
+  m_Name: Lv1_W1_Fifka
   m_EditorClassIdentifier: 
   ratingDropMode: 0
   regular_ratingDropTimeThresholds:
-  - 16.5
-  - 16.5
-  - 16.5
+  - 12
+  - 12
+  - 12
   random_ratingDropTimeThresholds: []
-  order: 18
+  order: 19

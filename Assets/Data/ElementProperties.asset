@@ -298,11 +298,11 @@ MonoBehaviour:
     sprite_element: {fileID: -8843447107372270502, guid: a8230558a327eb74c9e09f583262b40c, type: 3}
     sprite_order_bubble: {fileID: -9089580316525833861, guid: ebfbb5eb9ca047d4f814530d71fe7e29, type: 3}
     sprites_cooking_progress: []
-  filter: 16
-  _indexPreview: 11
+  filter: 9
+  _indexPreview: 4
   found:
-    element: 16
+    element: 9
     level: 1
-    sprite_element: {fileID: 48739409918137826, guid: cf557ec4107d48d47a4b3b8700d7eb4a, type: 3}
+    sprite_element: {fileID: 5555228422069194693, guid: 9133674cb485a47498ff3d774a16e4c0, type: 3}
     sprite_order_bubble: {fileID: 0}
     sprites_cooking_progress: []

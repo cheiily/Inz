@@ -16,7 +16,7 @@ MonoBehaviour:
   regular_spawnPoints:
   - timeSinceStart: 5
     randomVariance: 0
-    customer: {fileID: 11400000, guid: 2ea570892c73b164599ebdde23e85f2d, type: 2}
+    customer: {fileID: 11400000, guid: d61b76255de484f4d8780049e3463f01, type: 2}
   - timeSinceStart: 10
     randomVariance: 0
     customer: {fileID: 11400000, guid: fe3680f4046f1c641b6120841fd35cf3, type: 2}
@@ -28,7 +28,7 @@ MonoBehaviour:
     customer: {fileID: 11400000, guid: 4aca5d7ab3947524f9c2e5ea30efa9b6, type: 2}
   - timeSinceStart: 25
     randomVariance: 0
-    customer: {fileID: 11400000, guid: 2ea570892c73b164599ebdde23e85f2d, type: 2}
+    customer: {fileID: 11400000, guid: d61b76255de484f4d8780049e3463f01, type: 2}
   - timeSinceStart: 30
     randomVariance: 0
     customer: {fileID: 11400000, guid: 4babbfe9cced18c4eb1e9fe1c9a7fc0b, type: 2}
@@ -40,7 +40,7 @@ MonoBehaviour:
     customer: {fileID: 11400000, guid: 4babbfe9cced18c4eb1e9fe1c9a7fc0b, type: 2}
   - timeSinceStart: 45
     randomVariance: 0
-    customer: {fileID: 11400000, guid: 2ea570892c73b164599ebdde23e85f2d, type: 2}
+    customer: {fileID: 11400000, guid: d61b76255de484f4d8780049e3463f01, type: 2}
   - timeSinceStart: 50
     randomVariance: 0
     customer: {fileID: 11400000, guid: 4aca5d7ab3947524f9c2e5ea30efa9b6, type: 2}

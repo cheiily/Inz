@@ -16,13 +16,13 @@ MonoBehaviour:
   regular_spawnPoints:
   - timeSinceStart: 5
     randomVariance: 0
-    customer: {fileID: 11400000, guid: 952104c6d049c75439eecf13095fc40d, type: 2}
+    customer: {fileID: 11400000, guid: 5c2331a954414be49ae657d553e2b455, type: 2}
   - timeSinceStart: 10
     randomVariance: 0
     customer: {fileID: 11400000, guid: 7254b4a0a115d8b4aa3830fc7ab2e27c, type: 2}
   - timeSinceStart: 15
     randomVariance: 0
-    customer: {fileID: 11400000, guid: 952104c6d049c75439eecf13095fc40d, type: 2}
+    customer: {fileID: 11400000, guid: 5c2331a954414be49ae657d553e2b455, type: 2}
   - timeSinceStart: 20
     randomVariance: 0
     customer: {fileID: 11400000, guid: 190f60557fc5da3448897f2c887e0596, type: 2}
@@ -40,4 +40,4 @@ MonoBehaviour:
     customer: {fileID: 11400000, guid: 998fa6f5d2dfc2542a65ad70a66f1a80, type: 2}
   - timeSinceStart: 45
     randomVariance: 0
-    customer: {fileID: 11400000, guid: 952104c6d049c75439eecf13095fc40d, type: 2}
+    customer: {fileID: 11400000, guid: 5c2331a954414be49ae657d553e2b455, type: 2}

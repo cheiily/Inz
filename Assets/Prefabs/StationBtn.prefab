@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 216, y: -210}
+  m_AnchoredPosition: {x: -7, y: -316}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1300075171642145199
@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -124, y: -214}
+  m_AnchoredPosition: {x: -64, y: -214}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3368316305465739355
@@ -184,7 +184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 99, y: -209}
+  m_AnchoredPosition: {x: 159, y: -209}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7765279142774275314
@@ -259,7 +259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: -213}
+  m_AnchoredPosition: {x: 47, y: -213}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7282634329501859441
@@ -484,7 +484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229, y: -216}
+  m_AnchoredPosition: {x: -169, y: -216}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8766042422271551479
@@ -553,10 +553,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 133654671963829114}
   - {fileID: 4922638696983097761}
   - {fileID: 6263988864949252430}
   - {fileID: 3299166772031422943}
+  - {fileID: 133654671963829114}
   - {fileID: 6301904163857729333}
   m_Father: {fileID: 7985964522499487109}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -866,6 +866,7 @@ MonoBehaviour:
   _buffer: 
   _consumer: {fileID: 0}
   moveToMainBuffer: 
+  moveToMainBufferIndices: 
 --- !u!114 &2574314900791635743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,10 +879,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe66001c08164121a28f6d0e2bd60b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prop: {fileID: 0}
   _config: {fileID: 0}
   _processor: {fileID: 0}
   _progressSlider: {fileID: 0}
   _bufferImages: []
+  _animator: {fileID: 0}
+  _stateParam: 0
 --- !u!95 &1278864680380366129
 Animator:
   serializedVersion: 7

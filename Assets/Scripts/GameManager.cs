@@ -93,6 +93,11 @@ public class GameManager : MonoBehaviour {
         gameState = GameState.PLAYING;
     }
 
+    private void Awake() {
+        gameState = GameState.LEVEL_SELECT;
+        levelSelectUI.SetActive(true);
+    }
+
     void Update() {
         if (gameState == GameState.PLAYING) {
             currentLevelTime += Time.deltaTime;
