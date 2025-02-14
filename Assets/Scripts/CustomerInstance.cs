@@ -23,6 +23,13 @@ public class CustomerInstance : MonoBehaviour {
     public ElementConsumer _elementConsumer;
     public GameConfiguration _config;
 
+    public static int __id = 0;
+    public int id;
+
+    private void Awake() {
+        id = __id++;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         _config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
@@ -49,6 +56,9 @@ public class CustomerInstance : MonoBehaviour {
                 CustomerRemovePolicy?.Invoke(this, EventArgs.Empty);
             }
         };
+
+        var manager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
+        manager.OpenCustomerLog(this);
     }
 
     // Update is called once per frame
@@ -81,7 +91,7 @@ public class CustomerInstance : MonoBehaviour {
         var manager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
         var points = CustomerEvaluation.methods[ manager.config.evaluationMethod ](this);
         // manager.AddPoints(points);
-        manager.LogCustomer(this);
+        manager.CloseCustomerLog(this);
         Debug.Log("Adding points: " + points);
         Destroy(gameObject);
     }

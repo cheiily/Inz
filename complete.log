@@ -1,0 +1,28 @@
+{
+    "levelLog": [
+        {
+            "level": 1,
+            "customerLog": [
+                {
+                    "id": 0,
+                    "order": 19,
+                    "order_name": "FIFKA",
+                    "ratingDropTimeThresholds": [
+                        24.0,
+                        24.0,
+                        24.0
+                    ],
+                    "time_entered": 6.6162004470825199,
+                    "time_departed": 25.393075942993165,
+                    "lifetime": 18.776874542236329,
+                    "points": 100.0,
+                    "threshold": 0
+                }
+            ]
+        },
+        {
+            "level": 0,
+            "customerLog": []
+        }
+    ]
+}

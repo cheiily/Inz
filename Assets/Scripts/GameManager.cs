@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
         CREDITS_SCREEN
     }
 
+    public LoggingManager log;
     public Counter counter;
     public GameConfiguration config;
     public LevelData currentLevel;
@@ -90,6 +91,7 @@ public class GameManager : MonoBehaviour {
         // button.gameObject.SetActive(false);
         _points = 0;
         _currentLevel_thresholdToAmount = new List<int>(4) {0, 0, 0, 0};
+        log.OpenLevel(currentLevelID);
         gameState = GameState.PLAYING;
 
         OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
@@ -127,22 +129,40 @@ public class GameManager : MonoBehaviour {
         OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
     }
 
-    public void LogCustomer(CustomerInstance customer) {
-        _points += CustomerEvaluation.Invoke(config.evaluationMethod, customer);
+    public void OpenCustomerLog(CustomerInstance customer) {
+        var entry = log.Get(customer.id);
+        entry.time_entered = Time.time;
+        entry.order = customer.preset.order;
+        entry.order_name = customer.preset.order.ToString();
+        entry.ratingDropTimeThresholds = customer.thresholds;
+        log.Set(entry);
+    }
+
+    public void CloseCustomerLog(CustomerInstance customer) {
+        var pts = CustomerEvaluation.Invoke(config.evaluationMethod, customer);
+        _points += pts;
         _currentLevel_thresholdToAmount[customer.currentThreshold]++;
 
+        var entry = log.Get(customer.id);
+        entry.threshold = customer.currentThreshold;
+        entry.points = pts;
+        entry.time_departed = Time.time;
+        entry.lifetime = entry.time_departed - entry.time_entered;
+        log.Set(entry);
+
         OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
-        // Debug.Log("Customer logged: " + customer);
     }
 
     public void ExitGame() {
-        // todo log?
+        log.CompileAll();
+        log.Save();
         Application.Quit();
     }
 
 
     public IEnumerator WaitThenOpenSummary() {
         gameState = GameState.PAUSED;
+        log.CompileLevel();
         yield return new WaitForSeconds(1);
         gameState = GameState.SUMMARY;
         summaryUI.SetActive(true);

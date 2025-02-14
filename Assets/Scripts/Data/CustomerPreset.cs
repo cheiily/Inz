@@ -5,7 +5,9 @@ using UnityEngine;
 
 namespace Data {
     [CreateAssetMenu(fileName = "CustomerPreset", menuName = "Scriptable Objects/CustomerPreset")]
+    [Serializable]
     public class CustomerPreset : ScriptableObject {
+        [Serializable]
         public enum RatingDropMode {
             REGULAR,
             RANDOM
