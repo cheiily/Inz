@@ -17,7 +17,19 @@ namespace InzGame {
         public bool[] compiled = new bool[2];
         public string complete;
 
-        public void OpenLevel(int level) {
+        public void OpenLevel(int level, string levelName) {
+            if ( level == 1 ) {
+                level1Log = new LevelLogEntry {
+                    level = level,
+                    levelAssetName = levelName
+                };
+            } else if ( level == 2 ) {
+                level2Log = new LevelLogEntry {
+                    level = level,
+                    levelAssetName = levelName
+                };
+            }
+
             currentLevel = level;
             customerLog.Clear();
         }
@@ -51,7 +63,7 @@ namespace InzGame {
         }
 
         public void CompileLevel() {
-            LevelLogEntry log = new LevelLogEntry();
+            LevelLogEntry log = currentLevel == 1 ? level1Log : level2Log;
             log.level = currentLevel;
             log.customerLog = customerLog;
 
@@ -89,6 +101,7 @@ namespace InzGame {
             var manager = GetComponent<GameManager>();
 
             completeLog = new CompleteLog();
+            completeLog.gameVariantString = manager.config.gameVariantString;
             completeLog.evaluationMethod = manager.config.evaluationMethod;
             completeLog.evaluationMethod_name = manager.config.evaluationMethod.ToString();
             completeLog.levelLog.Add(level1Log);

@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour {
         recipeImage.SetNativeSize();
 
         _currentLevel_thresholdToAmount = new List<int>(4) {0, 0, 0, 0};
-        log.OpenLevel(currentLevelID);
+        log.OpenLevel(currentLevelID, currentLevel.name);
         gameState = GameState.PLAYING;
 
         OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
@@ -152,8 +152,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public void ExitGame() {
-        // log.CompileAll();
-        // log.Save();
+        log.CompileAll();
+        log.Save();
         Application.Quit();
     }
 

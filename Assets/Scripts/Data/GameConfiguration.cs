@@ -9,6 +9,7 @@ namespace Data {
         [Header("Levels")]
         public LevelData level1;
         public LevelData level2;
+        public string gameVariantString;
 
         [Header("System")]
         public int bufferSize = 3;

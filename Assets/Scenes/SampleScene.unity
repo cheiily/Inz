@@ -5922,11 +5922,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6301904163857729333, guid: 68d92bf43946e604cb875b2df3d679d8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -39
+      value: -43
       objectReference: {fileID: 0}
     - target: {fileID: 6301904163857729333, guid: 68d92bf43946e604cb875b2df3d679d8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -120.9
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 7029385857733282049, guid: 68d92bf43946e604cb875b2df3d679d8, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -7402,8 +7402,12 @@ PrefabInstance:
       value: 87.6
       objectReference: {fileID: 0}
     - target: {fileID: 6301904163857729333, guid: 68d92bf43946e604cb875b2df3d679d8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6301904163857729333, guid: 68d92bf43946e604cb875b2df3d679d8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 144.80002
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7029385857733282049, guid: 68d92bf43946e604cb875b2df3d679d8, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10172,6 +10176,7 @@ MonoBehaviour:
   customerLog: []
   level1Log:
     level: 0
+    levelAssetName: 
     numTotal: 0
     numHappy: 0
     numMid: 0
@@ -10185,6 +10190,7 @@ MonoBehaviour:
     customerLog: []
   level2Log:
     level: 0
+    levelAssetName: 
     numTotal: 0
     numHappy: 0
     numMid: 0
@@ -10197,6 +10203,7 @@ MonoBehaviour:
     avgLifetimeThreshold: 0
     customerLog: []
   completeLog:
+    gameVariantString: 
     evaluationMethod: 0
     evaluationMethod_name: 
     levelLog: []

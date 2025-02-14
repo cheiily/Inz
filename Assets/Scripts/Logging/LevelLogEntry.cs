@@ -5,6 +5,7 @@ namespace InzGame {
     [Serializable]
     public class LevelLogEntry {
         public int level;
+        public string levelAssetName;
 
         public int numTotal;
         public int numHappy;

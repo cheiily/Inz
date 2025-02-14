@@ -1,27 +1,52 @@
 {
+    "gameVariantString": "EASY",
+    "evaluationMethod": 1,
+    "evaluationMethod_name": "Step",
     "levelLog": [
         {
             "level": 1,
+            "levelAssetName": "Lv1_W1",
+            "numTotal": 1,
+            "numHappy": 0,
+            "numMid": 1,
+            "numSad": 0,
+            "numLeave": 0,
+            "avgPts": 66.66666412353516,
+            "avgThreshold": 1.0,
+            "avgLifetime": 15.956920623779297,
+            "avgThresholdLength": 12.0,
+            "avgLifetimeThreshold": 15.956920623779297,
             "customerLog": [
                 {
                     "id": 0,
                     "order": 19,
                     "order_name": "FIFKA",
                     "ratingDropTimeThresholds": [
-                        24.0,
-                        24.0,
-                        24.0
+                        12.0,
+                        12.0,
+                        12.0
                     ],
-                    "time_entered": 6.6162004470825199,
-                    "time_departed": 25.393075942993165,
-                    "lifetime": 18.776874542236329,
-                    "points": 100.0,
-                    "threshold": 0
+                    "time_entered": 5.019285678863525,
+                    "time_departed": 20.976205825805665,
+                    "lifetime": 15.956920623779297,
+                    "points": 66.66666412353516,
+                    "threshold": 1
                 }
             ]
         },
         {
             "level": 0,
+            "levelAssetName": "",
+            "numTotal": 0,
+            "numHappy": 0,
+            "numMid": 0,
+            "numSad": 0,
+            "numLeave": 0,
+            "avgPts": 0.0,
+            "avgThreshold": 0.0,
+            "avgLifetime": 0.0,
+            "avgThresholdLength": 0.0,
+            "avgLifetimeThreshold": 0.0,
             "customerLog": []
         }
     ]
