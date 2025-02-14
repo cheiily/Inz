@@ -165,4 +165,9 @@ public class FoodProcessor : MonoBehaviour {
             OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress / (status == Status.EXPIRING ? currentAction.expiryDuration : currentAction.duration), status == Status.EXPIRING));
         }
     }
+
+    public void Clear() {
+        _buffer.Clear();
+        OnBufferChange?.Invoke(this, _buffer);
+    }
 }

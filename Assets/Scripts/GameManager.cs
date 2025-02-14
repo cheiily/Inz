@@ -160,10 +160,18 @@ public class GameManager : MonoBehaviour {
     }
 
 
+    public void ClearAll() {
+        var processors = GameObject.FindWithTag("Processors").GetComponentsInChildren<FoodProcessor>();
+        foreach (var foodProcessor in processors) {
+            foodProcessor.Clear();
+        }
+    }
+
     public IEnumerator WaitThenOpenSummary() {
         gameState = GameState.PAUSED;
         log.CompileLevel();
         yield return new WaitForSeconds(1);
+        ClearAll();
         gameState = GameState.SUMMARY;
         summaryUI.SetActive(true);
         summaryUI.GetComponent<SummaryUIManager>().SetFor(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100, _currentLevel_thresholdToAmount);

@@ -31,6 +31,7 @@ namespace InzGame.DisplayHandlers {
             _processor.OnBufferChange += SetBufferImages;
             _processor.OnProgressChange += SetSliderProgress;
             _processor.OnStatusChange += SetAnimatorState;
+            _processor.OnStatusChange += ToggleSlider;
             _processor.OnMoveToMainBuffer += TweenItems;
             if (prop != null)
                 _processor.OnStatusChange += ToggleProp;
@@ -39,6 +40,7 @@ namespace InzGame.DisplayHandlers {
         public void SetSliderProgress(object sender, Tuple<float, bool> progressTuple) {
             _progressSlider.value = progressTuple.Item1;
             _progressSlider.fillRect.GetComponent<Image>().color = progressTuple.Item2 ? Color.red : Color.green;
+            _progressSlider.handleRect.GetComponent<Image>().color = progressTuple.Item2 ? Color.red : Color.green;
         }
 
         public void SetBufferImages(object sender, List<Element> buffer) {
@@ -68,6 +70,10 @@ namespace InzGame.DisplayHandlers {
                     prop.SetActive(true);
                     break;
             }
+        }
+
+        public void ToggleSlider(object sender, FoodProcessor.Status state) {
+            _progressSlider.gameObject.SetActive(state is FoodProcessor.Status.ACTIVE or FoodProcessor.Status.EXPIRING);
         }
 
         public void TweenItems(List<Element> elements, List<int> indices) {

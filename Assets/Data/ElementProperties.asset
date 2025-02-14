@@ -160,7 +160,7 @@ MonoBehaviour:
     sprites_cooking_progress: []
   - element: 34
     level: 2
-    sprite_element: {fileID: 0}
+    sprite_element: {fileID: 664362791331862716, guid: b3084adae7e2c4241bc27c340942d41f, type: 3}
     sprite_order_bubble: {fileID: 0}
     sprites_cooking_progress: []
   - element: 35
@@ -180,7 +180,7 @@ MonoBehaviour:
     sprites_cooking_progress: []
   - element: 38
     level: 2
-    sprite_element: {fileID: -1408731718, guid: 1d9835b66b2876e4b8980f2e3276d0c9, type: 3}
+    sprite_element: {fileID: -6361214976632155780, guid: aa4e98d1149deb54286b44485c3fbd58, type: 3}
     sprite_order_bubble: {fileID: 0}
     sprites_cooking_progress: []
   - element: 39
@@ -298,11 +298,16 @@ MonoBehaviour:
     sprite_element: {fileID: -8843447107372270502, guid: a8230558a327eb74c9e09f583262b40c, type: 3}
     sprite_order_bubble: {fileID: -9089580316525833861, guid: ebfbb5eb9ca047d4f814530d71fe7e29, type: 3}
     sprites_cooking_progress: []
-  filter: 9
-  _indexPreview: 4
+  - element: 46
+    level: 2
+    sprite_element: {fileID: -8843447107372270502, guid: a8230558a327eb74c9e09f583262b40c, type: 3}
+    sprite_order_bubble: {fileID: -9089580316525833861, guid: ebfbb5eb9ca047d4f814530d71fe7e29, type: 3}
+    sprites_cooking_progress: []
+  filter: 54
+  _indexPreview: 55
   found:
-    element: 9
-    level: 1
-    sprite_element: {fileID: 5555228422069194693, guid: 9133674cb485a47498ff3d774a16e4c0, type: 3}
+    element: 54
+    level: 2
+    sprite_element: {fileID: -1942611898200125746, guid: 761ebecb3839600439886a1b50eb3073, type: 3}
     sprite_order_bubble: {fileID: 0}
     sprites_cooking_progress: []
