@@ -15,9 +15,9 @@ namespace InzGame {
 
         public float avgPts;
         public float avgThreshold;
-        public float avgLifetime;
-
         public float avgThresholdLength;
+
+        public float avgLifetime;
         public float avgLifetimeThreshold;
 
         public List<CustomerLogEntry> customerLog = new List<CustomerLogEntry>();
