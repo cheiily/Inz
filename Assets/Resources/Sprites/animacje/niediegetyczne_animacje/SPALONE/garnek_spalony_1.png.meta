@@ -103,12 +103,12 @@ TextureImporter:
       name: garnek_spalony_1_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 38
-        width: 402
-        height: 362
+        x: 100
+        y: 24
+        width: 400
+        height: 374
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 26e19cf5d7e219e4ca749ebac2bc5b71
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      garnek_spalony_1_0: 2263544898653223812
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

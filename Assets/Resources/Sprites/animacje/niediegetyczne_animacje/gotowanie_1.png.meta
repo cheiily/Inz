@@ -103,10 +103,10 @@ TextureImporter:
       name: gotowanie_1_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 38
-        width: 402
-        height: 362
+        x: 100
+        y: 24
+        width: 400
+        height: 374
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9df52368e6c631e4d87febb559a764c6
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gotowanie_1_0: 6160142547891920112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

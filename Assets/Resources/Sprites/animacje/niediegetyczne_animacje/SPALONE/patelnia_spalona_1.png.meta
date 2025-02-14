@@ -106,12 +106,12 @@ TextureImporter:
       name: patelnia_spalona_1_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 51
-        width: 539
-        height: 316
+        x: 45
+        y: 40
+        width: 511
+        height: 305
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -124,33 +124,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: patelnia_spalona_1_1
-      rect:
-        serializedVersion: 2
-        x: 275
-        y: 357
-        width: 21
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 994e7859c103e20b0800000000000000
-      internalID: -5751606774779616103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 48bc47d91c37e5546a7a8d7360f3b29d
     internalID: 0
     vertices: []
     indices: 
@@ -159,7 +137,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      patelnia_spalona_1_0: -1644609453409763784
+      patelnia_spalona_1_1: -5751606774779616103
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
