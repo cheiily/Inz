@@ -103,10 +103,10 @@ TextureImporter:
       name: prazoki_z_kapusta_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 15
-        width: 287
-        height: 144
+        x: 7
+        y: 8
+        width: 184
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5c2e1149e24a69a4fb7857f4f7687c74
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      prazoki_z_kapusta_0: -8843447107372270502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

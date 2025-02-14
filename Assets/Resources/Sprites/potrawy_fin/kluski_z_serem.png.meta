@@ -103,10 +103,10 @@ TextureImporter:
       name: kluski_z_serem_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 2
-        width: 302
-        height: 157
+        x: 7
+        y: 8
+        width: 192
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 81ae382da52cd1143bfc43daabfbe869
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kluski_z_serem_0: -6011640561716611331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

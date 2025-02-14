@@ -103,10 +103,10 @@ TextureImporter:
       name: bulka_z_mlekiem_0
       rect:
         serializedVersion: 2
-        x: 83
-        y: 16
-        width: 237
-        height: 184
+        x: 42
+        y: 6
+        width: 120
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 90ff8fb2a2b8f1f4f9a080c548b2c56e
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bulka_z_mlekiem_0: 2728206546516584990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

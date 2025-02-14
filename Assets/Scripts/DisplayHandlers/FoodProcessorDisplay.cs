@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Data;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,13 +47,26 @@ namespace InzGame.DisplayHandlers {
         public void SetBufferImages(object sender, List<Element> buffer) {
             for (int i = 0; i < 5; ++i) {
                 if (i >= buffer.Count || buffer[i] is Element.NONE or Element.INVALID) {
+                    _bufferImages[ i ].DOKill();
                     _bufferImages[i].sprite = null;
                     _bufferImages[i].color = Color.clear;
                 } else {
-                    _bufferImages[i].sprite = _config.elementProperties.GetFor(buffer[i]).sprite_element;
-                    _bufferImages[i].color = Color.white;
+                    if (_processor.status is FoodProcessor.Status.DONE or FoodProcessor.Status.EXPIRING) {
+                        SetSprite(i, buffer);
+                        continue;
+                    }
+                    var i1 = i;
+                    // this is specifically bound to the item in order to easily cancel the tween when needed
+                    _bufferImages[i].DOColor(_bufferImages[i].color, _config.itemJumpDuration).From(_bufferImages[i].color)
+                                    .OnComplete(() => SetSprite(i1, buffer));
                 }
             }
+        }
+
+        public void SetSprite(int i, List<Element> buffer) {
+            _bufferImages[i].sprite = _config.elementProperties.GetFor(buffer[i]).sprite_element;
+            _bufferImages[i].preserveAspect = true;
+            _bufferImages[i].color = Color.white;
         }
 
         public void SetAnimatorState(object sender, FoodProcessor.Status state) {

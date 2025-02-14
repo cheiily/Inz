@@ -106,10 +106,10 @@ TextureImporter:
       name: knedle_ze_sliwkami_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 15
-        width: 287
-        height: 164
+        x: 7
+        y: 8
+        width: 184
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,33 +124,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: knedle_ze_sliwkami_1
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 167
-        width: 12
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e20cd30a55d3aa750800000000000000
-      internalID: 6316928865310457902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ee03cd87298e53f448fba2f7a93c9936
     internalID: 0
     vertices: []
     indices: 
@@ -159,7 +137,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      knedle_ze_sliwkami_0: 2693155622179020648
+      knedle_ze_sliwkami_1: 6316928865310457902
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -19,6 +19,7 @@ namespace InzGame.DisplayHandlers {
             _config = GetComponent<GameManager>().config;
             foreach (Transform child in GameObject.FindWithTag("Buffer Display").transform) {
                 anchors.Add(child.GetComponent<Image>());
+                child.GetComponent<Image>().preserveAspect = true;
             }
 
             _buffer.OnBufferChange += SetSprites;
@@ -98,6 +99,7 @@ namespace InzGame.DisplayHandlers {
                     anchors[ i ].color = Color.clear;
                 } else {
                     anchors[ i ].sprite = _config.elementProperties.GetFor(bufferState[ i ]).sprite_element;
+                    // anchors[ i ].SetNativeSize();
                     anchors[ i ].color = Color.white;
                 }
 

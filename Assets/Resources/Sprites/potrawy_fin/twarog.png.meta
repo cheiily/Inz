@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      twarog_0: -6738466099596052941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

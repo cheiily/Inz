@@ -103,10 +103,10 @@ TextureImporter:
       name: kluski_zelazne_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 15
-        width: 288
-        height: 150
+        x: 6
+        y: 8
+        width: 185
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e04f6dad05dab43488a68e1de9567bbd
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kluski_zelazne_0: 4965079557572248186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

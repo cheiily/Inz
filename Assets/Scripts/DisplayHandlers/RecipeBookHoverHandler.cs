@@ -10,11 +10,11 @@ public class RecipeBookHoverHandler : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerEnter(PointerEventData eventData) {
         transform.DOKill();
-        transform.DOMove(openPos.position, 0.5f);
+        transform.DOMove(openPos.position, 0.3f);
     }
 
     public void OnPointerExit(PointerEventData eventData) {
         transform.DOKill();
-        transform.DOMove(closedPos.position, 0.5f);
+        transform.DOMove(closedPos.position, 0.3f);
     }
 }

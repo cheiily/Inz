@@ -103,10 +103,10 @@ TextureImporter:
       name: sledzie_pod_pierzynka_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 15
-        width: 299
-        height: 108
+        x: 8
+        y: 8
+        width: 192
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 368907e8ecae8fb4c9d8d4d0c897fa6b
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sledzie_pod_pierzynka_0: -6726330576559985133
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

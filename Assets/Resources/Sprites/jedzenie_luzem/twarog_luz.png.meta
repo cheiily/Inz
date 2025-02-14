@@ -103,10 +103,10 @@ TextureImporter:
       name: twarog_luz_0
       rect:
         serializedVersion: 2
-        x: 91
-        y: 136
-        width: 217
-        height: 88
+        x: 19
+        y: 34
+        width: 111
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 32e5e032ab8c15744b7e9ac0e1cb0f83
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      twarog_luz_0: -56212128843095325
+      twarog_luz_1: -1548573725
+      twarog_luz_2: -300176965
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -23,30 +23,53 @@ namespace InzGame.DisplayHandlers {
             }
         }
 
-        public void StartWith(Element elem, Transform from, Transform to) {
+        public GameObject StartWith(Element elem, Transform from, Transform to) {
             GameObject item = itemPool.Find(obj => !obj.activeSelf);
             if (item == null) {
                 Debug.Log("No available items in pool");
-                return;
+                return null;
             }
 
             item.GetComponent<Image>().sprite = _config.elementProperties.GetFor(elem).sprite_element;
+            item.GetComponent<Image>().preserveAspect = true;
+            // item.GetComponent<Image>().SetNativeSize();
 
             item.transform.DOMove(to.position, _config.itemJumpDuration).SetEase(_config.itemJumpEase).From(from.position).OnComplete(() => {
                 item.gameObject.SetActive(false);
                 item.GetComponent<Image>().sprite = null;
             });
             item.SetActive(true);
+
+            return item;
         }
 
         public void Source(ElementSource source, int slot) {
-            StartWith(source.element, source.transform, bufferDisplay.anchors[slot].transform);
+            StartWith(source.element, source.transform, bufferDisplay.anchors[ slot ].transform)
+                .transform.DOScale(new Vector3(1.25f, 1.25f, 1.25f), _config.itemJumpDuration).From(new Vector3(1,1,1));
         }
 
         public void Consumer(ElementConsumer consumer, List<Element> elements) {
+            var procDisp = consumer.GetComponent<FoodProcessorDisplay>();
+            var proc = consumer.GetComponent<FoodProcessor>();
+            int add = 0;
+
             foreach (var displayTuple in bufferDisplay.m_displayBuffer) {
                 if (displayTuple.Item1 != Element.INVALID && Misc.Extensions.Contains(elements, displayTuple.Item1)) {
-                    StartWith(displayTuple.Item1, bufferDisplay.anchors[displayTuple.Item2].transform, consumer.transform);
+                    Transform target = null;
+                    if ( procDisp != null ) {
+                        var idx = proc._buffer.FindIndex(elem => elem == displayTuple.Item1);
+                        if (idx != -1)
+                            target = procDisp._bufferImages[ idx ].transform;
+                        else {
+                            idx = proc._buffer.Count + add;
+                            idx = Math.Clamp(idx, 0, 5);
+                            target = procDisp._bufferImages[ idx ].transform;
+                            add++;
+                        }
+                    }
+
+                    StartWith(displayTuple.Item1, bufferDisplay.anchors[displayTuple.Item2].transform, target != null ? target : consumer.transform)
+                        .transform.DOScale(new Vector3(1,1,1), _config.itemJumpDuration).From(new Vector3(1.25f, 1.25f, 1.25f));
                 }
             }
         }
@@ -56,7 +79,8 @@ namespace InzGame.DisplayHandlers {
                 var elem = elements[i];
                 var idx = bufferDisplay._buffer.buffer.LastIndexOf(elem);
 
-                StartWith(elem, processorDisplay._bufferImages[idx].transform, bufferDisplay.anchors[idx].transform);
+                StartWith(elem, processorDisplay._bufferImages[idx].transform, bufferDisplay.anchors[idx].transform)
+                    .transform.DOScale(new Vector3(1.25f, 1.25f, 1.25f), _config.itemJumpDuration).From(new Vector3(1,1,1));
             }
         }
     }
