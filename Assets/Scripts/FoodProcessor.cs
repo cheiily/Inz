@@ -82,8 +82,8 @@ public class FoodProcessor : MonoBehaviour {
                 moveToMainBuffer.Add(_buffer[0]); // change to action.output if errors?
                 moveToMainBufferIndices.Add(0);
                 _buffer.RemoveAt(0);
-                status = Status.FREE;
                 currentAction = null;
+                status = Status.FREE;
 
                 progress = 0;
                 OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress, false));

@@ -87,6 +87,8 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void ToggleSlider(object sender, FoodProcessor.Status state) {
+            Debug.Log("ToggleSlider received, state: " + state + ", currentAction null?: " + (_processor.currentAction == null));
+
             if (state == FoodProcessor.Status.FREE && _processor.currentAction == null) {
                 _progressSlider.gameObject.SetActive(false);
                 return;
