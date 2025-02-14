@@ -34,7 +34,7 @@ public class CustomerInstance : MonoBehaviour {
     void Start() {
         _config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
 
-        CustomerRemovePolicy += PolicyModification_Delay(Policy_AddPointsThenDestroy, _config.itemJumpDuration);
+        CustomerRemovePolicy += PolicyModification_Delay(Policy_AddPointsThenDestroy, 0.5f /* bounce_leave animation length */);
 
         thresholds = new List<float>();
         if (preset.ratingDropMode == CustomerPreset.RatingDropMode.REGULAR) {
