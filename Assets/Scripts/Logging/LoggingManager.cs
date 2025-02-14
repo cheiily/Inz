@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace InzGame {
@@ -13,6 +14,7 @@ namespace InzGame {
         public string level1;
         public string level2;
 
+        public bool[] compiled = new bool[2];
         public string complete;
 
         public void OpenLevel(int level) {
@@ -53,6 +55,19 @@ namespace InzGame {
             log.level = currentLevel;
             log.customerLog = customerLog;
 
+            log.numTotal = customerLog.Count;
+            log.numHappy = customerLog.FindAll(entry => entry.threshold == 0).Count;
+            log.numMid = customerLog.FindAll(entry => entry.threshold == 1).Count;
+            log.numSad = customerLog.FindAll(entry => entry.threshold == 2).Count;
+            log.numLeave = customerLog.FindAll(entry => entry.threshold == 3).Count;
+
+            log.avgPts = customerLog.Average(entry => entry.points);
+            log.avgThreshold = (float)customerLog.Average(entry => entry.threshold);
+            log.avgLifetime = customerLog.Average(entry => entry.lifetime);
+
+            log.avgThresholdLength = customerLog.SelectMany(entry => entry.ratingDropTimeThresholds).Average();
+            log.avgLifetimeThreshold = log.avgLifetime / log.avgThreshold;
+
             if ( currentLevel == 1 ) {
                 level1Log = log;
                 level1 = JsonUtility.ToJson(log, true);
@@ -60,6 +75,13 @@ namespace InzGame {
             else if ( currentLevel == 2 ) {
                 level2Log = log;
                 level2 = JsonUtility.ToJson(log, true);
+            }
+
+            compiled[currentLevel - 1] = true;
+
+            if ( compiled[0] && compiled[1] ) {
+                CompileAll();
+                Save();
             }
         }
 

@@ -154,8 +154,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public void ExitGame() {
-        log.CompileAll();
-        log.Save();
+        // log.CompileAll();
+        // log.Save();
         Application.Quit();
     }
 

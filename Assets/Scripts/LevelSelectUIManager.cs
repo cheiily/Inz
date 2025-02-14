@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 namespace InzGame {
     public class LevelSelectUIManager : MonoBehaviour {
+        public Button button1;
+        public Button button2;
+        public GameObject finishedLabel1;
+        public GameObject finishedLabel2;
+
         public GameManager gameManager;
 
         public Image lvl1Buzka;
@@ -36,6 +41,11 @@ namespace InzGame {
                 levelData = gameManager.config.level2;
             else
                 return;
+
+            var buttonPressed = level == 1 ? button1 : button2;
+            buttonPressed.interactable = false;
+            var finishedLabel = level == 1 ? finishedLabel1 : finishedLabel2;
+            finishedLabel.SetActive(true);
 
             gameManager.currentLevel = levelData;
             gameManager.currentLevelID = level;
