@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 1424738020984299016}
   - component: {fileID: 3949057801458759925}
   - component: {fileID: 245806997431395602}
+  - component: {fileID: 3378506868333920953}
   m_Layer: 5
   m_Name: TrashBtn
   m_TagString: Untagged
@@ -285,3 +286,16 @@ MonoBehaviour:
   elements: 01000000
   requirementMode: 1
   consumptionMode: 0
+--- !u!114 &3378506868333920953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241111671341982343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fa7bbb74a843a798c21f284ab49767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bufferDisplay: {fileID: 0}

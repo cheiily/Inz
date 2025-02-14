@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using Data;
 using DG.Tweening;
+using Misc;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace InzGame.DisplayHandlers {
     public class BufferDisplay : MonoBehaviour {
         public Buffer _buffer;
         public GameConfiguration _config;
-        public List<Image> anchors;
+        public List<Image> displays;
+
+        public List<GameObject> plates;
+        public List<Transform> plateDefaultPositions;
+        public List<Transform> plateHighlightPositions;
 
         public List<Tuple<Element, int>> m_displayBuffer;
 
@@ -18,14 +24,14 @@ namespace InzGame.DisplayHandlers {
             _buffer = GetComponent<Buffer>();
             _config = GetComponent<GameManager>().config;
             foreach (Transform child in GameObject.FindWithTag("Buffer Display").transform) {
-                anchors.Add(child.GetComponent<Image>());
+                displays.Add(child.GetComponent<Image>());
                 child.GetComponent<Image>().preserveAspect = true;
             }
 
             _buffer.OnBufferChange += SetSprites;
             _buffer.OnSubmit += DelayShowSubmitted;
 
-            foreach (var anchor in anchors) {
+            foreach (var anchor in displays) {
                 anchor.sprite = null;
                 anchor.color = Color.clear;
             }
@@ -95,12 +101,12 @@ namespace InzGame.DisplayHandlers {
 
             for (int i = 0; i < bufferState.Count; ++i) {
                 if ( bufferState[ i ] is Element.NONE or Element.INVALID ) {
-                    anchors[ i ].sprite = null;
-                    anchors[ i ].color = Color.clear;
+                    displays[ i ].sprite = null;
+                    displays[ i ].color = Color.clear;
                 } else {
-                    anchors[ i ].sprite = _config.elementProperties.GetFor(bufferState[ i ]).sprite_element;
+                    displays[ i ].sprite = _config.elementProperties.GetFor(bufferState[ i ]).sprite_element;
                     // anchors[ i ].SetNativeSize();
-                    anchors[ i ].color = Color.white;
+                    displays[ i ].color = Color.white;
                 }
 
                 m_displayBuffer[ i ] = new Tuple<Element, int>(bufferState[ i ], i);
@@ -108,7 +114,7 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void DelayShowSubmitted(object sender, Tuple<Element, int> elem) {
-            var anchor = anchors[ elem.Item2 ];
+            var anchor = displays[ elem.Item2 ];
             anchor.DOKill();
             anchor.DOColor(Color.clear, _config.itemJumpDuration).From(Color.clear).OnComplete(() => {
                 anchor.sprite = _config.elementProperties.GetFor(elem.Item1).sprite_element;
@@ -137,6 +143,31 @@ namespace InzGame.DisplayHandlers {
             }
 
             return seatList.IndexOf(false);
+        }
+
+
+        public void StartHighlight(List<Element> elements) {
+            foreach (var displayTuple in m_displayBuffer) {
+                if (Extensions.Contains(elements, displayTuple.Item1)) {
+                    var plate = plates[displayTuple.Item2];
+                    plate.transform.DOKill();
+                    plate.transform.DOMove(plateHighlightPositions[displayTuple.Item2].position, _config.itemJumpDuration).SetEase(_config.itemJumpEase);
+                    displays[displayTuple.Item2].transform.DOKill();
+                    displays[displayTuple.Item2].transform.DOMove(plateHighlightPositions[displayTuple.Item2].position, _config.itemJumpDuration).SetEase(_config.itemJumpEase);
+                }
+
+                elements.Remove(displayTuple.Item1);
+            }
+        }
+
+        public void StopHighlight() {
+            for (int i = 0; i < plates.Count; i++) {
+                var plate = plates[i];
+                plate.transform.DOKill();
+                plate.transform.DOMove(plateDefaultPositions[plates.IndexOf(plate)].position, _config.itemJumpDuration).SetEase(_config.itemJumpEase);
+                displays[i].transform.DOKill();
+                displays[i].transform.DOMove(plateDefaultPositions[plates.IndexOf(plate)].position, _config.itemJumpDuration).SetEase(_config.itemJumpEase);
+            }
         }
     }
 }

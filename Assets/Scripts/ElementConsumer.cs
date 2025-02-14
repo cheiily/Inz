@@ -34,6 +34,7 @@ public class ElementConsumer : MonoBehaviour
     public event Func<Element, CONSUMPTION_RESULT> CustomConsumption;
     public event Action<List<Element>> OnElementsConsumed;
     public event Action<List<Element>> BeforeElementsConsumed;
+    public HighlightProxy highlightProxy;
 
     public static Buffer _buffer;
 
@@ -42,6 +43,17 @@ public class ElementConsumer : MonoBehaviour
             _buffer = GameObject.FindWithTag("Manager").GetComponent<Buffer>();
 
         BeforeElementsConsumed += TweenJumpItems;
+
+        highlightProxy = gameObject.GetComponent<HighlightProxy>();
+        if (GetComponent<FoodProcessor>() == null) {
+            if (elements.Count == 1 && elements[0] == Element.ALL && requirementMode == REQUIREMENT_MODE.ALL)
+                highlightProxy.HighlightCheck = TrashHighlightCheck;
+            else highlightProxy.HighlightCheck = HighlightCheck;
+        }
+
+        OnElementsConsumed += _ => {
+            highlightProxy.DoStopHighlight();
+        };
     }
 
     public void AcceptBuffer() {
@@ -74,5 +86,28 @@ public class ElementConsumer : MonoBehaviour
 
     public void TweenJumpItems(List<Element> elements) {
         GameObject.FindWithTag("ItemJumpTweener").GetComponent<ItemJumpTweener>().Consumer(this, elements);
+    }
+
+    public List<Element> HighlightCheck() {
+        List<Element> ret = new List<Element>();
+
+        if ( requirementMode == REQUIREMENT_MODE.FAIL )
+            return ret;
+
+        if ( requirementMode == REQUIREMENT_MODE.ALL && elements.All(elem => _buffer.Contains(elem)) ){
+            ret = elements;
+        } else if ( requirementMode == REQUIREMENT_MODE.ONE ) {
+            ret = elements.FindAll(element => _buffer.Contains(element));
+        } else if ( requirementMode == REQUIREMENT_MODE.CUSTOM ) {
+            ret = CustomRequirementCheck?.Invoke(elements, _buffer.buffer);
+        } else if ( requirementMode == REQUIREMENT_MODE.NONE ) {
+            ret = elements;
+        }
+
+        return ret;
+    }
+
+    public List<Element> TrashHighlightCheck() {
+        return _buffer.buffer.FindAll(element => element != Element.INVALID && element != Element.ALL && element != Element.NONE && element != Element.ANY);
     }
 }

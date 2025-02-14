@@ -44,7 +44,7 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void Source(ElementSource source, int slot) {
-            StartWith(source.element, source.transform, bufferDisplay.anchors[ slot ].transform)
+            StartWith(source.element, source.transform, bufferDisplay.displays[ slot ].transform)
                 .transform.DOScale(new Vector3(1.25f, 1.25f, 1.25f), _config.itemJumpDuration).From(new Vector3(1,1,1));
         }
 
@@ -69,7 +69,7 @@ namespace InzGame.DisplayHandlers {
                         }
                     }
 
-                    StartWith(displayTuple.Item1, bufferDisplay.anchors[displayTuple.Item2].transform, target != null ? target : consumer.transform)
+                    StartWith(displayTuple.Item1, bufferDisplay.displays[displayTuple.Item2].transform, target != null ? target : consumer.transform)
                         .transform.DOScale(new Vector3(1,1,1), _config.itemJumpDuration).From(new Vector3(1.25f, 1.25f, 1.25f));
 
                     elemsCpy.Remove(displayTuple.Item1);
@@ -82,7 +82,7 @@ namespace InzGame.DisplayHandlers {
                 var elem = elements[i];
                 var idx = bufferDisplay._buffer.buffer.LastIndexOf(elem);
 
-                StartWith(elem, processorDisplay._bufferImages[idx].transform, bufferDisplay.anchors[idx].transform)
+                StartWith(elem, processorDisplay._bufferImages[idx].transform, bufferDisplay.displays[idx].transform)
                     .transform.DOScale(new Vector3(1.25f, 1.25f, 1.25f), _config.itemJumpDuration).From(new Vector3(1,1,1));
             }
         }

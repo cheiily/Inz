@@ -71,6 +71,11 @@ public class FoodProcessor : MonoBehaviour {
     public void Initialize(FoodProcessorPreset preset) {
         this.preset = preset;
 
+        var highlightProxy = GetComponent<HighlightProxy>();
+        if (highlightProxy != null) {
+            highlightProxy.HighlightCheck = HighlightCheck;
+        }
+
         _consumer.elements = preset.actions.SelectMany(action => action.input).ToList();
         _consumer.CustomRequirementCheck += delegate(List<Element> required, List<Element> bufferState) {
             if ( status == Status.DONE || status == Status.EXPIRING ) {
@@ -170,7 +175,24 @@ public class FoodProcessor : MonoBehaviour {
         OnBufferChange?.Invoke(this, _buffer);
     }
 
-    public void HighlightCheck() {
+    public List<Element> HighlightCheck() {
+        CookingAction maxCompletionAction = currentAction;
+        HashSet<Element> maxCompletionElements = new HashSet<Element>();
+        HashSet<Element> matchingIn = new HashSet<Element>();
+        HashSet<Element> matchingTotal = new HashSet<Element>(); // buffer + matchingIn, kept separate for easy return of only contained elements
+        float maxCompletion = 0;
+        foreach ( var action in preset.actions ) {
+            matchingIn = new HashSet<Element>(mainBuffer.buffer.FindAll(element => action.GetInputSet().Contains(element) && !_buffer.Contains(element)));
+            matchingTotal = new HashSet<Element>(matchingIn);
+            matchingTotal.AddRange(_buffer.FindAll(element => action.GetInputSet().Contains(element)));
+            float completion = (float) matchingTotal.Count / action.input.Count;
+            if ( completion > maxCompletion || (maxCompletionAction != null && completion - maxCompletion < 0.00001 && config.elementProperties.GetFor(action.output).level > config.elementProperties.GetFor(maxCompletionAction.output).level) ) {
+                maxCompletion = completion;
+                maxCompletionAction = action;
+                maxCompletionElements = matchingIn;
+            }
+        }
 
+        return maxCompletionElements.ToList();
     }
 }
