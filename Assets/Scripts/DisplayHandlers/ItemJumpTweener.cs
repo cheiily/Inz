@@ -53,9 +53,8 @@ namespace InzGame.DisplayHandlers {
             var proc = consumer.GetComponent<FoodProcessor>();
             int add = 0;
 
-            var ordered = bufferDisplay.m_displayBuffer.OrderByDescending(entry => entry.Item2);
             var elemsCpy = new List<Element>(elements);
-            foreach (var displayTuple in ordered) {
+            foreach (var displayTuple in bufferDisplay.m_displayBuffer) {
                 if (displayTuple.Item1 != Element.INVALID && Misc.Extensions.Contains(elemsCpy, displayTuple.Item1)) {
                     Transform target = null;
                     if ( procDisp != null ) {

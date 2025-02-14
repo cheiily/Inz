@@ -88,16 +88,16 @@ public class FoodProcessor : MonoBehaviour {
             if (Buffer.Count(bufferState) == 0)
                 return new List<Element>();
 
-            if ( currentAction != null ) {
-                HashSet<Element> actionIn = currentAction.GetInputSet();
-                HashSet<Element> compare = new HashSet<Element>(_buffer);
-                List<Element> matchingInput = new List<Element>(bufferState.FindAll(element => actionIn.Contains(element)));
-                compare.AddRange(matchingInput);
-
-                if ( actionIn == compare ) {
-                    return matchingInput;
-                }
-            }
+            // if ( currentAction != null ) {
+            //     HashSet<Element> actionIn = currentAction.GetInputSet();
+            //     HashSet<Element> compare = new HashSet<Element>(_buffer);
+            //     List<Element> matchingInput = new List<Element>(bufferState.FindAll(element => actionIn.Contains(element)));
+            //     compare.AddRange(matchingInput);
+            //
+            //     if ( actionIn == compare ) {
+            //         return matchingInput;
+            //     }
+            // }
 
             CookingAction maxCompletionAction = currentAction;
             HashSet<Element> maxCompletionElements = new HashSet<Element>();
@@ -114,16 +114,12 @@ public class FoodProcessor : MonoBehaviour {
                     maxCompletionAction = action;
                     maxCompletionElements = matchingIn;
                 }
-
-                if (completion >= 1) {
-                    currentAction = action;
-                    return new List<Element>(matchingIn);
-                }
             }
 
             if ( _buffer.Count > 0 && currentAction != maxCompletionAction ) {
                 moveToMainBuffer.AddRange(_buffer.FindAll(element => !maxCompletionAction.input.Contains(element)));
                 moveToMainBufferIndices.AddRange(_buffer.FindAll(element => !maxCompletionAction.input.Contains(element)).Select(element => _buffer.IndexOf(element)));
+                _buffer.RemoveAll(element => !maxCompletionAction.input.Contains(element));
             }
 
             currentAction = maxCompletionAction;
@@ -172,5 +168,9 @@ public class FoodProcessor : MonoBehaviour {
     public void Clear() {
         _buffer.Clear();
         OnBufferChange?.Invoke(this, _buffer);
+    }
+
+    public void HighlightCheck() {
+
     }
 }
