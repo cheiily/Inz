@@ -53,8 +53,10 @@ namespace InzGame.DisplayHandlers {
             var proc = consumer.GetComponent<FoodProcessor>();
             int add = 0;
 
-            foreach (var displayTuple in bufferDisplay.m_displayBuffer) {
-                if (displayTuple.Item1 != Element.INVALID && Misc.Extensions.Contains(elements, displayTuple.Item1)) {
+            var ordered = bufferDisplay.m_displayBuffer.OrderByDescending(entry => entry.Item2);
+            var elemsCpy = new List<Element>(elements);
+            foreach (var displayTuple in ordered) {
+                if (displayTuple.Item1 != Element.INVALID && Misc.Extensions.Contains(elemsCpy, displayTuple.Item1)) {
                     Transform target = null;
                     if ( procDisp != null ) {
                         var idx = proc._buffer.FindIndex(elem => elem == displayTuple.Item1);
@@ -70,6 +72,8 @@ namespace InzGame.DisplayHandlers {
 
                     StartWith(displayTuple.Item1, bufferDisplay.anchors[displayTuple.Item2].transform, target != null ? target : consumer.transform)
                         .transform.DOScale(new Vector3(1,1,1), _config.itemJumpDuration).From(new Vector3(1.25f, 1.25f, 1.25f));
+
+                    elemsCpy.Remove(displayTuple.Item1);
                 }
             }
         }
