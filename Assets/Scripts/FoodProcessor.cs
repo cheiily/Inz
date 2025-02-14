@@ -135,9 +135,12 @@ public class FoodProcessor : MonoBehaviour {
                 status = Status.ACTIVE;
                 _buffer.Clear();
             }
+            if ( currentAction != null && status == Status.FREE ) {
+                status = Status.FREE; // toggle display refresh to show progress slider
+                progress = (float)_buffer.Count / currentAction.GetInputSet().Count;
+            }
 
             OnBufferChange?.Invoke(this, _buffer);
-            progress = 0;
             OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress, false));
 
             foreach (var element in moveToMainBuffer) {

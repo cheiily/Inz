@@ -13,7 +13,9 @@ public class Counter : MonoBehaviour {
     public int numCustomers = 0;
     public List<GameObject> anchors;
     public GameObject customerPrefab;
-    public List<Sprite> customerSprites;
+
+    public List<Sprite> maleSprites;
+    public List<Sprite> femaleSprites;
 
     public CustomerInstance[] customers;
     public GameConfiguration _config;
@@ -42,7 +44,14 @@ public class Counter : MonoBehaviour {
         customerInstance.preset = preset;
 
         var customerDisplay = customer.GetComponent<CustomerDisplay>();
-        customerDisplay.personImage.sprite = customerSprites[Random.Range(0, customerSprites.Count)];
+        int person = Random.Range(0, 2);
+        if ( person == 0 ) {
+            customerDisplay.personSprites = maleSprites;
+            customerDisplay.personImage.sprite = maleSprites[0];
+        } else if ( person == 1 ) {
+            customerDisplay.personSprites = femaleSprites;
+            customerDisplay.personImage.sprite = femaleSprites[0];
+        }
         customerDisplay.orderImage.sprite = _config.elementProperties.GetFor(preset.order).sprite_order_bubble;
         customers[index] = customerInstance;
         numCustomers++;

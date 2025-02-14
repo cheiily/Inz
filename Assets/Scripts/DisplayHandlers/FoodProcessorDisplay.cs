@@ -39,8 +39,7 @@ namespace InzGame.DisplayHandlers {
 
         public void SetSliderProgress(object sender, Tuple<float, bool> progressTuple) {
             _progressSlider.value = progressTuple.Item1;
-            _progressSlider.fillRect.GetComponent<Image>().color = progressTuple.Item2 ? Color.red : Color.green;
-            _progressSlider.handleRect.GetComponent<Image>().color = progressTuple.Item2 ? Color.red : Color.green;
+            // _progressSlider.fillRect.GetComponent<Image>().color = progressTuple.Item2 ? Color.red : Color.green;
         }
 
         public void SetBufferImages(object sender, List<Element> buffer) {
@@ -73,7 +72,26 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void ToggleSlider(object sender, FoodProcessor.Status state) {
-            _progressSlider.gameObject.SetActive(state is FoodProcessor.Status.ACTIVE or FoodProcessor.Status.EXPIRING);
+            if (state == FoodProcessor.Status.FREE && _processor.currentAction == null) {
+                _progressSlider.gameObject.SetActive(false);
+                return;
+            }
+
+            _progressSlider.gameObject.SetActive(true);
+            var fillImg = _progressSlider.fillRect.GetComponent<Image>();
+            switch (state) {
+                case FoodProcessor.Status.FREE:
+                    fillImg.color = Color.cyan;
+                    break;
+                case FoodProcessor.Status.ACTIVE:
+                    fillImg.color = Color.green;
+                    break;
+                case FoodProcessor.Status.EXPIRING:
+                    fillImg.color = Color.red;
+                    break;
+
+                // don't change color if done, keep active/expired dependency
+            }
         }
 
         public void TweenItems(List<Element> elements, List<int> indices) {
