@@ -88,8 +88,6 @@ public class GameManager : MonoBehaviour {
         recipeImage.sprite = currentLevel.recipeBook;
         recipeImage.SetNativeSize();
 
-        // button.gameObject.SetActive(false);
-        _points = 0;
         _currentLevel_thresholdToAmount = new List<int>(4) {0, 0, 0, 0};
         log.OpenLevel(currentLevelID);
         gameState = GameState.PLAYING;
@@ -165,22 +163,26 @@ public class GameManager : MonoBehaviour {
         foreach (var foodProcessor in processors) {
             foodProcessor.Clear();
         }
+
+        _points = 0;
+        // OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
     }
 
     public IEnumerator WaitThenOpenSummary() {
         gameState = GameState.PAUSED;
         log.CompileLevel();
         yield return new WaitForSeconds(1);
-        ClearAll();
         gameState = GameState.SUMMARY;
         summaryUI.SetActive(true);
         summaryUI.GetComponent<SummaryUIManager>().SetFor(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100, _currentLevel_thresholdToAmount);
         float scorePercentage = _points / (currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100);
         int scoreThreshold =
-            scorePercentage >= config.totalMoodThresholds[0] ? 0
+            scorePercentage >= config.totalMoodThresholds[2] ? 2
             : scorePercentage >= config.totalMoodThresholds[1] ? 1
-            : scorePercentage >= config.totalMoodThresholds[2] ? 2
+            : scorePercentage >= config.totalMoodThresholds[0] ? 0
             : 3;
         levelSelectUI.GetComponent<LevelSelectUIManager>().SetDisplaysFor(currentLevelID, _points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100, scoreThreshold);
+
+        ClearAll();
     }
 }
