@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Data;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -21,12 +23,21 @@ namespace InzGame.DisplayHandlers {
         };
         public int _prevThreshold = 0;
 
+        public Animator _particleAnimator;
+        public List<Image> _particleImages;
+
         private void Awake() {
             _customer = GetComponent<CustomerInstance>();
             _slider = transform.GetComponentInChildren<Slider>();
             _animator = transform.parent.GetComponent<Animator>();
             _thresholdParam = Animator.StringToHash("Threshold");
             _config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
+
+            _particleAnimator = transform.GetChild(0).GetComponent<Animator>();
+            _particleImages = _particleAnimator.gameObject.GetComponentsInChildren<Image>(true).ToList();
+
+            _customer.OnCustomerRemove += PlayParticles;
+            // _customer.OnCustomerRemove += PlayCustomerLeave;
 
             _customer.OnPatienceChange += SetSliderValue;
             _customer.OnPatienceChange += SetAnimatorState;
@@ -49,6 +60,17 @@ namespace InzGame.DisplayHandlers {
 
             personImage.sprite = personSprites[ patienceTuple.Item2 ];
             _prevThreshold = patienceTuple.Item2;
+        }
+
+        public void PlayCustomerLeave(object sender, EventArgs _) {
+            _animator.SetInteger(_thresholdParam, 3);
+        }
+
+        public void PlayParticles(object sender, EventArgs _) {
+            _particleImages.ForEach(image => image.sprite = _config.moodSprites[_customer.currentThreshold]);
+            _particleAnimator.gameObject.SetActive(true);
+            _particleAnimator.SetTrigger("PlayParticles");
+            DOVirtual.DelayedCall(1.75f, () => _particleAnimator.gameObject.SetActive(false));
         }
     }
 }
