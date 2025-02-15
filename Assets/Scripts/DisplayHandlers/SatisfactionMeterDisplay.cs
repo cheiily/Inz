@@ -22,13 +22,15 @@ namespace InzGame.DisplayHandlers {
 
             var active = DOTween.TweensByTarget(_slider);
 
-            float addTime = 0;
-            if (active != null && active.Count > 0) {
-                addTime = active[0].Duration() - active[0].Elapsed();
-                _slider.DOKill();
-            }
+            DOVirtual.DelayedCall(1.25f /*~~customer particles anim length~~ idfk na oko to zmierzylem*/, () => {
+                float addTime = 0;
+                if ( active != null && active.Count > 0 ) {
+                    addTime = active[ 0 ].Duration() - active[ 0 ].Elapsed();
+                    _slider.DOKill();
+                }
 
-            _slider.DOValue(currentPoints / maxPoints, 1.0f + addTime);
+                _slider.DOValue(currentPoints / maxPoints, 1.0f + addTime);
+            });
         }
 
     }

@@ -186,7 +186,7 @@ public class GameManager : MonoBehaviour {
     public IEnumerator WaitThenOpenSummary() {
         gameState = GameState.PAUSED;
         log.CompileLevel();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         gameState = GameState.SUMMARY;
         summaryUI.SetActive(true);
         summaryUI.GetComponent<SummaryUIManager>().SetFor(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100, _currentLevel_thresholdToAmount);
