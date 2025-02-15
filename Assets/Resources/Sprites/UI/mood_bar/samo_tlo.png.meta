@@ -103,10 +103,10 @@ TextureImporter:
       name: samo_tlo_0
       rect:
         serializedVersion: 2
-        x: 82
-        y: 14
-        width: 88
-        height: 476
+        x: 15
+        y: 81
+        width: 474
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5a59b20158dad304ab883a4841c251ba
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      samo_tlo_0: 8283642219718411589
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -109,10 +109,10 @@ TextureImporter:
       name: same_buzki_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 260
-        width: 145
-        height: 71
+        x: 9
+        y: 0
+        width: 69
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: same_buzki_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 132
-        width: 144
-        height: 71
+        x: 137
+        y: 2
+        width: 69
+        height: 142
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: same_buzki_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4
-        width: 144
-        height: 71
+        x: 265
+        y: 0
+        width: 69
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 19b8fdedce01c90478f5fa5f9a8933d6
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      same_buzki_0: 1020582555234774324
+      same_buzki_1: 4839753117106236404
+      same_buzki_2: 4611003909365439518
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
