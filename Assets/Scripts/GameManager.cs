@@ -68,21 +68,24 @@ public class GameManager : MonoBehaviour {
             currentLevelSpawns.Add(new CustomerSpawningPattern.SpawnPoint(spawnPoint.timeSinceStart + Random.Range(-spawnPoint.randomVariance, spawnPoint.randomVariance), spawnPoint.customer));
         }
 
-        var processors = GameObject.FindWithTag("Processors").GetComponentsInChildren<FoodProcessor>();
+        var processors = GameObject.FindWithTag("Processors").GetComponentsInChildren<FoodProcessor>(true);
         var levelPresets = currentLevel.availableProcessors.Select(preset => preset.type).ToList();
         foreach (var processor in processors) {
             var idx = 0;
-            if ( (idx = levelPresets.IndexOf(processor.type)) != -1 )
-                processor.Initialize(currentLevel.availableProcessors[idx]);
+            if ( (idx = levelPresets.IndexOf(processor.type)) != -1 ) {
+                processor.gameObject.SetActive(true);
+                processor.Initialize(currentLevel.availableProcessors[ idx ]);
+            }
             else processor.gameObject.SetActive(false);
         }
 
         var inputs = LinqUtility.ToHashSet(currentLevel.availableProcessors.SelectMany(preset => preset.actions.SelectMany(action => action.GetInputSet())));
-        var sources = GameObject.FindWithTag("Sources").GetComponentsInChildren<ElementSource>();
+        var sources = GameObject.FindWithTag("Sources").GetComponentsInChildren<ElementSource>(true);
 
         foreach (var source in sources) {
             if ( !inputs.Contains(source.element) )
                 source.gameObject.SetActive(false);
+            else source.gameObject.SetActive(true);
         }
 
         recipeImage.sprite = currentLevel.recipeBook;

@@ -62,21 +62,30 @@ public class FoodProcessor : MonoBehaviour {
     public List<Element> moveToMainBuffer = new List<Element>();
     public List<int> moveToMainBufferIndices = new List<int>();
 
+    public bool _initialized = false;
+
     void Start() {
         mainBuffer = GameObject.FindWithTag("Manager").GetComponent<Buffer>();
         config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
         _consumer = GetComponent<ElementConsumer>();
     }
 
+    private FoodProcessorPreset getPreset() {
+        return preset;
+    }
+
     public void Initialize(FoodProcessorPreset preset) {
         this.preset = preset;
+        _consumer.elements = preset.actions.SelectMany(action => action.input).ToList();
+
+        if ( _initialized )
+            return;
 
         var highlightProxy = GetComponent<HighlightProxy>();
         if (highlightProxy != null) {
             highlightProxy.HighlightCheck = HighlightCheck;
         }
 
-        _consumer.elements = preset.actions.SelectMany(action => action.input).ToList();
         _consumer.CustomRequirementCheck += delegate(List<Element> required, List<Element> bufferState) {
             if ( status == Status.DONE || status == Status.EXPIRING ) {
                 moveToMainBuffer.Add(_buffer[0]); // change to action.output if errors?
@@ -109,7 +118,7 @@ public class FoodProcessor : MonoBehaviour {
             HashSet<Element> matchingIn = new HashSet<Element>();
             HashSet<Element> matchingTotal = new HashSet<Element>(); // buffer + matchingIn, kept separate for easy return of only contained elements
             float maxCompletion = 0;
-            foreach ( var action in preset.actions ) {
+            foreach ( var action in this.preset.actions ) {
                 matchingIn = new HashSet<Element>(bufferState.FindAll(element => action.GetInputSet().Contains(element) && !_buffer.Contains(element)));
                 matchingTotal = new HashSet<Element>(matchingIn);
                 matchingTotal.AddRange(_buffer.FindAll(element => action.GetInputSet().Contains(element)));
@@ -151,6 +160,8 @@ public class FoodProcessor : MonoBehaviour {
             moveToMainBuffer.Clear();
             moveToMainBufferIndices.Clear();
         };
+
+        _initialized = true;
     }
 
     // Update is called once per frame
