@@ -439,6 +439,8 @@ MonoBehaviour:
   _particleAnimator: {fileID: 0}
   _particleImages: []
   _particleParam: 0
+  _cursorOverride: {fileID: 0}
+  _cursorManager: {fileID: 0}
 --- !u!1 &8354692969063297714
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,7 +806,13 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1758256815227095630, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5847695351064594390, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8499571107574191014}
+    - targetCorrespondingSourceObject: {fileID: 5847695351064594390, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1351397589887570854}
   m_SourcePrefab: {fileID: 100100000, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
 --- !u!224 &2365139921918885160 stripped
 RectTransform:
@@ -816,7 +824,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8826931100237623427, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
   m_PrefabInstance: {fileID: 3443035725859238940}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 9146583451887547338}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -827,9 +835,59 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8143385731593465446, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
   m_PrefabInstance: {fileID: 3443035725859238940}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 9146583451887547338}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36ee3a917be36f642b39ee03bb66e161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &9146583451887547338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5847695351064594390, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
+  m_PrefabInstance: {fileID: 3443035725859238940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8499571107574191014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146583451887547338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31715c12e3624dfc89a3f5178ab405c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _config: {fileID: 0}
+  cursorHoverOverride: {fileID: 0}
+  cursorHotspot: {x: 0, y: 0}
+--- !u!114 &1351397589887570854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146583451887547338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898d799e32c640c5817f0ac50fb936f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPointerEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1341611300032809578}
+        m_TargetAssemblyTypeName: InzGame.DisplayHandlers.CustomerDisplay, Assembly-CSharp
+        m_MethodName: AdjustCursorOverrideUnityEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Data;
 using DG.Tweening;
+using Misc;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -27,6 +28,9 @@ namespace InzGame.DisplayHandlers {
         public List<Image> _particleImages;
         public int _particleParam;
 
+        public CursorOverride _cursorOverride;
+        public ChangeCursorOnHover _cursorManager;
+
         private void Awake() {
             _customer = GetComponent<CustomerInstance>();
             _slider = transform.GetComponentInChildren<Slider>();
@@ -37,6 +41,9 @@ namespace InzGame.DisplayHandlers {
             _particleAnimator = GameObject.FindWithTag("CustomerParticles").transform.GetChild(_customer.seat).GetComponent<Animator>();
             _particleImages = _particleAnimator.gameObject.GetComponentsInChildren<Image>(true).ToList();
             _particleParam = Animator.StringToHash("PlayParticles");
+
+            _cursorOverride = GetComponentInChildren<CursorOverride>();
+            _cursorManager = GetComponentInChildren<ChangeCursorOnHover>();
 
             _customer.BeforeCustomerRemove += PlayParticles;
             _customer.BeforeCustomerRemove += PlayCustomerLeave;
@@ -75,6 +82,20 @@ namespace InzGame.DisplayHandlers {
             // _particleAnimator.Play("Particles");
             _particleAnimator.SetTrigger(_particleParam);
             DOVirtual.DelayedCall(1.75f, () => _particleAnimator.gameObject.SetActive(false));
+        }
+
+
+        public void AdjustCursorOverrideUnityEvent() {
+            if ( ElementConsumer._buffer.Contains(_customer.preset.order) ) {
+                _cursorOverride.cursorHoverOverride = _config.cursorHover;
+                _cursorOverride.cursorHotspot = _config.cursorHoverHotspot;
+            } else {
+                _cursorOverride.cursorHoverOverride = _config.cursorDefault;
+                _cursorOverride.cursorHotspot = _config.cursorDefaultHotspot;
+            }
+
+            if (_cursorManager._pointerInside)
+                _cursorManager.SetEffectiveHoverCursor();
         }
     }
 }
