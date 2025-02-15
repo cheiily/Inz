@@ -42,6 +42,7 @@ public class Counter : MonoBehaviour {
         var customerInstance = customer.GetComponent<CustomerInstance>();
         customerInstance.OnCustomerRemove += RemoveCustomer;
         customerInstance.preset = preset;
+        customerInstance.seat = index;
 
         var customerDisplay = customer.GetComponent<CustomerDisplay>();
         int person = Random.Range(0, 2);

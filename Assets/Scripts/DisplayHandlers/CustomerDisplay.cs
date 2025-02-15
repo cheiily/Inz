@@ -25,6 +25,7 @@ namespace InzGame.DisplayHandlers {
 
         public Animator _particleAnimator;
         public List<Image> _particleImages;
+        public int _particleParam;
 
         private void Awake() {
             _customer = GetComponent<CustomerInstance>();
@@ -33,11 +34,12 @@ namespace InzGame.DisplayHandlers {
             _thresholdParam = Animator.StringToHash("Threshold");
             _config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
 
-            _particleAnimator = transform.GetChild(0).GetComponent<Animator>();
+            _particleAnimator = GameObject.FindWithTag("CustomerParticles").transform.GetChild(_customer.seat).GetComponent<Animator>();
             _particleImages = _particleAnimator.gameObject.GetComponentsInChildren<Image>(true).ToList();
+            _particleParam = Animator.StringToHash("PlayParticles");
 
-            _customer.OnCustomerRemove += PlayParticles;
-            // _customer.OnCustomerRemove += PlayCustomerLeave;
+            _customer.BeforeCustomerRemove += PlayParticles;
+            _customer.BeforeCustomerRemove += PlayCustomerLeave;
 
             _customer.OnPatienceChange += SetSliderValue;
             _customer.OnPatienceChange += SetAnimatorState;
@@ -63,13 +65,15 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void PlayCustomerLeave(object sender, EventArgs _) {
-            _animator.SetInteger(_thresholdParam, 3);
+            // _animator.SetInteger(_thresholdParam, 3);
+            _animator.Play("Leave");
         }
 
         public void PlayParticles(object sender, EventArgs _) {
             _particleImages.ForEach(image => image.sprite = _config.moodSprites[_customer.currentThreshold]);
             _particleAnimator.gameObject.SetActive(true);
-            _particleAnimator.SetTrigger("PlayParticles");
+            // _particleAnimator.Play("Particles");
+            _particleAnimator.SetTrigger(_particleParam);
             DOVirtual.DelayedCall(1.75f, () => _particleAnimator.gameObject.SetActive(false));
         }
     }

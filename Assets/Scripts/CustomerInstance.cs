@@ -11,6 +11,7 @@ using Random = UnityEngine.Random;
 public class CustomerInstance : MonoBehaviour {
     public event EventHandler<Tuple<float, int>> OnPatienceChange;
     public event EventHandler OnPatienceEnd;
+    public event EventHandler BeforeCustomerRemove;
     public event EventHandler OnCustomerRemove;
     private event EventHandler CustomerRemovePolicy;
 
@@ -25,6 +26,7 @@ public class CustomerInstance : MonoBehaviour {
 
     public static int __id = 0;
     public int id;
+    public int seat;
 
     private void Awake() {
         id = __id++;
@@ -34,6 +36,7 @@ public class CustomerInstance : MonoBehaviour {
     void Start() {
         _config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
 
+        CustomerRemovePolicy += (sender, args) => BeforeCustomerRemove?.Invoke(sender, args);
         CustomerRemovePolicy += PolicyModification_Delay(Policy_AddPointsThenDestroy, 0.5f /* bounce_leave animation length */);
 
         thresholds = new List<float>();

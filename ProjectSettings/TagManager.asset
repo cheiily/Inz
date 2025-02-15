@@ -9,6 +9,7 @@ TagManager:
   - Buffer Display
   - Sources
   - ItemJumpTweener
+  - CustomerParticles
   layers:
   - Default
   - TransparentFX
