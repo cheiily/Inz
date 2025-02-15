@@ -63,7 +63,10 @@ namespace InzGame {
         }
 
         public void CompileLevel() {
-            LevelLogEntry log = currentLevel == 1 ? level1Log : level2Log;
+            LevelLogEntry log = currentLevel == 1 ? level1Log : currentLevel == 2 ? level2Log : null;
+            if ( log == null )
+                return;
+
             log.level = currentLevel;
             log.customerLog = customerLog;
 

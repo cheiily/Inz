@@ -35,17 +35,21 @@ namespace InzGame {
 
         public void LoadLevel(int level) {
             LevelData levelData;
-            if ( level == 1 )
+            if ( level == 0 )
+                levelData = gameManager.config.levelTutorial;
+            else if ( level == 1 )
                 levelData = gameManager.config.level1;
             else if ( level == 2 )
                 levelData = gameManager.config.level2;
             else
                 return;
 
-            var buttonPressed = level == 1 ? button1 : button2;
-            buttonPressed.interactable = false;
-            var finishedLabel = level == 1 ? finishedLabel1 : finishedLabel2;
-            finishedLabel.SetActive(true);
+            var buttonPressed = level == 1 ? button1 : level == 2 ? button2 : null;
+            if (buttonPressed != null)
+                buttonPressed.interactable = false;
+            var finishedLabel = level == 1 ? finishedLabel1 : level == 2 ? finishedLabel2 : null;
+            if (finishedLabel != null)
+                finishedLabel.SetActive(true);
 
             gameManager.currentLevel = levelData;
             gameManager.currentLevelID = level;

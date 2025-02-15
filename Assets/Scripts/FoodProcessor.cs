@@ -123,7 +123,7 @@ public class FoodProcessor : MonoBehaviour {
                 matchingTotal = new HashSet<Element>(matchingIn);
                 matchingTotal.AddRange(_buffer.FindAll(element => action.GetInputSet().Contains(element)));
                 float completion = (float) matchingTotal.Count / action.input.Count;
-                if ( completion > maxCompletion || (maxCompletionAction != null && completion - maxCompletion < 0.00001 && config.elementProperties.GetFor(action.output).level > config.elementProperties.GetFor(maxCompletionAction.output).level) ) {
+                if ( completion > maxCompletion || (maxCompletionAction != null && Math.Abs(completion - maxCompletion) < 0.00001 && config.elementProperties.GetFor(action.output).level > config.elementProperties.GetFor(maxCompletionAction.output).level) ) {
                     maxCompletion = completion;
                     maxCompletionAction = action;
                     maxCompletionElements = matchingIn;
@@ -197,7 +197,7 @@ public class FoodProcessor : MonoBehaviour {
             matchingTotal = new HashSet<Element>(matchingIn);
             matchingTotal.AddRange(_buffer.FindAll(element => action.GetInputSet().Contains(element)));
             float completion = (float) matchingTotal.Count / action.input.Count;
-            if ( completion > maxCompletion || (maxCompletionAction != null && completion - maxCompletion < 0.00001 && config.elementProperties.GetFor(action.output).level > config.elementProperties.GetFor(maxCompletionAction.output).level) ) {
+            if ( completion > maxCompletion || (maxCompletionAction != null && Math.Abs(completion - maxCompletion) < 0.00001 && config.elementProperties.GetFor(action.output).level > config.elementProperties.GetFor(maxCompletionAction.output).level) ) {
                 maxCompletion = completion;
                 maxCompletionAction = action;
                 maxCompletionElements = matchingIn;

@@ -131,6 +131,9 @@ public class GameManager : MonoBehaviour {
     }
 
     public void OpenCustomerLog(CustomerInstance customer) {
+        if (currentLevelID == 0)
+            return;
+
         var entry = log.Get(customer.id);
         entry.time_entered = Time.time;
         entry.order = customer.preset.order;
@@ -144,12 +147,14 @@ public class GameManager : MonoBehaviour {
         _points += pts;
         _currentLevel_thresholdToAmount[customer.currentThreshold]++;
 
-        var entry = log.Get(customer.id);
-        entry.threshold = customer.currentThreshold;
-        entry.points = pts;
-        entry.time_departed = Time.time;
-        entry.lifetime = entry.time_departed - entry.time_entered;
-        log.Set(entry);
+        if (currentLevelID != 0) {
+            var entry = log.Get(customer.id);
+            entry.threshold = customer.currentThreshold;
+            entry.points = pts;
+            entry.time_departed = Time.time;
+            entry.lifetime = entry.time_departed - entry.time_entered;
+            log.Set(entry);
+        }
 
         OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
     }

@@ -7,6 +7,7 @@ namespace Data {
     [CreateAssetMenu(fileName = "GameConfiguration", menuName = "Scriptable Objects/GameConfiguration")]
     public class GameConfiguration : ScriptableObject {
         [Header("Levels")]
+        public LevelData levelTutorial;
         public LevelData level1;
         public LevelData level2;
         public string gameVariantString;
