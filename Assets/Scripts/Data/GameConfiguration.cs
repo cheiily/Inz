@@ -19,6 +19,7 @@ namespace Data {
         [Header("Customers")]
         public CustomerEvaluation.Method evaluationMethod;
         public List<Sprite> moodSprites;
+        public float entryWaitTime = 5f;
 
         [Header("Summary")]
         public List<float> totalMoodThresholds;

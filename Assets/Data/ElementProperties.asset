@@ -303,11 +303,11 @@ MonoBehaviour:
     sprite_element: {fileID: -7135836193941119997, guid: 72d0f17b191507f489c7f9ee8dc8f1c3, type: 3}
     sprite_order_bubble: {fileID: 0}
     sprites_cooking_progress: []
-  filter: 8
-  _indexPreview: 3
+  filter: 51
+  _indexPreview: 46
   found:
-    element: 8
-    level: 1
-    sprite_element: {fileID: -5230584924102000288, guid: d9fa8489ef0bf934d947337e9005e59a, type: 3}
-    sprite_order_bubble: {fileID: 0}
+    element: 51
+    level: 3
+    sprite_element: {fileID: 2728206546516584990, guid: c7d7d147d61fd9142839401d0ea1d029, type: 3}
+    sprite_order_bubble: {fileID: -8828760626370826899, guid: 69b1745125d28544cb7a112ece69947c, type: 3}
     sprites_cooking_progress: []

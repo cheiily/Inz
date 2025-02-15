@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13d81558e8a284428bfbc45dc27e4c7, type: 3}
   m_Name: GameConfiguration
   m_EditorClassIdentifier: 
+  levelTutorial: {fileID: 11400000, guid: 0e8bf3bb9c9739c4b81c405e8b9fb7aa, type: 2}
   level1: {fileID: 11400000, guid: 3a1a0cc217fe519439758b10c08378f2, type: 2}
   level2: {fileID: 11400000, guid: 647c743836f94fb4b8a686635460c8f4, type: 2}
   gameVariantString: EASY(2.0)
@@ -23,6 +24,7 @@ MonoBehaviour:
   - {fileID: -1469292499312139711, guid: b1f420ba3edf4f245b120b8822ac4ba3, type: 3}
   - {fileID: -8301523043961844586, guid: 2c951853bc37d6f4887c6fd078b23e42, type: 3}
   - {fileID: -8301523043961844586, guid: 2c951853bc37d6f4887c6fd078b23e42, type: 3}
+  entryWaitTime: 5
   totalMoodThresholds:
   - 0.25
   - 0.5
