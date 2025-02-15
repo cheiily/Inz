@@ -9398,7 +9398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1721555432
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10601,6 +10601,7 @@ MonoBehaviour:
   currentLevelID: 0
   currentLevelTime: 0
   currentLevelSpawns: []
+  customerSpawnWaitTimer: 0
   recipeImage: {fileID: 1003432734}
   summaryUI: {fileID: 2041708289}
   levelSelectUI: {fileID: 1721555431}

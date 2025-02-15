@@ -26,6 +26,9 @@ namespace InzGame {
         }
 
         public void SetDisplaysFor(int level, float pts, float ptsMax, int threshold) {
+            if ( level == 0 )
+                return;
+
             Image buzka = level == 1 ? lvl1Buzka : lvl2Buzka;
             TextMeshProUGUI wynik = level == 1 ? lvl1Wynik : lvl2Wynik;
 

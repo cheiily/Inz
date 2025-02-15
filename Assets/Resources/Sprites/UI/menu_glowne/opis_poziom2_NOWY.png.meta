@@ -103,19 +103,19 @@ TextureImporter:
       name: opis_poziom2_NOWY_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 7
-        width: 406
-        height: 642
+        x: 0
+        y: 0
+        width: 431
+        height: 664
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: aa0d9139d3f2a2d30800000000000000
+      spriteID: df245719dfb6ced4987aeeb1b1297f40
       internalID: 4407387126842904746
       vertices: []
       indices: 
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5be0cd692ded5624fa795e9f7f182427
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      opis_poziom2_NOWY_0: 4407387126842904746
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
