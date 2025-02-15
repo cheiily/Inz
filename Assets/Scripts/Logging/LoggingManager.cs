@@ -81,7 +81,7 @@ namespace InzGame {
             log.avgLifetime = customerLog.Average(entry => entry.lifetime);
 
             log.avgThresholdLength = customerLog.SelectMany(entry => entry.ratingDropTimeThresholds).Average();
-            log.avgLifetimeThreshold = log.avgLifetime / log.avgThreshold;
+            log.avgLifetimeThreshold = log.avgLifetime / log.avgThresholdLength;
 
             if ( currentLevel == 1 ) {
                 level1Log = log;
