@@ -1,37 +1,339 @@
 {
-    "gameVariantString": "EASY(2.0)",
+    "gameVariantString": "EASY(2.5)",
     "evaluationMethod": 1,
     "evaluationMethod_name": "Step",
     "levelLog": [
         {
-            "level": 0,
-            "levelAssetName": "",
-            "numTotal": 0,
-            "numHappy": 0,
+            "level": 1,
+            "levelAssetName": "Lv1_W3",
+            "numTotal": 9,
+            "numHappy": 9,
             "numMid": 0,
             "numSad": 0,
             "numLeave": 0,
-            "avgPts": 0.0,
+            "avgPts": 100.0,
             "avgThreshold": 0.0,
-            "avgThresholdLength": 0.0,
-            "avgLifetime": 0.0,
-            "avgLifetimeThreshold": 0.0,
-            "customerLog": []
+            "avgThresholdLength": 40.27777862548828,
+            "avgLifetime": 21.076995849609376,
+            "avgLifetimeThreshold": Infinity,
+            "customerLog": [
+                {
+                    "id": 11,
+                    "order": 18,
+                    "order_name": "ZALEWAJKA",
+                    "ratingDropTimeThresholds": [
+                        27.5,
+                        27.5,
+                        27.5
+                    ],
+                    "time_entered": 238.54388427734376,
+                    "time_departed": 252.943603515625,
+                    "lifetime": 14.39971923828125,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 12,
+                    "order": 51,
+                    "order_name": "BULKA_Z_MLEKIEM",
+                    "ratingDropTimeThresholds": [
+                        35.0,
+                        35.0,
+                        35.0
+                    ],
+                    "time_entered": 248.54029846191407,
+                    "time_departed": 267.75244140625,
+                    "lifetime": 19.212142944335939,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 13,
+                    "order": 47,
+                    "order_name": "KLUSKI_ZELAZNE",
+                    "ratingDropTimeThresholds": [
+                        50.0,
+                        50.0,
+                        50.0
+                    ],
+                    "time_entered": 255.7429962158203,
+                    "time_departed": 290.8876953125,
+                    "lifetime": 35.14469909667969,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 14,
+                    "order": 43,
+                    "order_name": "SLEDZIE_POD_PIERZYNKA",
+                    "ratingDropTimeThresholds": [
+                        60.0,
+                        60.0,
+                        60.0
+                    ],
+                    "time_entered": 269.2008361816406,
+                    "time_departed": 307.9977111816406,
+                    "lifetime": 38.796875,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 15,
+                    "order": 18,
+                    "order_name": "ZALEWAJKA",
+                    "ratingDropTimeThresholds": [
+                        27.5,
+                        27.5,
+                        27.5
+                    ],
+                    "time_entered": 291.7257995605469,
+                    "time_departed": 313.09991455078127,
+                    "lifetime": 21.374114990234376,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 16,
+                    "order": 18,
+                    "order_name": "ZALEWAJKA",
+                    "ratingDropTimeThresholds": [
+                        27.5,
+                        27.5,
+                        27.5
+                    ],
+                    "time_entered": 308.99932861328127,
+                    "time_departed": 328.3952331542969,
+                    "lifetime": 19.395904541015626,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 17,
+                    "order": 51,
+                    "order_name": "BULKA_Z_MLEKIEM",
+                    "ratingDropTimeThresholds": [
+                        35.0,
+                        35.0,
+                        35.0
+                    ],
+                    "time_entered": 314.35302734375,
+                    "time_departed": 337.5523681640625,
+                    "lifetime": 23.1993408203125,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 18,
+                    "order": 47,
+                    "order_name": "KLUSKI_ZELAZNE",
+                    "ratingDropTimeThresholds": [
+                        50.0,
+                        50.0,
+                        50.0
+                    ],
+                    "time_entered": 330.06256103515627,
+                    "time_departed": 357.716796875,
+                    "lifetime": 27.65423583984375,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 19,
+                    "order": 51,
+                    "order_name": "BULKA_Z_MLEKIEM",
+                    "ratingDropTimeThresholds": [
+                        35.0,
+                        35.0,
+                        35.0
+                    ],
+                    "time_entered": 340.0572814941406,
+                    "time_departed": 368.589111328125,
+                    "lifetime": 28.531829833984376,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 20,
+                    "order": 43,
+                    "order_name": "SLEDZIE_POD_PIERZYNKA",
+                    "ratingDropTimeThresholds": [
+                        60.0,
+                        60.0,
+                        60.0
+                    ],
+                    "time_entered": 362.7168884277344,
+                    "time_departed": 387.04547119140627,
+                    "lifetime": 24.328582763671876,
+                    "points": 100.0,
+                    "threshold": 0
+                }
+            ]
         },
         {
-            "level": 0,
-            "levelAssetName": "",
-            "numTotal": 0,
-            "numHappy": 0,
+            "level": 2,
+            "levelAssetName": "Lv2_W3",
+            "numTotal": 10,
+            "numHappy": 10,
             "numMid": 0,
             "numSad": 0,
             "numLeave": 0,
-            "avgPts": 0.0,
+            "avgPts": 100.0,
             "avgThreshold": 0.0,
-            "avgThresholdLength": 0.0,
-            "avgLifetime": 0.0,
-            "avgLifetimeThreshold": 0.0,
-            "customerLog": []
+            "avgThresholdLength": 40.75,
+            "avgLifetime": 25.203744888305665,
+            "avgLifetimeThreshold": Infinity,
+            "customerLog": [
+                {
+                    "id": 11,
+                    "order": 18,
+                    "order_name": "ZALEWAJKA",
+                    "ratingDropTimeThresholds": [
+                        27.5,
+                        27.5,
+                        27.5
+                    ],
+                    "time_entered": 238.54388427734376,
+                    "time_departed": 252.943603515625,
+                    "lifetime": 14.39971923828125,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 12,
+                    "order": 51,
+                    "order_name": "BULKA_Z_MLEKIEM",
+                    "ratingDropTimeThresholds": [
+                        35.0,
+                        35.0,
+                        35.0
+                    ],
+                    "time_entered": 248.54029846191407,
+                    "time_departed": 267.75244140625,
+                    "lifetime": 19.212142944335939,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 13,
+                    "order": 47,
+                    "order_name": "KLUSKI_ZELAZNE",
+                    "ratingDropTimeThresholds": [
+                        50.0,
+                        50.0,
+                        50.0
+                    ],
+                    "time_entered": 255.7429962158203,
+                    "time_departed": 290.8876953125,
+                    "lifetime": 35.14469909667969,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 14,
+                    "order": 43,
+                    "order_name": "SLEDZIE_POD_PIERZYNKA",
+                    "ratingDropTimeThresholds": [
+                        60.0,
+                        60.0,
+                        60.0
+                    ],
+                    "time_entered": 269.2008361816406,
+                    "time_departed": 307.9977111816406,
+                    "lifetime": 38.796875,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 15,
+                    "order": 18,
+                    "order_name": "ZALEWAJKA",
+                    "ratingDropTimeThresholds": [
+                        27.5,
+                        27.5,
+                        27.5
+                    ],
+                    "time_entered": 291.7257995605469,
+                    "time_departed": 313.09991455078127,
+                    "lifetime": 21.374114990234376,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 16,
+                    "order": 18,
+                    "order_name": "ZALEWAJKA",
+                    "ratingDropTimeThresholds": [
+                        27.5,
+                        27.5,
+                        27.5
+                    ],
+                    "time_entered": 308.99932861328127,
+                    "time_departed": 328.3952331542969,
+                    "lifetime": 19.395904541015626,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 17,
+                    "order": 51,
+                    "order_name": "BULKA_Z_MLEKIEM",
+                    "ratingDropTimeThresholds": [
+                        35.0,
+                        35.0,
+                        35.0
+                    ],
+                    "time_entered": 314.35302734375,
+                    "time_departed": 337.5523681640625,
+                    "lifetime": 23.1993408203125,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 18,
+                    "order": 47,
+                    "order_name": "KLUSKI_ZELAZNE",
+                    "ratingDropTimeThresholds": [
+                        50.0,
+                        50.0,
+                        50.0
+                    ],
+                    "time_entered": 330.06256103515627,
+                    "time_departed": 357.716796875,
+                    "lifetime": 27.65423583984375,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 19,
+                    "order": 51,
+                    "order_name": "BULKA_Z_MLEKIEM",
+                    "ratingDropTimeThresholds": [
+                        35.0,
+                        35.0,
+                        35.0
+                    ],
+                    "time_entered": 340.0572814941406,
+                    "time_departed": 368.589111328125,
+                    "lifetime": 28.531829833984376,
+                    "points": 100.0,
+                    "threshold": 0
+                },
+                {
+                    "id": 20,
+                    "order": 43,
+                    "order_name": "SLEDZIE_POD_PIERZYNKA",
+                    "ratingDropTimeThresholds": [
+                        60.0,
+                        60.0,
+                        60.0
+                    ],
+                    "time_entered": 362.7168884277344,
+                    "time_departed": 387.04547119140627,
+                    "lifetime": 24.328582763671876,
+                    "points": 100.0,
+                    "threshold": 0
+                }
+            ]
         }
     ]
 }

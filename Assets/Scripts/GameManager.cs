@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject summaryUI;
     public GameObject levelSelectUI;
+    public GameObject prelevelUI;
 
     public event EventHandler<Tuple<float /* current */, float /* max */>> OnPointsAdded;
 
@@ -94,7 +95,9 @@ public class GameManager : MonoBehaviour {
 
         _currentLevel_thresholdToAmount = new List<int>(4) {0, 0, 0, 0};
         log.OpenLevel(currentLevelID, currentLevel.name);
-        gameState = GameState.PLAYING;
+        gameState = GameState.PAUSED;
+        prelevelUI.GetComponent<PrelevelUIManager>().SetFor(currentLevel.customerSpawningPattern.regular_spawnPoints.Count, currentLevel.recipeBook);
+        prelevelUI.SetActive(true);
 
         OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
     }
