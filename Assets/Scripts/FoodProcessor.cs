@@ -206,4 +206,23 @@ public class FoodProcessor : MonoBehaviour {
 
         return maxCompletionElements.ToList();
     }
+
+    public bool WillSwapAction() {
+        CookingAction maxCompletionAction = currentAction;
+        HashSet<Element> matchingIn = new HashSet<Element>();
+        HashSet<Element> matchingTotal = new HashSet<Element>(); // buffer + matchingIn, kept separate for easy return of only contained elements
+        float maxCompletion = 0;
+        foreach ( var action in preset.actions ) {
+            matchingIn = new HashSet<Element>(mainBuffer.buffer.FindAll(element => action.GetInputSet().Contains(element) && !_buffer.Contains(element)));
+            matchingTotal = new HashSet<Element>(matchingIn);
+            matchingTotal.AddRange(_buffer.FindAll(element => action.GetInputSet().Contains(element)));
+            float completion = (float) matchingTotal.Count / action.input.Count;
+            if ( completion > maxCompletion || (maxCompletionAction != null && Math.Abs(completion - maxCompletion) < 0.00001 && config.elementProperties.GetFor(action.output).level > config.elementProperties.GetFor(maxCompletionAction.output).level) ) {
+                maxCompletion = completion;
+                maxCompletionAction = action;
+            }
+        }
+
+        return currentAction != maxCompletionAction;
+    }
 }

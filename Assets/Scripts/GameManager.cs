@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour {
     private void Awake() {
         gameState = GameState.LEVEL_SELECT;
         levelSelectUI.SetActive(true);
+        Cursor.SetCursor(config.cursorDefault, new Vector2(20,15), CursorMode.Auto);
     }
 
     void Update() {

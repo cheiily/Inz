@@ -408,6 +408,8 @@ MonoBehaviour:
   doCountdown: 1
   _elementConsumer: {fileID: 6830554278890658426}
   _config: {fileID: 0}
+  id: 0
+  seat: 0
 --- !u!114 &1341611300032809578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,11 +424,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personImage: {fileID: 1767351693824720664}
   orderImage: {fileID: 3364542392911360905}
+  personSprites: []
   _slider: {fileID: 0}
   _customer: {fileID: 0}
   _animator: {fileID: 0}
   _thresholdParam: 0
   _config: {fileID: 0}
+  _colors:
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 0}
+  _prevThreshold: 0
+  _particleAnimator: {fileID: 0}
+  _particleImages: []
+  _particleParam: 0
 --- !u!1 &8354692969063297714
 GameObject:
   m_ObjectHideFlags: 0

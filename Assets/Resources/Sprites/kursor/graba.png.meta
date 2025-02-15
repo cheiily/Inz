@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 625fc45a9d416434283a7b36c21b680a
+guid: 3e203f7e9add8f04384b1781b370cfe9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6507331478432100469
-    second: poziom_tutorial_przepisnik_0
+      213: 6689946219126220166
+    second: graba_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 7
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: poziom_tutorial_przepisnik_0
+      name: graba_0
       rect:
         serializedVersion: 2
-        x: 321
-        y: 15
-        width: 1328
-        height: 1018
+        x: 7
+        y: 7
+        width: 89
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 570b9a7908fae4a50800000000000000
-      internalID: 6507331478432100469
+      spriteID: 6856c7534a677dc50800000000000000
+      internalID: 6689946219126220166
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      poziom_tutorial_przepisnik_0: 6507331478432100469
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

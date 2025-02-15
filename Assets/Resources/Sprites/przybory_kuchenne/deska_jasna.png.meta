@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 625fc45a9d416434283a7b36c21b680a
+guid: 9e99eefcccdc75e4c989262fabf12b4d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6507331478432100469
-    second: poziom_tutorial_przepisnik_0
+      213: 4249112668883025044
+    second: deska_jasna_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: poziom_tutorial_przepisnik_0
+      name: deska_jasna_0
       rect:
         serializedVersion: 2
-        x: 321
-        y: 15
-        width: 1328
-        height: 1018
+        x: 0
+        y: 64
+        width: 594
+        height: 322
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 570b9a7908fae4a50800000000000000
-      internalID: 6507331478432100469
+      spriteID: 49c7267a571e7fa30800000000000000
+      internalID: 4249112668883025044
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e9b3e65071d4050468197472f9f49d86
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      poziom_tutorial_przepisnik_0: 6507331478432100469
+      deska_jasna_0: 4249112668883025044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

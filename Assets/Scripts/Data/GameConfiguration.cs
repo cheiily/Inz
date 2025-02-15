@@ -15,6 +15,12 @@ namespace Data {
         [Header("System")]
         public int bufferSize = 3;
         public ElementProperties elementProperties;
+        public Texture2D cursorDefault;
+        public Vector2 cursorDefaultHotspot = new Vector2(20, 15);
+        public Texture2D cursorHover;
+        public Vector2 cursorHoverHotspot = new Vector2(15, 20);
+        public Texture2D cursorGrab;
+        public Vector2 cursorGrabHotspot = new Vector2(20, 20);
 
         [Header("Customers")]
         public CustomerEvaluation.Method evaluationMethod;

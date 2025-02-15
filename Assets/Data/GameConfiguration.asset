@@ -18,6 +18,12 @@ MonoBehaviour:
   gameVariantString: EASY(2.5)
   bufferSize: 3
   elementProperties: {fileID: 11400000, guid: 3e00747ff38097843b0c7ff0b2e5efe7, type: 2}
+  cursorDefault: {fileID: 2800000, guid: 27f587cfd0819cb419679d04a922900c, type: 3}
+  cursorDefaultHotspot: {x: 20, y: 15}
+  cursorHover: {fileID: 2800000, guid: 44a3bb7bed4a8ed45853c9e0995c1828, type: 3}
+  cursorHoverHotspot: {x: 15, y: 20}
+  cursorGrab: {fileID: 2800000, guid: 3e203f7e9add8f04384b1781b370cfe9, type: 3}
+  cursorGrabHotspot: {x: 20, y: 20}
   evaluationMethod: 1
   moodSprites:
   - {fileID: 2686795930990171874, guid: 271091ecad8a5e34187757c7e3c8fcd1, type: 3}
