@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ratingDropMode: 0
   regular_ratingDropTimeThresholds:
-  - 25.5
-  - 25.5
-  - 25.5
+  - 34
+  - 34
+  - 34
   random_ratingDropTimeThresholds: []
   order: 20

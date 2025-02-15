@@ -15,7 +15,7 @@ MonoBehaviour:
   levelTutorial: {fileID: 11400000, guid: 0e8bf3bb9c9739c4b81c405e8b9fb7aa, type: 2}
   level1: {fileID: 11400000, guid: 3a1a0cc217fe519439758b10c08378f2, type: 2}
   level2: {fileID: 11400000, guid: 647c743836f94fb4b8a686635460c8f4, type: 2}
-  gameVariantString: EASY(2.0)
+  gameVariantString: EASY(2.5)
   bufferSize: 3
   elementProperties: {fileID: 11400000, guid: 3e00747ff38097843b0c7ff0b2e5efe7, type: 2}
   evaluationMethod: 1
