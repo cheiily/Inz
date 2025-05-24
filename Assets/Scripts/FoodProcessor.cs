@@ -102,17 +102,6 @@ public class FoodProcessor : MonoBehaviour {
             if (Buffer.Count(bufferState) == 0)
                 return new List<Element>();
 
-            // if ( currentAction != null ) {
-            //     HashSet<Element> actionIn = currentAction.GetInputSet();
-            //     HashSet<Element> compare = new HashSet<Element>(_buffer);
-            //     List<Element> matchingInput = new List<Element>(bufferState.FindAll(element => actionIn.Contains(element)));
-            //     compare.AddRange(matchingInput);
-            //
-            //     if ( actionIn == compare ) {
-            //         return matchingInput;
-            //     }
-            // }
-
             CookingAction maxCompletionAction = currentAction;
             HashSet<Element> maxCompletionElements = new HashSet<Element>();
             HashSet<Element> matchingIn = new HashSet<Element>();

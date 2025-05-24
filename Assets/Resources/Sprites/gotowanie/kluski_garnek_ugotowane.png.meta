@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 02c1f150f70e3464c8fdfdca86834517
+guid: 5c580c0581514504bad9d698b36e0cd1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6540832550849302433
-    second: barszcz_garnek_0
+      213: 4106250445026978580
+    second: kluski_garnek_ugotowane_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: barszcz_garnek_0
+      name: kluski_garnek_ugotowane_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b106e559f3b13414aab7886a06669d2b
-      internalID: 247675170
+      spriteID: e6af7e1dd9055294cb0f97974ddaab4f
+      internalID: 1051779907
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d09ac9238a27f3447a9abedf69718149
+    spriteID: 39d320ee2ec7a0a4cb1f4d01ecc238ba
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      barszcz_garnek_0: 247675170
+      kluski_garnek_ugotowane_0: 1051779907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -106,42 +106,20 @@ TextureImporter:
       name: seler_garnek_0
       rect:
         serializedVersion: 2
-        x: 213
-        y: 304
-        width: 92
-        height: 46
+        x: 0
+        y: 0
+        width: 600
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: de903b5261de96c00800000000000000
-      internalID: 894506680387308013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seler_garnek_1
-      rect:
-        serializedVersion: 2
-        x: 358
-        y: 293
-        width: 66
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6374fa5d6ce8c60b0800000000000000
-      internalID: -5734051240909781194
+      spriteID: c3ce8970ddd95fc46879711863b7b313
+      internalID: -1372051351
       vertices: []
       indices: 
       edges: []
@@ -150,7 +128,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 37ce2a90737819b47abb8ea14ec18568
     internalID: 0
     vertices: []
     indices: 
@@ -159,7 +137,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      seler_garnek_0: -1372051351
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

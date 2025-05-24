@@ -103,20 +103,20 @@ TextureImporter:
       name: mleko_garnek_0
       rect:
         serializedVersion: 2
-        x: 165
-        y: 291
-        width: 263
-        height: 37
+        x: 0
+        y: 0
+        width: 600
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 24e29031b9dbda6d0800000000000000
-      internalID: -2977515304885080510
+      spriteID: 6841155ff305d844eb4caba31da0168a
+      internalID: 1589540470
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b5962b1956d5b394b9f0196a8e38e73f
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mleko_garnek_0: 1589540470
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

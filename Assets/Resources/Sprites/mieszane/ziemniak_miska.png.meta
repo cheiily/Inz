@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 02c1f150f70e3464c8fdfdca86834517
+guid: 1e7c653315532c444ae17d318dee3fcd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6540832550849302433
-    second: barszcz_garnek_0
+      213: -6595721177263173033
+    second: ziemniak_miska_0
+  - first:
+      213: -9015912898339405458
+    second: ziemniak_miska_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: barszcz_garnek_0
+      name: ziemniak_miska_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b106e559f3b13414aab7886a06669d2b
-      internalID: 247675170
+      spriteID: 8d9e9d181ba573f43906b1577ddc9f2b
+      internalID: 1024635577
       vertices: []
       indices: 
       edges: []
@@ -125,7 +128,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d09ac9238a27f3447a9abedf69718149
+    spriteID: 7eec8a256ba60b84591df6d959d706b9
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +138,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      barszcz_garnek_0: 247675170
+      ziemniak_miska_0: 1024635577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

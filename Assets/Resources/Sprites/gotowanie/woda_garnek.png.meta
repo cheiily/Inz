@@ -103,20 +103,20 @@ TextureImporter:
       name: woda_garnek_0
       rect:
         serializedVersion: 2
-        x: 165
-        y: 291
-        width: 263
-        height: 37
+        x: 0
+        y: 0
+        width: 600
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 121bde65aa37348f0800000000000000
-      internalID: -557474753423757023
+      spriteID: 488ac3517d08e0b418907916f231fd2b
+      internalID: 2106482273
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1b781ca2870c732409585e96f7efcbb5
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      woda_garnek_0: 2106482273
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

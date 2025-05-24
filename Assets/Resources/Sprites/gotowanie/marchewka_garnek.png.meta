@@ -109,64 +109,20 @@ TextureImporter:
       name: marchewka_garnek_0
       rect:
         serializedVersion: 2
-        x: 175
-        y: 306
-        width: 56
-        height: 46
+        x: 0
+        y: 0
+        width: 600
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a8b12ad0afe9fef20800000000000000
-      internalID: 3454154236024200074
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marchewka_garnek_1
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 316
-        width: 25
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f8efb68148a2dac20800000000000000
-      internalID: 3219276055473553039
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marchewka_garnek_2
-      rect:
-        serializedVersion: 2
-        x: 345
-        y: 292
-        width: 52
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 56e66ae31dc3739c0800000000000000
-      internalID: -3947619678970024347
+      spriteID: 3848b0fb620787b4a9184b403e73a26f
+      internalID: -1439788216
       vertices: []
       indices: 
       edges: []
@@ -175,7 +131,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 676a167a2a2cd1b46b9e3eb21db36192
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +140,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      marchewka_garnek_0: -1439788216
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

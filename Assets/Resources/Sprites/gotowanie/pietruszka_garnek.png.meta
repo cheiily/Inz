@@ -115,108 +115,20 @@ TextureImporter:
       name: pietruszka_garnek_0
       rect:
         serializedVersion: 2
-        x: 185
-        y: 304
-        width: 23
-        height: 13
+        x: 0
+        y: 0
+        width: 600
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 35cac33a863d49430800000000000000
-      internalID: 3788885632894151763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pietruszka_garnek_1
-      rect:
-        serializedVersion: 2
-        x: 209
-        y: 312
-        width: 37
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ba54a2d294ecc0c50800000000000000
-      internalID: 6632903164895577515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pietruszka_garnek_2
-      rect:
-        serializedVersion: 2
-        x: 229
-        y: 294
-        width: 96
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2e70c70c1f4b71760800000000000000
-      internalID: 7428605060780394466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pietruszka_garnek_3
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 295
-        width: 72
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ee61feffc0b5f350800000000000000
-      internalID: 6049936081824083685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pietruszka_garnek_4
-      rect:
-        serializedVersion: 2
-        x: 311
-        y: 292
-        width: 29
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d9120e0918d79de0800000000000000
-      internalID: -1326353963116521006
+      spriteID: 06695907738bb3c41ba478491cda3928
+      internalID: -851198253
       vertices: []
       indices: 
       edges: []
@@ -225,7 +137,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e98929e45ce5ed1459aedb44ac9e5aa1
     internalID: 0
     vertices: []
     indices: 
@@ -234,7 +146,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pietruszka_garnek_0: -851198253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -109,64 +109,20 @@ TextureImporter:
       name: ziemniak_garnek_0
       rect:
         serializedVersion: 2
-        x: 188
-        y: 297
-        width: 70
-        height: 38
+        x: 0
+        y: 0
+        width: 600
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2bf2f2571088a7a10800000000000000
-      internalID: 1907986931987197874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ziemniak_garnek_1
-      rect:
-        serializedVersion: 2
-        x: 265
-        y: 290
-        width: 47
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 941ef9b1d201d2540800000000000000
-      internalID: 4984658148492042569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ziemniak_garnek_2
-      rect:
-        serializedVersion: 2
-        x: 308
-        y: 296
-        width: 56
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07cab9641f60bcf10800000000000000
-      internalID: 2290932468789521520
+      spriteID: dfe80b03cfa760142a770fdc2bb76311
+      internalID: -953786283
       vertices: []
       indices: 
       edges: []
@@ -175,7 +131,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4031607393031384abe40f965f2704b4
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +140,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ziemniak_garnek_0: -953786283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

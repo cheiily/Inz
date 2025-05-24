@@ -112,86 +112,20 @@ TextureImporter:
       name: maslo_garnek_0
       rect:
         serializedVersion: 2
-        x: 177
-        y: 294
-        width: 97
-        height: 27
+        x: 0
+        y: 0
+        width: 600
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dda5ee7b047e9d2e0800000000000000
-      internalID: -2100393486041851171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: maslo_garnek_1
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 313
-        width: 39
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1af6f29d66b56aa0800000000000000
-      internalID: -6168323532880676326
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: maslo_garnek_2
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 296
-        width: 67
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e071a0a1f4b1ffc80800000000000000
-      internalID: -8286874762785188082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: maslo_garnek_3
-      rect:
-        serializedVersion: 2
-        x: 282
-        y: 301
-        width: 32
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cfb1fbd49dc7c2790800000000000000
-      internalID: -7553525202253046788
+      spriteID: 0b5a930094862ba498dc135cf2372351
+      internalID: -1218179501
       vertices: []
       indices: 
       edges: []
@@ -200,7 +134,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9b080ba2b17ec98419c68bd75fa33946
     internalID: 0
     vertices: []
     indices: 
@@ -209,7 +143,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      maslo_garnek_0: -1218179501
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

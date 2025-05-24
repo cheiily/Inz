@@ -103,20 +103,20 @@ TextureImporter:
       name: bulion_garnek_0
       rect:
         serializedVersion: 2
-        x: 165
-        y: 291
-        width: 263
-        height: 37
+        x: 0
+        y: 0
+        width: 600
+        height: 399
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 52d1c5786ddabf270800000000000000
-      internalID: 8285407076383726885
+      spriteID: a71cdf674f05e464688bb26b934d6915
+      internalID: -2048622639
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8851c4d0f54a79943bcde28174534280
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bulion_garnek_0: -2048622639
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

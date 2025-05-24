@@ -103,20 +103,20 @@ TextureImporter:
       name: cebula_garnek_0
       rect:
         serializedVersion: 2
-        x: 233
-        y: 296
-        width: 66
-        height: 52
+        x: 0
+        y: 0
+        width: 600
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ed869a1e81d2b0750800000000000000
-      internalID: 6272156490931988702
+      spriteID: 5d697430d8265214792292e651a68680
+      internalID: -1961363222
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ec4a3125443113e48b1b998c9f36c886
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cebula_garnek_0: -1961363222
+      cebula_garnek_1: 56177890
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

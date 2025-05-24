@@ -115,108 +115,20 @@ TextureImporter:
       name: smietana__garnek_0
       rect:
         serializedVersion: 2
-        x: 185
-        y: 301
-        width: 74
-        height: 22
+        x: 0
+        y: 0
+        width: 600
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 02a1456347f822690800000000000000
-      internalID: -7628377089521739232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: smietana__garnek_1
-      rect:
-        serializedVersion: 2
-        x: 269
-        y: 317
-        width: 41
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 837de4f35d875c2b0800000000000000
-      internalID: -5564908907260881096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: smietana__garnek_2
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 302
-        width: 66
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 680babb4921316320800000000000000
-      internalID: 2549372917502357638
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: smietana__garnek_3
-      rect:
-        serializedVersion: 2
-        x: 275
-        y: 295
-        width: 30
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 766b969bea7366250800000000000000
-      internalID: 5937494382309127783
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: smietana__garnek_4
-      rect:
-        serializedVersion: 2
-        x: 323
-        y: 295
-        width: 32
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 48ef687946b416f00800000000000000
-      internalID: 1108249878720872068
+      spriteID: 31c02f48ec839844bb84b8fece175896
+      internalID: -2014156502
       vertices: []
       indices: 
       edges: []
@@ -225,7 +137,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2595bf47e239b02498bafced8edc1059
     internalID: 0
     vertices: []
     indices: 
@@ -234,7 +146,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      smietana__garnek_0: -2014156502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
