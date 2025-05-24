@@ -34,7 +34,7 @@ public class FoodProcessor : MonoBehaviour {
                     break;
                 case Status.ACTIVE:
                     progress = 0;
-                    _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.FAIL;
+                    _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.CUSTOM;
                     _buffer.Clear();
                     break;
                 case Status.EXPIRING:
@@ -56,6 +56,7 @@ public class FoodProcessor : MonoBehaviour {
     public FoodProcessorPreset preset;
     public CookingAction currentAction;
     public float progress;
+    public float progressSecPerTap = 1;
 
     public List<Element> _buffer;
     public ElementConsumer _consumer;
@@ -87,6 +88,11 @@ public class FoodProcessor : MonoBehaviour {
         }
 
         _consumer.CustomRequirementCheck += delegate(List<Element> required, List<Element> bufferState) {
+            if ( status == Status.ACTIVE ) {
+                progress += progressSecPerTap;
+                return new List<Element>();
+            }
+
             if ( status == Status.DONE || status == Status.EXPIRING ) {
                 moveToMainBuffer.Add(_buffer[0]); // change to action.output if errors?
                 moveToMainBufferIndices.Add(0);
@@ -156,9 +162,10 @@ public class FoodProcessor : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (status is Status.ACTIVE or Status.EXPIRING) {
-            progress += Time.deltaTime;
+            // progress += Time.deltaTime;
             if (status == Status.ACTIVE && progress >= currentAction.duration) {
-                status = currentAction.expiryDuration > 0 ? Status.EXPIRING : Status.DONE;
+                // we are never going into expiry mode anymore
+                status = Status.DONE; //currentAction.expiryDuration > 0 ? Status.EXPIRING : Status.DONE;
                 _buffer.Add(currentAction.output);
                 OnBufferChange?.Invoke(this, _buffer);
             } else if (status == Status.EXPIRING && progress >= currentAction.expiryDuration) {

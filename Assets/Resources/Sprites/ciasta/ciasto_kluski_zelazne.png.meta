@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ciasto_kluski_zelazne_0: 2113748825259548436
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

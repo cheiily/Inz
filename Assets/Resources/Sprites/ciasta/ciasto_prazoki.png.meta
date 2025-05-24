@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ciasto_prazoki_0: 6188545683707903555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
