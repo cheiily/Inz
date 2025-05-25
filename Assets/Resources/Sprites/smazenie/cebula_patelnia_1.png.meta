@@ -51,7 +51,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -106,10 +106,10 @@ TextureImporter:
       name: cebula_patelnia_1_0
       rect:
         serializedVersion: 2
-        x: 149
-        y: 122
-        width: 206
-        height: 78
+        x: 45
+        y: 40
+        width: 511
+        height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,33 +124,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: cebula_patelnia_1_1
-      rect:
-        serializedVersion: 2
-        x: 356
-        y: 129
-        width: 29
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 33533ba20042a8530800000000000000
-      internalID: 3857935613931238707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -159,7 +137,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cebula_patelnia_1_0: -4146122986022201018
+      cebula_patelnia_1_1: 3857935613931238707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

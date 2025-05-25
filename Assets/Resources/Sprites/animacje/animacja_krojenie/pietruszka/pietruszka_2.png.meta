@@ -106,12 +106,12 @@ TextureImporter:
       name: pietruszka_2_0
       rect:
         serializedVersion: 2
-        x: 112
-        y: 130
-        width: 218
-        height: 158
+        x: 0
+        y: 64
+        width: 594
+        height: 322
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -124,33 +124,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: pietruszka_2_1
-      rect:
-        serializedVersion: 2
-        x: 327
-        y: 137
-        width: 76
-        height: 138
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 56d04b2aaee10c2a0800000000000000
-      internalID: -6719336650935890587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 79341b81ff7897b449c980382751d351
     internalID: 0
     vertices: []
     indices: 
@@ -159,7 +137,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pietruszka_2_0: -3005939181382874963
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

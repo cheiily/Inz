@@ -54,7 +54,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -109,10 +109,10 @@ TextureImporter:
       name: mieso_patelnia_2_0
       rect:
         serializedVersion: 2
-        x: 137
-        y: 139
-        width: 52
-        height: 31
+        x: 45
+        y: 40
+        width: 511
+        height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,55 +127,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: mieso_patelnia_2_1
-      rect:
-        serializedVersion: 2
-        x: 182
-        y: 124
-        width: 105
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5437138095b4d710800000000000000
-      internalID: 1717196990214255709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mieso_patelnia_2_2
-      rect:
-        serializedVersion: 2
-        x: 286
-        y: 131
-        width: 101
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ac7a23e770051710800000000000000
-      internalID: 1663236152295586984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +140,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mieso_patelnia_2_0: -6518360008095611738
+      mieso_patelnia_2_1: 1717196990214255709
+      mieso_patelnia_2_2: 1663236152295586984
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

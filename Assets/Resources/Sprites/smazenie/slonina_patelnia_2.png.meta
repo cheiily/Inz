@@ -78,7 +78,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -133,10 +133,10 @@ TextureImporter:
       name: slonina_patelnia_2_0
       rect:
         serializedVersion: 2
-        x: 184
-        y: 134
-        width: 62
-        height: 58
+        x: 45
+        y: 40
+        width: 511
+        height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,231 +151,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: slonina_patelnia_2_1
-      rect:
-        serializedVersion: 2
-        x: 221
-        y: 192
-        width: 43
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5bf445b733030fef0800000000000000
-      internalID: -76508195994710091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_patelnia_2_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 126
-        width: 40
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 260c27ba19c733740800000000000000
-      internalID: 5130581365593653346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_patelnia_2_3
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 146
-        width: 25
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7ca8ea916be434cf0800000000000000
-      internalID: -269285008690214201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_patelnia_2_4
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 120
-        width: 27
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a5c4dbc84412abc70800000000000000
-      internalID: 8987532584673954906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_patelnia_2_5
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 98
-        width: 58
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 871115627dba7f600800000000000000
-      internalID: 502058824024265080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_patelnia_2_6
-      rect:
-        serializedVersion: 2
-        x: 258
-        y: 124
-        width: 67
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0ed65ea5a6469bb90800000000000000
-      internalID: -7225633719184953888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_patelnia_2_7
-      rect:
-        serializedVersion: 2
-        x: 318
-        y: 126
-        width: 30
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a276340f0d4870e0800000000000000
-      internalID: -2271981285117889885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_patelnia_2_8
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 145
-        width: 35
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c1ffdda8f6829ad0800000000000000
-      internalID: -2696944824214359616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_patelnia_2_9
-      rect:
-        serializedVersion: 2
-        x: 354
-        y: 133
-        width: 27
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d291026a3cda774c0800000000000000
-      internalID: -4289769064229758675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slonina_patelnia_2_10
-      rect:
-        serializedVersion: 2
-        x: 193
-        y: 122
-        width: 34
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dff8376ee2b3f99a0800000000000000
-      internalID: -6224191087381868547
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -384,7 +164,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slonina_patelnia_2_0: 116623052015507372
+      slonina_patelnia_2_1: -76508195994710091
+      slonina_patelnia_2_10: -6224191087381868547
+      slonina_patelnia_2_2: 5130581365593653346
+      slonina_patelnia_2_3: -269285008690214201
+      slonina_patelnia_2_4: 8987532584673954906
+      slonina_patelnia_2_5: 502058824024265080
+      slonina_patelnia_2_6: -7225633719184953888
+      slonina_patelnia_2_7: -2271981285117889885
+      slonina_patelnia_2_8: -2696944824214359616
+      slonina_patelnia_2_9: -4289769064229758675
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -103,12 +103,12 @@ TextureImporter:
       name: mieso_3_0
       rect:
         serializedVersion: 2
-        x: 156
-        y: 175
-        width: 237
-        height: 121
+        x: 0
+        y: 64
+        width: 594
+        height: 322
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 33983748e571d374c98373108373b444
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mieso_3_0: 6311737509192831432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

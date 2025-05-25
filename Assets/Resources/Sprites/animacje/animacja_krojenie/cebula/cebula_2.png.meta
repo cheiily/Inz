@@ -51,7 +51,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -106,12 +106,12 @@ TextureImporter:
       name: cebula_2_0
       rect:
         serializedVersion: 2
-        x: 197
-        y: 149
-        width: 132
-        height: 154
+        x: 0
+        y: 64
+        width: 594
+        height: 322
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -124,33 +124,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: cebula_2_1
-      rect:
-        serializedVersion: 2
-        x: 327
-        y: 198
-        width: 46
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e43e567c06eeb4020800000000000000
-      internalID: 2327215731896607566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f0d034dee345d7046a38531d6a8ac6f1
     internalID: 0
     vertices: []
     indices: 
@@ -159,7 +137,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cebula_2_0: -3441267259989219925
+      cebula_2_1: 2327215731896607566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

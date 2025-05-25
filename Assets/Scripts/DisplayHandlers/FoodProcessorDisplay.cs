@@ -51,11 +51,20 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void SetSliderProgress(object sender, Tuple<float, bool> progressTuple) {
+            if ( _processor.playMode != LevelData.PlayMode.TIMER ) {
+                _progressSlider.gameObject.SetActive(false);
+                return;
+            }
+
             _progressSlider.value = progressTuple.Item1;
             // _progressSlider.fillRect.GetComponent<Image>().color = progressTuple.Item2 ? Color.red : Color.green;
         }
 
         public void SetBufferImages(object sender, List<Element> buffer) {
+            if ( _processor.playMode != LevelData.PlayMode.TIMER ) {
+                _progressSlider.gameObject.SetActive(false);
+            }
+
             for (int i = 0; i < 5; ++i) {
                 if ( i >= buffer.Count || buffer[ i ] is Element.NONE or Element.INVALID ) {
                     _bufferImages[ i ].DOKill();
@@ -100,6 +109,11 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void ToggleSlider(object sender, FoodProcessor.Status state) {
+            if ( _processor.playMode != LevelData.PlayMode.TIMER ) {
+                _progressSlider.gameObject.SetActive(false);
+                return;
+            }
+
             Debug.Log("ToggleSlider received, state: " + state + ", currentAction null?: " +
                       (_processor.currentAction == null));
 
@@ -156,5 +170,8 @@ namespace InzGame.DisplayHandlers {
             if (_cursorManager._pointerInside)
                 _cursorManager.SetEffectiveHoverCursor();
         }
+
+
+
     }
 }

@@ -78,7 +78,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -133,10 +133,10 @@ TextureImporter:
       name: jajo_patelnia_3_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 126
-        width: 65
-        height: 32
+        x: 45
+        y: 40
+        width: 511
+        height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,231 +151,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: jajo_patelnia_3_1
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 149
-        width: 76
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c86591f1fd0e7c10800000000000000
-      internalID: 2053093812918905031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jajo_patelnia_3_2
-      rect:
-        serializedVersion: 2
-        x: 223
-        y: 150
-        width: 27
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6289f0250402603f0800000000000000
-      internalID: -935024412006049754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jajo_patelnia_3_3
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 144
-        width: 45
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e848aa57aa0fec560800000000000000
-      internalID: 7336065457942332558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jajo_patelnia_3_4
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 158
-        width: 17
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d037ac25ecdf6f320800000000000000
-      internalID: 2591537698192388877
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jajo_patelnia_3_5
-      rect:
-        serializedVersion: 2
-        x: 330
-        y: 146
-        width: 36
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ffecf3d33b1ec96d0800000000000000
-      internalID: -2982260693283123457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jajo_patelnia_3_6
-      rect:
-        serializedVersion: 2
-        x: 191
-        y: 124
-        width: 51
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 040a5597e707c8880800000000000000
-      internalID: -8607381099308015552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jajo_patelnia_3_7
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 131
-        width: 22
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 766a17a6818ba5b50800000000000000
-      internalID: 6582776220359960167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jajo_patelnia_3_8
-      rect:
-        serializedVersion: 2
-        x: 265
-        y: 121
-        width: 46
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ecb67cbc7e2cf69a0800000000000000
-      internalID: -6237552658072769586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jajo_patelnia_3_9
-      rect:
-        serializedVersion: 2
-        x: 310
-        y: 127
-        width: 62
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c35a2bafd6d463060800000000000000
-      internalID: 6932813811136243004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jajo_patelnia_3_10
-      rect:
-        serializedVersion: 2
-        x: 373
-        y: 133
-        width: 29
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 04cf28931ca93daa0800000000000000
-      internalID: -6137391712491602880
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -384,7 +164,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jajo_patelnia_3_0: -6984636037793590910
+      jajo_patelnia_3_1: 2053093812918905031
+      jajo_patelnia_3_10: -6137391712491602880
+      jajo_patelnia_3_2: -935024412006049754
+      jajo_patelnia_3_3: 7336065457942332558
+      jajo_patelnia_3_4: 2591537698192388877
+      jajo_patelnia_3_5: -2982260693283123457
+      jajo_patelnia_3_6: -8607381099308015552
+      jajo_patelnia_3_7: 6582776220359960167
+      jajo_patelnia_3_8: -6237552658072769586
+      jajo_patelnia_3_9: 6932813811136243004
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

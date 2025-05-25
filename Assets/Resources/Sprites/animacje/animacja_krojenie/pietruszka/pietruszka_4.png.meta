@@ -109,12 +109,12 @@ TextureImporter:
       name: pietruszka_4_0
       rect:
         serializedVersion: 2
-        x: 109
-        y: 191
-        width: 97
-        height: 35
+        x: 0
+        y: 64
+        width: 594
+        height: 322
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -127,55 +127,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: pietruszka_4_1
-      rect:
-        serializedVersion: 2
-        x: 202
-        y: 130
-        width: 132
-        height: 151
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e2f402ebc10383390800000000000000
-      internalID: -7838462251431342290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pietruszka_4_2
-      rect:
-        serializedVersion: 2
-        x: 327
-        y: 137
-        width: 76
-        height: 138
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a17b290ce1dbc95c0800000000000000
-      internalID: -4207280012093376742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5cd625dd6447f4e4687358972aa208ce
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +140,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pietruszka_4_0: 8851026828814871046
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
