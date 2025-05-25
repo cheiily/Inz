@@ -19,3 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 33f8985f24b0ada458ea1e9d4c8cd62a, type: 2}
   - {fileID: 11400000, guid: 7ed9d7cfc5d5ccf44970728afd0f201d, type: 2}
   recipeBook: {fileID: 8749509944623120676, guid: 8d8bb1cdf50feac4c994e708848914bf, type: 3}
+  playMode: 2

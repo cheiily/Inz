@@ -4369,6 +4369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 0}
+  _cursorOverride: {fileID: 0}
+  _pointerInside: 0
 --- !u!1 &606266727
 GameObject:
   m_ObjectHideFlags: 0
@@ -7333,6 +7335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 0}
+  _cursorOverride: {fileID: 0}
+  _pointerInside: 0
 --- !u!1001 &1050141434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8203,6 +8207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 0}
+  _cursorOverride: {fileID: 0}
+  _pointerInside: 0
 --- !u!1 &1213894274
 GameObject:
   m_ObjectHideFlags: 0
@@ -8862,6 +8868,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 0}
+  _cursorOverride: {fileID: 0}
+  _pointerInside: 0
 --- !u!1001 &1316289864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10545,6 +10553,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 0}
+  _cursorOverride: {fileID: 0}
+  _pointerInside: 0
 --- !u!1 &1669798239
 GameObject:
   m_ObjectHideFlags: 0
@@ -11350,6 +11360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 0}
+  _cursorOverride: {fileID: 0}
+  _pointerInside: 0
 --- !u!1 &1734465912
 GameObject:
   m_ObjectHideFlags: 0

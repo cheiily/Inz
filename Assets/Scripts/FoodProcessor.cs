@@ -34,7 +34,10 @@ public class FoodProcessor : MonoBehaviour {
                     break;
                 case Status.ACTIVE:
                     progress = 0;
-                    _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.CUSTOM;
+                    if (playMode != LevelData.PlayMode.CLICKER_DIEGETIC)
+                        _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.FAIL;
+                    else
+                        _consumer.requirementMode = ElementConsumer.REQUIREMENT_MODE.CUSTOM;
                     _buffer.Clear();
                     break;
                 case Status.EXPIRING:
@@ -52,6 +55,7 @@ public class FoodProcessor : MonoBehaviour {
     public FoodProcessorPreset.FoodProcessorType type;
 
     public GameConfiguration config;
+    public LevelData.PlayMode playMode;
     public Buffer mainBuffer;
     public FoodProcessorPreset preset;
     public CookingAction currentAction;
@@ -76,6 +80,8 @@ public class FoodProcessor : MonoBehaviour {
     }
 
     public void Initialize(FoodProcessorPreset preset) {
+        playMode = GameObject.FindWithTag("Manager").GetComponent<GameManager>().currentLevel.playMode;
+
         this.preset = preset;
         _consumer.elements = preset.actions.SelectMany(action => action.input).ToList();
 
@@ -162,10 +168,14 @@ public class FoodProcessor : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (status is Status.ACTIVE or Status.EXPIRING) {
-            // progress += Time.deltaTime;
+            if ( playMode != LevelData.PlayMode.CLICKER_DIEGETIC )
+                progress += Time.deltaTime;
             if (status == Status.ACTIVE && progress >= currentAction.duration) {
-                // we are never going into expiry mode anymore
-                status = Status.DONE; //currentAction.expiryDuration > 0 ? Status.EXPIRING : Status.DONE;
+                if ( playMode != LevelData.PlayMode.CLICKER_DIEGETIC ) {
+                    status = currentAction.expiryDuration > 0 ? Status.EXPIRING : Status.DONE;
+                } else {
+                    status = Status.DONE;
+                }
                 _buffer.Add(currentAction.output);
                 OnBufferChange?.Invoke(this, _buffer);
             } else if (status == Status.EXPIRING && progress >= currentAction.expiryDuration) {
