@@ -42,3 +42,14 @@ MonoBehaviour:
   buzkaPusta: {fileID: -3811198684117987707, guid: 12722b35d22e3d240bb7e87017524fa6, type: 3}
   itemJumpDuration: 0.25
   itemJumpEase: 19
+  diegeticAnimOverrides:
+  - foodProcessorType: 0
+    animatorOverrideController: {fileID: 22100000, guid: 33da75a12e1344946b85b45061f2b358, type: 2}
+  - foodProcessorType: 1
+    animatorOverrideController: {fileID: 22100000, guid: 8a80f33398cb8e54387437dd970df070, type: 2}
+  - foodProcessorType: 2
+    animatorOverrideController: {fileID: 22100000, guid: 1563dd781fca6244b8c37a2a4a0a5353, type: 2}
+  - foodProcessorType: 3
+    animatorOverrideController: {fileID: 22100000, guid: 5fe48c150d1c8fb429c6ce580d3c19b5, type: 2}
+  - foodProcessorType: 4
+    animatorOverrideController: {fileID: 22100000, guid: a60b8a9169f16d340aa3f5cbcab15fa4, type: 2}

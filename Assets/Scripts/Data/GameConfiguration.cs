@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using InzGame;
@@ -35,5 +36,14 @@ namespace Data {
         [Header("Item Jump Tweener")]
         public float itemJumpDuration = 0.5f;
         public Ease itemJumpEase = Ease.OutExpo;
+
+        [Serializable]
+        public struct DiegeticAnimatorOverride {
+            public FoodProcessorPreset.FoodProcessorType foodProcessorType;
+            public AnimatorOverrideController animatorOverrideController;
+        }
+
+        [Header("Diegetic UI")]
+        public List<DiegeticAnimatorOverride> diegeticAnimOverrides;
     }
 }

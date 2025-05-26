@@ -21,13 +21,15 @@ namespace InzGame.DisplayHandlers {
         public ChangeCursorOnHover _cursorManager;
         public HighlightProxy _highlightProxy;
 
+        [Header("Common UI")]
+        public Animator processorAnimator;
+        public int _processorAnimStateParam;
+
         [Header("Non-Diegetic UI")]
         public GameObject prop;
         public GameObject elemDisplayParent;
         public Slider _progressSlider;
         public List<Image> _bufferImages;
-        public Animator processorAnimator;
-        public int _processorAnimStateParam;
 
         // ------------------------ Diegetic UI ------------------------
         [Header("Diegetic UI")]
@@ -38,10 +40,10 @@ namespace InzGame.DisplayHandlers {
         public Image diegeticExtraImage;
         public Image diegeticExtraFadeImage;
         public Image diegeticPropImage;
-        public Animator diegeticAnimator;
 
         public CookingAction _currentAction;
 
+        public Animator diegeticAnimator;
         public Transform diegeticTweeningAnchor;
         // ------------------------------------------------------------
 
@@ -74,7 +76,7 @@ namespace InzGame.DisplayHandlers {
 
             _processor.OnActionChange += DgUI_SetAction;
 
-            // _processor.OnStatusChange += SetAnimatorState;
+            _processor.OnStatusChange += SetAnimatorState;
             _processor.OnStatusChange += ToggleSlider;
             _processor.OnStatusChange += DgUI_HandleStateChange;
 
@@ -85,6 +87,8 @@ namespace InzGame.DisplayHandlers {
 
         public void LoadProcessorParams(object sender, FoodProcessor processor) {
             _processorType = processor.preset.type;
+            processorAnimator.runtimeAnimatorController =
+                _config.diegeticAnimOverrides.Find(ovr => ovr.foodProcessorType == _processorType).animatorOverrideController;
             ClearImage(diegeticPropImage);
             ClearImage(diegeticExtraImage);
             ClearImage(diegeticExtraFadeImage);
@@ -312,6 +316,9 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void DgUI_HandleStateChange(object sender, FoodProcessor.Status state) {
+            if ( _processor.playMode == LevelData.PlayMode.TIMER )
+                return;
+
             if (state is FoodProcessor.Status.FREE or FoodProcessor.Status.ACTIVE && _processorType is DESKA_DO_KROJENIA)
                 ClearImage(_bufferImages[4]);
 
