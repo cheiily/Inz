@@ -16,3 +16,6 @@ MonoBehaviour:
   output: 30
   duration: 8
   expiryDuration: 24
+  spritesExtraDisplay:
+  - {fileID: 2106482273, guid: 3545b74c72d1f084588b7ffe5c0ade46, type: 3}
+  - {fileID: 2106482273, guid: 3545b74c72d1f084588b7ffe5c0ade46, type: 3}

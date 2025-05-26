@@ -9,6 +9,7 @@ namespace Data {
         public Element output;
         public float duration;
         public float expiryDuration;
+        public List<Sprite> spritesExtraDisplay;
 
         public HashSet<Element> inputSet;
         // public List<Element> preview;

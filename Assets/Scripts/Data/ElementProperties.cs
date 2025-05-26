@@ -8,12 +8,18 @@ namespace Data {
     public class ElementProperties : ScriptableObject
     {
         [Serializable]
+        public struct DiegeticSpriteData {
+            public FoodProcessorPreset.FoodProcessorType foodProcessorType;
+            public List<Sprite> sprites;
+        }
+
+        [Serializable]
         public class ElementData {
             public Element element;
             public int level;
             public Sprite sprite_element;
             public Sprite sprite_order_bubble;
-            public List<Sprite> sprites_cooking_progress;
+            public List<DiegeticSpriteData> sprites_cooking_progress;
         }
 
         public List<ElementData> properties;
@@ -25,6 +31,16 @@ namespace Data {
             }
 
             return new ElementData();
+        }
+
+        public DiegeticSpriteData GetFor(FoodProcessorPreset.FoodProcessorType foodProcessorType, Element element) {
+            ElementData data = GetFor(element);
+            foreach (var diegeticSpriteData in data.sprites_cooking_progress) {
+                if ( diegeticSpriteData.foodProcessorType == foodProcessorType )
+                    return diegeticSpriteData;
+            }
+
+            return new DiegeticSpriteData();
         }
 
         public Element filter;

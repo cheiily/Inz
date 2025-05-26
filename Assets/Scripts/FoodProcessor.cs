@@ -12,7 +12,9 @@ public class FoodProcessor : MonoBehaviour {
     public event EventHandler<Tuple<float, bool>> OnProgressChange;
     public event EventHandler<List<Element>> OnBufferChange;
     public event EventHandler<Status> OnStatusChange;
+    public event EventHandler<CookingAction> OnActionChange;
     public event Action<List<Element> /*elements*/, List<int> /*indices*/> OnMoveToMainBuffer;
+    public event EventHandler<FoodProcessor> OnInit;
 
     public enum Status {
         FREE,
@@ -58,7 +60,16 @@ public class FoodProcessor : MonoBehaviour {
     public LevelData.PlayMode playMode;
     public Buffer mainBuffer;
     public FoodProcessorPreset preset;
-    public CookingAction currentAction;
+
+    private CookingAction _currentAction;
+    public CookingAction currentAction {
+        get => _currentAction;
+        set {
+            _currentAction = value;
+            OnActionChange?.Invoke(this, value);
+        }
+    }
+
     public float progress;
     public float progressSecPerTap = 1;
 
@@ -163,6 +174,7 @@ public class FoodProcessor : MonoBehaviour {
         };
 
         _initialized = true;
+        OnInit?.Invoke(this, this);
     }
 
     // Update is called once per frame

@@ -16,3 +16,4 @@ MonoBehaviour:
   output: 20
   duration: 12
   expiryDuration: 36
+  spritesExtraDisplay: []
