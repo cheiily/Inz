@@ -306,6 +306,7 @@ namespace InzGame.DisplayHandlers {
             switch (_processorType) {
                 case GARNEK: {
                     SetImage(diegeticExtraImage, action.spritesExtraDisplay[ 0 ]);
+                    SetImage(diegeticExtraFadeImage, action.spritesExtraDisplay[ 1 ]);
                     break;
                 }
                 case MISKA: {
@@ -340,9 +341,12 @@ namespace InzGame.DisplayHandlers {
                     switch (_processorType) {
                         case MISKA: {
                             for (int i = 0; i < 5; i++) {
-                                SetImage(_diegeticBufferImages[ i ], _config.elementProperties.GetFor(MISKA, _currentAction.input[ i ]).sprites[ 0 ]);
-                                SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[ 0 ]);
+                                if ( i >= _currentAction.input.Count )
+                                    ClearImage(_diegeticBufferImages[ i ]);
+                                else
+                                    SetImage(_diegeticBufferImages[ i ], _config.elementProperties.GetFor(MISKA, _currentAction.input[ i ]).sprites[ 0 ]);
                             }
+                            SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[ 0 ]);
                             break;
                         }
                         case GARNEK: {
@@ -385,7 +389,7 @@ namespace InzGame.DisplayHandlers {
                 case FoodProcessor.Status.DONE: {
                     switch (_processorType) {
                         case MISKA: {
-                            SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[1]);
+                            SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[0]); // debug double call
                             _diegeticBufferImages.ForEach(ClearImage);
                             break;
                         }
