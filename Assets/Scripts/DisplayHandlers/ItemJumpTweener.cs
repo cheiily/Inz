@@ -59,12 +59,16 @@ namespace InzGame.DisplayHandlers {
                     Transform target = null;
                     if ( procDisp != null ) {
                         var idx = proc._buffer.FindIndex(elem => elem == displayTuple.Item1);
-                        if (idx != -1)
-                            target = procDisp._bufferImages[ idx ].transform;
+                        if ( idx != -1 )
+                            target = procDisp._processor.playMode == LevelData.PlayMode.TIMER
+                                ? procDisp._bufferImages[ idx ].transform
+                                : procDisp.diegeticTweeningAnchor;
                         else {
                             idx = proc._buffer.Count + add;
                             idx = Math.Clamp(idx, 0, 5);
-                            target = procDisp._bufferImages[ idx ].transform;
+                            target = procDisp._processor.playMode == LevelData.PlayMode.TIMER
+                                ? procDisp._bufferImages[ idx ].transform
+                                : procDisp.diegeticTweeningAnchor;
                             add++;
                         }
                     }
@@ -82,8 +86,12 @@ namespace InzGame.DisplayHandlers {
                 var elem = elements[i];
                 var idx = bufferDisplay._buffer.buffer.LastIndexOf(elem);
 
-                StartWith(elem, processorDisplay._bufferImages[idx].transform, bufferDisplay.displays[idx].transform)
-                    .transform.DOScale(new Vector3(1.25f, 1.25f, 1.25f), _config.itemJumpDuration).From(new Vector3(1,1,1));
+                if (processorDisplay._processor.playMode is LevelData.PlayMode.TIMER)
+                    StartWith(elem, processorDisplay._bufferImages[idx].transform, bufferDisplay.displays[idx].transform)
+                        .transform.DOScale(new Vector3(1.25f, 1.25f, 1.25f), _config.itemJumpDuration).From(new Vector3(1,1,1));
+                else
+                    StartWith(elem, processorDisplay.diegeticTweeningAnchor, bufferDisplay.displays[idx].transform)
+                        .transform.DOScale(new Vector3(1.25f, 1.25f, 1.25f), _config.itemJumpDuration).From(new Vector3(1,1,1));
             }
         }
     }

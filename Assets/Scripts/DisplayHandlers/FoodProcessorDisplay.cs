@@ -42,13 +42,7 @@ namespace InzGame.DisplayHandlers {
 
         public CookingAction _currentAction;
 
-
-
-
-
-
-
-
+        public Transform diegeticTweeningAnchor;
         // ------------------------------------------------------------
 
         private void Awake() {

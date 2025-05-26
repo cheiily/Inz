@@ -640,6 +640,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2718063134855619798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1959084605023788363}
+  m_Layer: 0
+  m_Name: DiegeticTweeningAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1959084605023788363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718063134855619798}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7985964522499487109}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3472093715583455537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1616,7 @@ RectTransform:
   - {fileID: 9016510457131008490}
   - {fileID: 229614612936561484}
   - {fileID: 7327450158003078336}
+  - {fileID: 1959084605023788363}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1760,6 +1792,7 @@ MonoBehaviour:
   diegeticPropImage: {fileID: 4850531854649114320}
   diegeticAnimator: {fileID: 7494077373086908005}
   _currentAction: {fileID: 0}
+  diegeticTweeningAnchor: {fileID: 1959084605023788363}
 --- !u!95 &1278864680380366129
 Animator:
   serializedVersion: 7
