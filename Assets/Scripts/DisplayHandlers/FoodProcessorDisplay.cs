@@ -303,8 +303,9 @@ namespace InzGame.DisplayHandlers {
 
             switch (_processorType) {
                 case GARNEK: {
-                    SetImage(diegeticExtraImage, action.spritesExtraDisplay[ 0 ]);
-                    SetImage(diegeticExtraFadeImage, action.spritesExtraDisplay[ 1 ]);
+                    AdvanceExtraDisplayStep(0, 1);
+                    // SetImage(diegeticExtraImage, action.spritesExtraDisplay[ 0 ]);
+                    // SetImage(diegeticExtraFadeImage, action.spritesExtraDisplay[ 1 ]);
                     break;
                 }
                 case MISKA: {
@@ -351,8 +352,7 @@ namespace InzGame.DisplayHandlers {
                             break;
                         }
                         case GARNEK: {
-                            SetImage(diegeticExtraImage, diegeticExtraFadeImage.sprite);
-                            ClearImage(diegeticExtraFadeImage);
+                            // here fade water -> soup, don't change sprites assinged at SetAction
                             AdvanceDisplayStep(0, 1);
                             break;
                         }
@@ -374,7 +374,11 @@ namespace InzGame.DisplayHandlers {
                         case MISKA: {
                             break;
                         }
-                        case GARNEK: // fade kolorów, brak fade'u wody na tym etapie
+                        case GARNEK: {
+                            AdvanceDisplayStep(1, 2);
+                            AdvanceExtraDisplayStep(1, 2);
+                            break;
+                        }
                         case PATELNIA: {
                             AdvanceDisplayStep(1, 2);
                             break;
@@ -399,7 +403,7 @@ namespace InzGame.DisplayHandlers {
                                 SetImage(_diegeticBufferImages[i], _diegeticBufferFadeImages[i].sprite);
                                 ClearImage(_diegeticBufferFadeImages[i]);
                             }
-                            SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[1]);
+                            SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[2]);
                             ClearImage(diegeticExtraFadeImage);
                             break;
                         }
@@ -436,6 +440,11 @@ namespace InzGame.DisplayHandlers {
                 SetImage(_diegeticBufferImages[ i ], currentStep);
                 SetImage(_diegeticBufferFadeImages[ i ], nextStep);
             }
+        }
+
+        private void AdvanceExtraDisplayStep(int iCurrentStep, int iNextStep) {
+            SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[ iCurrentStep ]);
+            SetImage(diegeticExtraFadeImage, _currentAction.spritesExtraDisplay[ iNextStep ]);
         }
     }
 }

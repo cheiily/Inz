@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: maslo_garnek_0
+      name: maslo_garnek_cale_0
       rect:
         serializedVersion: 2
         x: 100
@@ -111,7 +111,7 @@ TextureImporter:
         width: 400
         height: 374
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      maslo_garnek_0: 1383750209
+      maslo_garnek_cale_0: 1383750209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
