@@ -28,7 +28,7 @@ namespace InzGame.DisplayHandlers {
         [Header("Non-Diegetic UI")]
         public GameObject prop;
         public GameObject elemDisplayParent;
-        public Slider _progressSlider;
+        public Slider progressSlider;
         public List<Image> _bufferImages;
 
         // ------------------------ Diegetic UI ------------------------
@@ -44,14 +44,15 @@ namespace InzGame.DisplayHandlers {
         public CookingAction _currentAction;
 
         public Animator diegeticAnimator;
+        public int _diegeticAnimStateParam;
         public Transform diegeticTweeningAnchor;
         // ------------------------------------------------------------
 
         private void Awake() {
             _config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
             _processor = GetComponent<FoodProcessor>();
-            _progressSlider = transform.GetChild(0).GetComponent<Slider>();
             _processorAnimStateParam = Animator.StringToHash("Status");
+            _diegeticAnimStateParam = Animator.StringToHash("DiegeticStatus");
             _cursorOverride = GetComponent<CursorOverride>();
             _cursorManager = GetComponent<ChangeCursorOnHover>();
             _highlightProxy = GetComponent<HighlightProxy>();
@@ -98,11 +99,11 @@ namespace InzGame.DisplayHandlers {
 
         public void SetSliderProgress(object sender, Tuple<float, bool> progressTuple) {
             if ( _processor.playMode != LevelData.PlayMode.TIMER ) {
-                _progressSlider.gameObject.SetActive(false);
+                progressSlider.gameObject.SetActive(false);
                 return;
             }
 
-            _progressSlider.value = progressTuple.Item1;
+            progressSlider.value = progressTuple.Item1;
             // _progressSlider.fillRect.GetComponent<Image>().color = progressTuple.Item2 ? Color.red : Color.green;
         }
 
@@ -211,6 +212,7 @@ namespace InzGame.DisplayHandlers {
 
         public void SetAnimatorState(object sender, FoodProcessor.Status state) {
             processorAnimator.SetInteger(_processorAnimStateParam, (int) state);
+            diegeticAnimator.SetInteger(_diegeticAnimStateParam, (int) state);
         }
 
         public void ToggleProp(object sender, FoodProcessor.Status state) {
@@ -228,7 +230,7 @@ namespace InzGame.DisplayHandlers {
 
         public void ToggleSlider(object sender, FoodProcessor.Status state) {
             if ( _processor.playMode != LevelData.PlayMode.TIMER ) {
-                _progressSlider.gameObject.SetActive(false);
+                progressSlider.gameObject.SetActive(false);
                 return;
             }
 
@@ -236,12 +238,12 @@ namespace InzGame.DisplayHandlers {
                       (_processor.currentAction == null));
 
             if ( state == FoodProcessor.Status.FREE && _processor.currentAction == null ) {
-                _progressSlider.gameObject.SetActive(false);
+                progressSlider.gameObject.SetActive(false);
                 return;
             }
 
-            _progressSlider.gameObject.SetActive(true);
-            var fillImg = _progressSlider.fillRect.GetComponent<Image>();
+            progressSlider.gameObject.SetActive(true);
+            var fillImg = progressSlider.fillRect.GetComponent<Image>();
             switch (state) {
                 case FoodProcessor.Status.FREE:
                     fillImg.color = Color.cyan;
