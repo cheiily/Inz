@@ -7,5 +7,5 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Patelnia-Dg
-  m_Controller: {fileID: 9100000, guid: ffdf5c936de8cdb4e87a4873fb7fe406, type: 2}
+  m_Controller: {fileID: 9100000, guid: 04a88d41b11ea8c4093a37913b2a283a, type: 2}
   m_Clips: []

@@ -7,5 +7,5 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Miska-Dg
-  m_Controller: {fileID: 9100000, guid: ffdf5c936de8cdb4e87a4873fb7fe406, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6d4e867f53952c943b75a42510286086, type: 2}
   m_Clips: []
