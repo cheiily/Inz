@@ -194,20 +194,25 @@ namespace InzGame.DisplayHandlers {
             SetImage(forDisp, sprite);
         }
 
-        public void SetImage(Image display, Sprite sprite) {
+        public void SetImage(Image display, Sprite sprite, bool transparent = false) {
             if ( sprite == null ) {
                 ClearImage(display);
                 return;
             }
             display.sprite = sprite;
             display.preserveAspect = true;
-            display.color = Color.white;
+            if ( transparent )
+                display.color = Color.clear;
+            else
+                display.color = Color.white;
+            Debug.Log("Setting white color for " + display.name + ", sprite: " + sprite.name);
         }
 
         public void ClearImage(Image forDisp) {
             forDisp.DOKill();
             forDisp.sprite = null;
             forDisp.color = Color.clear;
+            Debug.Log("Clearing image: " + forDisp.name);
         }
 
         public void SetAnimatorState(object sender, FoodProcessor.Status state) {
@@ -305,13 +310,13 @@ namespace InzGame.DisplayHandlers {
 
             switch (_processorType) {
                 case GARNEK: {
-                    AdvanceExtraDisplayStep(0, 1);
+                    AdvanceExtraDisplayStep(0, 1, false);
                     // SetImage(diegeticExtraImage, action.spritesExtraDisplay[ 0 ]);
                     // SetImage(diegeticExtraFadeImage, action.spritesExtraDisplay[ 1 ]);
                     break;
                 }
                 case MISKA: {
-                    SetImage(diegeticExtraImage, action.spritesExtraDisplay[ 0 ]);
+                    SetImage(diegeticExtraImage, action.spritesExtraDisplay[ 0 ], true);
                     break;
                 }
                 default: break;
@@ -350,7 +355,8 @@ namespace InzGame.DisplayHandlers {
                                 else
                                     SetImage(_diegeticBufferImages[ i ], _config.elementProperties.GetFor(MISKA, _currentAction.input[ i ]).sprites[ 0 ]);
                             }
-                            SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[ 0 ]);
+                            SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[ 0 ], true);
+                            TweenMiska(GetActionStageTime());
                             break;
                         }
                         case GARNEK: {
@@ -429,7 +435,7 @@ namespace InzGame.DisplayHandlers {
             }
         }
 
-        private void AdvanceDisplayStep(int iCurrentStep, int iNextStep) {
+        private void AdvanceDisplayStep(int iCurrentStep, int iNextStep, bool tween = true) {
             for (int i = 0; i < 5; i++) {
                 if ( i >= _currentAction.input.Count ) {
                     ClearImage(_diegeticBufferImages[ i ]);
@@ -440,13 +446,83 @@ namespace InzGame.DisplayHandlers {
                 Sprite currentStep = _config.elementProperties.GetFor(_processorType, _currentAction.input[ i ]).sprites[ iCurrentStep ];
                 Sprite nextStep = _config.elementProperties.GetFor(_processorType, _currentAction.input[ i ]).sprites[ iNextStep ];
                 SetImage(_diegeticBufferImages[ i ], currentStep);
-                SetImage(_diegeticBufferFadeImages[ i ], nextStep);
+                SetImage(_diegeticBufferFadeImages[ i ], nextStep, !tween);
+            }
+
+            if ( tween )
+                TweenFadeColors(GetActionStageTime());
+        }
+
+        private void AdvanceExtraDisplayStep(int iCurrentStep, int iNextStep, bool tween = true) {
+            SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[ iCurrentStep ]);
+            SetImage(diegeticExtraFadeImage, _currentAction.spritesExtraDisplay[ iNextStep ], !tween);
+            if ( tween )
+                TweenFadeExtra(GetActionStageTime());
+        }
+
+
+        private float GetActionStageTime() {
+            if ( _processor.currentAction == null )
+                return 0;
+
+            if ( _processor.status is FoodProcessor.Status.ACTIVE )
+                return _processor.currentAction.duration;
+            if ( _processor.status is FoodProcessor.Status.EXPIRING )
+                return _processor.currentAction.expiryDuration;
+
+            return 0;
+        }
+
+        private void TweenFadeExtra(float seconds) {
+            if ( diegeticExtraImage.sprite != null ) {
+                diegeticExtraImage.DOKill();
+                diegeticExtraImage    .DOFade(0, seconds).From(1);
+            }
+            if ( diegeticExtraFadeImage.sprite != null ) {
+                diegeticExtraFadeImage.DOKill();
+                diegeticExtraFadeImage.DOFade(1, seconds).From(0);
             }
         }
 
-        private void AdvanceExtraDisplayStep(int iCurrentStep, int iNextStep) {
-            SetImage(diegeticExtraImage, _currentAction.spritesExtraDisplay[ iCurrentStep ]);
-            SetImage(diegeticExtraFadeImage, _currentAction.spritesExtraDisplay[ iNextStep ]);
+        private void StopTweenFadeExtra() {
+            diegeticExtraImage.DOKill();
+            diegeticExtraFadeImage.DOKill();
+        }
+
+        private void TweenFadeColors(float seconds) {
+            for (int i = 0; i < 5; i++) {
+                if ( _diegeticBufferImages[ i ].sprite != null ) {
+                    _diegeticBufferImages[ i ].DOKill();
+                    _diegeticBufferImages[ i ].DOFade(0, seconds).From(1);
+                }
+                if ( _diegeticBufferFadeImages[ i ].sprite != null ) {
+                    _diegeticBufferFadeImages[ i ].DOKill();
+                    _diegeticBufferFadeImages[ i ].DOFade(1, seconds).From(0);
+                }
+            }
+        }
+
+        private void StopTweenFadeColors() {
+            for (int i = 0; i < 5; i++) {
+                _diegeticBufferImages[ i ].DOKill();
+                _diegeticBufferFadeImages[ i ].DOKill();
+            }
+        }
+
+
+        // Miska
+        private void TweenMiska(float seconds) {
+            for (int i = 0; i < 5; i++) {
+                if ( _diegeticBufferImages[ i ].sprite != null ) {
+                    _diegeticBufferImages[ i ].DOKill();
+                    _diegeticBufferImages[ i ].DOFade(0, seconds).From(1);
+                }
+            }
+            if ( diegeticExtraImage.sprite != null ) {
+                diegeticExtraImage.DOKill();
+                diegeticExtraImage.color = Color.white;
+                diegeticExtraImage.DOFade(1, seconds).From(0);
+            }
         }
     }
 }
