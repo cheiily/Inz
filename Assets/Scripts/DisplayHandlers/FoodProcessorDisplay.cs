@@ -88,8 +88,9 @@ namespace InzGame.DisplayHandlers {
 
         public void LoadProcessorParams(object sender, FoodProcessor processor) {
             _processorType = processor.preset.type;
-            processorAnimator.runtimeAnimatorController =
-                _config.diegeticAnimOverrides.Find(ovr => ovr.foodProcessorType == _processorType).animatorOverrideController;
+            if ( _processor.playMode != LevelData.PlayMode.TIMER )
+                processorAnimator.runtimeAnimatorController =
+                    _config.diegeticAnimOverrides.Find(ovr => ovr.foodProcessorType == _processorType).animatorOverrideController;
             ClearImage(diegeticPropImage);
             ClearImage(diegeticExtraImage);
             ClearImage(diegeticExtraFadeImage);

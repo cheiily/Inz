@@ -96,84 +96,95 @@ public class FoodProcessor : MonoBehaviour {
         this.preset = preset;
         _consumer.elements = preset.actions.SelectMany(action => action.input).ToList();
 
-        if ( _initialized )
-            return;
-
-        var highlightProxy = GetComponent<HighlightProxy>();
-        if (highlightProxy != null) {
-            highlightProxy.HighlightCheck = HighlightCheck;
-        }
-
-        _consumer.CustomRequirementCheck += delegate(List<Element> required, List<Element> bufferState) {
-            if ( status == Status.ACTIVE ) {
-                progress += progressSecPerTap;
-                return new List<Element>();
+        if ( !_initialized ) {
+            var highlightProxy = GetComponent<HighlightProxy>();
+            if ( highlightProxy != null ) {
+                highlightProxy.HighlightCheck = HighlightCheck;
             }
 
-            if ( status == Status.DONE || status == Status.EXPIRING ) {
-                moveToMainBuffer.Add(_buffer[0]); // change to action.output if errors?
-                moveToMainBufferIndices.Add(0);
-                _buffer.RemoveAt(0);
-                currentAction = null;
-                status = Status.FREE;
-
-                progress = 0;
-                OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress, false));
-                OnBufferChange?.Invoke(this, _buffer);
-            }
-
-            if (Buffer.Count(bufferState) == 0)
-                return new List<Element>();
-
-            CookingAction maxCompletionAction = currentAction;
-            HashSet<Element> maxCompletionElements = new HashSet<Element>();
-            HashSet<Element> matchingIn = new HashSet<Element>();
-            HashSet<Element> matchingTotal = new HashSet<Element>(); // buffer + matchingIn, kept separate for easy return of only contained elements
-            float maxCompletion = 0;
-            foreach ( var action in this.preset.actions ) {
-                matchingIn = new HashSet<Element>(bufferState.FindAll(element => action.GetInputSet().Contains(element) && !_buffer.Contains(element)));
-                matchingTotal = new HashSet<Element>(matchingIn);
-                matchingTotal.AddRange(_buffer.FindAll(element => action.GetInputSet().Contains(element)));
-                float completion = (float) matchingTotal.Count / action.input.Count;
-                if ( completion > maxCompletion || (maxCompletionAction != null && Math.Abs(completion - maxCompletion) < 0.00001 && config.elementProperties.GetFor(action.output).level > config.elementProperties.GetFor(maxCompletionAction.output).level) ) {
-                    maxCompletion = completion;
-                    maxCompletionAction = action;
-                    maxCompletionElements = matchingIn;
+            _consumer.CustomRequirementCheck += delegate(List<Element> required, List<Element> bufferState) {
+                if ( status == Status.ACTIVE ) {
+                    progress += progressSecPerTap;
+                    return new List<Element>();
                 }
-            }
 
-            if ( _buffer.Count > 0 && currentAction != maxCompletionAction ) {
-                moveToMainBuffer.AddRange(_buffer.FindAll(element => !maxCompletionAction.input.Contains(element)));
-                moveToMainBufferIndices.AddRange(_buffer.FindAll(element => !maxCompletionAction.input.Contains(element)).Select(element => _buffer.IndexOf(element)));
-                _buffer.RemoveAll(element => !maxCompletionAction.input.Contains(element));
-            }
+                if ( status == Status.DONE || status == Status.EXPIRING ) {
+                    moveToMainBuffer.Add(_buffer[ 0 ]); // change to action.output if errors?
+                    moveToMainBufferIndices.Add(0);
+                    _buffer.RemoveAt(0);
+                    currentAction = null;
+                    status = Status.FREE;
 
-            currentAction = maxCompletionAction;
-            return new List<Element>(maxCompletionElements);
-        };
-        _consumer.OnElementsConsumed += delegate(List<Element> consumed) {
-            _buffer.AddRange(consumed);
-            if ( currentAction != null && currentAction.input.All(element => _buffer.Contains(element)) ) {
-                status = Status.ACTIVE;
-                _buffer.Clear();
-            }
-            if ( currentAction != null && status == Status.FREE ) {
-                status = Status.FREE; // toggle display refresh to show progress slider
-                progress = (float)_buffer.Count / currentAction.GetInputSet().Count;
-            }
+                    progress = 0;
+                    OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress, false));
+                    OnBufferChange?.Invoke(this, _buffer);
+                }
 
-            OnBufferChange?.Invoke(this, _buffer);
-            OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress, false));
+                if ( Buffer.Count(bufferState) == 0 )
+                    return new List<Element>();
 
-            foreach (var element in moveToMainBuffer) {
-                mainBuffer.Submit(element);
-            }
-            OnMoveToMainBuffer?.Invoke(moveToMainBuffer, moveToMainBufferIndices);
-            moveToMainBuffer.Clear();
-            moveToMainBufferIndices.Clear();
-        };
+                CookingAction maxCompletionAction = currentAction;
+                HashSet<Element> maxCompletionElements = new HashSet<Element>();
+                HashSet<Element> matchingIn = new HashSet<Element>();
+                HashSet<Element>
+                    matchingTotal =
+                        new HashSet<Element>(); // buffer + matchingIn, kept separate for easy return of only contained elements
+                float maxCompletion = 0;
+                foreach (var action in this.preset.actions) {
+                    matchingIn = new HashSet<Element>(bufferState.FindAll(element =>
+                        action.GetInputSet().Contains(element) && !_buffer.Contains(element)));
+                    matchingTotal = new HashSet<Element>(matchingIn);
+                    matchingTotal.AddRange(_buffer.FindAll(element => action.GetInputSet().Contains(element)));
+                    float completion = (float) matchingTotal.Count / action.input.Count;
+                    if ( completion > maxCompletion || (maxCompletionAction != null &&
+                                                        Math.Abs(completion - maxCompletion) < 0.00001 &&
+                                                        config.elementProperties.GetFor(action.output).level >
+                                                        config.elementProperties.GetFor(maxCompletionAction.output)
+                                                              .level) ) {
+                        maxCompletion = completion;
+                        maxCompletionAction = action;
+                        maxCompletionElements = matchingIn;
+                    }
+                }
 
-        _initialized = true;
+                if ( _buffer.Count > 0 && currentAction != maxCompletionAction ) {
+                    moveToMainBuffer.AddRange(_buffer.FindAll(element => !maxCompletionAction.input.Contains(element)));
+                    moveToMainBufferIndices.AddRange(_buffer
+                                                     .FindAll(element => !maxCompletionAction.input.Contains(element))
+                                                     .Select(element => _buffer.IndexOf(element)));
+                    _buffer.RemoveAll(element => !maxCompletionAction.input.Contains(element));
+                }
+
+                currentAction = maxCompletionAction;
+                return new List<Element>(maxCompletionElements);
+            };
+            _consumer.OnElementsConsumed += delegate(List<Element> consumed) {
+                _buffer.AddRange(consumed);
+                if ( currentAction != null && currentAction.input.All(element => _buffer.Contains(element)) ) {
+                    status = Status.ACTIVE;
+                    _buffer.Clear();
+                }
+
+                if ( currentAction != null && status == Status.FREE ) {
+                    status = Status.FREE; // toggle display refresh to show progress slider
+                    progress = (float) _buffer.Count / currentAction.GetInputSet().Count;
+                }
+
+                OnBufferChange?.Invoke(this, _buffer);
+                OnProgressChange?.Invoke(this, new Tuple<float, bool>(progress, false));
+
+                foreach (var element in moveToMainBuffer) {
+                    mainBuffer.Submit(element);
+                }
+
+                OnMoveToMainBuffer?.Invoke(moveToMainBuffer, moveToMainBufferIndices);
+                moveToMainBuffer.Clear();
+                moveToMainBufferIndices.Clear();
+            };
+
+            _initialized = true;
+        }
+        
         OnInit?.Invoke(this, this);
     }
 

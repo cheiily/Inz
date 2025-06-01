@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13d81558e8a284428bfbc45dc27e4c7, type: 3}
   m_Name: GameConfiguration
   m_EditorClassIdentifier: 
-  levelTutorial: {fileID: 11400000, guid: 0e8bf3bb9c9739c4b81c405e8b9fb7aa, type: 2}
-  level1: {fileID: 11400000, guid: 3a1a0cc217fe519439758b10c08378f2, type: 2}
-  level2: {fileID: 11400000, guid: 647c743836f94fb4b8a686635460c8f4, type: 2}
-  gameVariantString: EASY(2.5)
+  levelTutorial: {fileID: 11400000, guid: 4886650538820ad4193b9ab4f39077c9, type: 2}
+  level1: {fileID: 11400000, guid: 7c80a78aa992d82478709cc542afdb7a, type: 2}
+  level2: {fileID: 11400000, guid: dc1659a7b3f91094891bdf6e343f672e, type: 2}
+  gameVariantString: EASY(2.5) | UI Comparison
   bufferSize: 3
   elementProperties: {fileID: 11400000, guid: 3e00747ff38097843b0c7ff0b2e5efe7, type: 2}
   cursorDefault: {fileID: 2800000, guid: 27f587cfd0819cb419679d04a922900c, type: 3}
