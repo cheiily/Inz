@@ -8,4 +8,8 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: DDK-Dg
   m_Controller: {fileID: 9100000, guid: ffdf5c936de8cdb4e87a4873fb7fe406, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: cde7cc3c2023b0b409ffe2a69da2159f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 607f7a6c66f16a74fb5e47af28a1966e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1272b750f19de5a4987d98b72209df2e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f9cd13db88bc12d4287c99290ad4cf98, type: 2}

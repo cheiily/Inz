@@ -8,4 +8,8 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: DDO-Dg
   m_Controller: {fileID: 9100000, guid: fed76087a088e1047b1acc96ea290896, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 16932f17d0350944d8f698ba7532ab22, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fbe42cdd344153241865852a3d0abb08, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ed2f9acd9ac55ac4ea3a0832bf427dea, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 26a431dee01fc66429897787a65733eb, type: 2}
