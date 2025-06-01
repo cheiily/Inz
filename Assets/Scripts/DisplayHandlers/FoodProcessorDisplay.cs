@@ -205,14 +205,12 @@ namespace InzGame.DisplayHandlers {
                 display.color = Color.clear;
             else
                 display.color = Color.white;
-            Debug.Log("Setting white color for " + display.name + ", sprite: " + sprite.name);
         }
 
         public void ClearImage(Image forDisp) {
             forDisp.DOKill();
             forDisp.sprite = null;
             forDisp.color = Color.clear;
-            Debug.Log("Clearing image: " + forDisp.name);
         }
 
         public void SetAnimatorState(object sender, FoodProcessor.Status state) {
@@ -523,6 +521,10 @@ namespace InzGame.DisplayHandlers {
                 diegeticExtraImage.color = Color.white;
                 diegeticExtraImage.DOFade(1, seconds).From(0);
             }
+        }
+
+        public void DDKSetCutPhase(int phase) {
+            SetImage(_diegeticBufferImages[0], _config.elementProperties.GetFor(DESKA_DO_KROJENIA, _currentAction.input[0]).sprites[phase]);
         }
     }
 }
