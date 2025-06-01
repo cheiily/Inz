@@ -46,6 +46,9 @@ namespace InzGame.DisplayHandlers {
         public Animator diegeticAnimator;
         public int _diegeticAnimStateParam;
         public Transform diegeticTweeningAnchor;
+
+        private object _diegeticAnimatorTweenID;
+        private object _processorAnimatorTweenID;
         // ------------------------------------------------------------
 
         private void Awake() {
@@ -74,6 +77,7 @@ namespace InzGame.DisplayHandlers {
             _processor.OnBufferChange += AdjustCursorOverride;
 
             _processor.OnProgressChange += SetSliderProgress;
+            _processor.OnClick += DgUI_AcceptProgress;
 
             _processor.OnActionChange += DgUI_SetAction;
 
@@ -217,6 +221,11 @@ namespace InzGame.DisplayHandlers {
         public void SetAnimatorState(object sender, FoodProcessor.Status state) {
             processorAnimator.SetInteger(_processorAnimStateParam, (int) state);
             diegeticAnimator.SetInteger(_diegeticAnimStateParam, (int) state);
+
+            if ( _processor.playMode == LevelData.PlayMode.CLICKER_DIEGETIC ) {
+                processorAnimator.speed = 0;
+                diegeticAnimator.speed = 0;
+            }
         }
 
         public void ToggleProp(object sender, FoodProcessor.Status state) {
@@ -526,6 +535,29 @@ namespace InzGame.DisplayHandlers {
 
         public void DDKSetCutPhase(int phase) {
             SetImage(_diegeticBufferImages[0], _config.elementProperties.GetFor(DESKA_DO_KROJENIA, _currentAction.input[0]).sprites[phase]);
+        }
+
+
+
+        public void DgUI_AcceptProgress(object sender, float progress) {
+            if ( _processor.playMode != LevelData.PlayMode.CLICKER_DIEGETIC )
+                return;
+            Debug.Log("Clicker accepting progress: " + progress);
+
+            float addDieg = 0, addProc = 0;
+            var active = DOTween.TweensById(_diegeticAnimatorTweenID);
+            if (active != null && active.Count > 0) {
+                addDieg = active[0].Duration() - active[0].Elapsed();
+            }
+            active = DOTween.TweensById(_processorAnimatorTweenID);
+            if (active != null && active.Count > 0) {
+                addProc = active[0].Duration() - active[0].Elapsed();
+            }
+
+            DOTween.Kill(_diegeticAnimatorTweenID);
+            DOTween.Kill(_processorAnimatorTweenID);
+            _diegeticAnimatorTweenID = DOTween.To(() => diegeticAnimator.speed, (val) => diegeticAnimator.speed = val, 0, 1.0f + addDieg).From(1).id;
+            _processorAnimatorTweenID = DOTween.To(() => processorAnimator.speed, (val) => processorAnimator.speed = val, 0, 1.0f + addProc).From(1).id;
         }
     }
 }

@@ -9,6 +9,7 @@ using Buffer = InzGame.Buffer;
 
 public class FoodProcessor : MonoBehaviour {
 
+    public event EventHandler<float> OnClick;
     public event EventHandler<Tuple<float, bool>> OnProgressChange;
     public event EventHandler<List<Element>> OnBufferChange;
     public event EventHandler<Status> OnStatusChange;
@@ -105,6 +106,7 @@ public class FoodProcessor : MonoBehaviour {
             _consumer.CustomRequirementCheck += delegate(List<Element> required, List<Element> bufferState) {
                 if ( status == Status.ACTIVE ) {
                     progress += progressSecPerTap;
+                    OnClick?.Invoke(this, progress / currentAction.duration);
                     return new List<Element>();
                 }
 
@@ -184,7 +186,7 @@ public class FoodProcessor : MonoBehaviour {
 
             _initialized = true;
         }
-        
+
         OnInit?.Invoke(this, this);
     }
 
