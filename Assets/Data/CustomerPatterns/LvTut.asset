@@ -17,6 +17,3 @@ MonoBehaviour:
   - timeSinceStart: 5
     randomVariance: 0
     customer: {fileID: 11400000, guid: 461d7dc7a03d6ad4aac6597f9ed54386, type: 2}
-  - timeSinceStart: 10
-    randomVariance: 0
-    customer: {fileID: 11400000, guid: 94d66db71a7ef0f46a95f6958bc899b0, type: 2}
