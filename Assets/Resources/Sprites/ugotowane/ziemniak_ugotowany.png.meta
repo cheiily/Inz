@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ziemniak_ugotowany_0: -4748512920594500979
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

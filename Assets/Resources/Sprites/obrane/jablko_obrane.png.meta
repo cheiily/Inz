@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jablko_obrane_0: 2994599086107577574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

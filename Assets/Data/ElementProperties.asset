@@ -63,7 +63,7 @@ MonoBehaviour:
       sprites:
       - {fileID: -1439788216, guid: 4d7feda2c2548d0469abafde531b8909, type: 3}
       - {fileID: -1290756371, guid: 8442c0cb5350ba34c95b35b9f04143de, type: 3}
-      - {fileID: -1290756371, guid: 8442c0cb5350ba34c95b35b9f04143de, type: 3}
+      - {fileID: 86265849, guid: d04a0173e0d92124292ef824210cd07c, type: 3}
   - element: 11
     level: 1
     sprite_element: {fileID: 1278639323435529542, guid: b4404966b43c33849b588b7e64793beb, type: 3}
@@ -399,16 +399,16 @@ MonoBehaviour:
     sprite_element: {fileID: -7135836193941119997, guid: 72d0f17b191507f489c7f9ee8dc8f1c3, type: 3}
     sprite_order_bubble: {fileID: 0}
     sprites_cooking_progress: []
-  filter: 16
-  _indexPreview: 11
+  filter: 10
+  _indexPreview: 5
   found:
-    element: 16
+    element: 10
     level: 1
-    sprite_element: {fileID: 48739409918137826, guid: cf557ec4107d48d47a4b3b8700d7eb4a, type: 3}
+    sprite_element: {fileID: -1993166340432426632, guid: 8b521fd59d7eaf0418a37bf24a3cd318, type: 3}
     sprite_order_bubble: {fileID: 0}
     sprites_cooking_progress:
     - foodProcessorType: 0
       sprites:
-      - {fileID: -851198253, guid: 6ee89d753d209a44ea1e497af6476869, type: 3}
-      - {fileID: -851198253, guid: 6ee89d753d209a44ea1e497af6476869, type: 3}
-      - {fileID: -1558036793, guid: facb0d779e5f4994f92014759d21a32f, type: 3}
+      - {fileID: -1439788216, guid: 4d7feda2c2548d0469abafde531b8909, type: 3}
+      - {fileID: -1290756371, guid: 8442c0cb5350ba34c95b35b9f04143de, type: 3}
+      - {fileID: 86265849, guid: d04a0173e0d92124292ef824210cd07c, type: 3}

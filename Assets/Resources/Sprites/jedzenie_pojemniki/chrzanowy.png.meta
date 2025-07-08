@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chrzanowy_0: -9134316108247995653
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

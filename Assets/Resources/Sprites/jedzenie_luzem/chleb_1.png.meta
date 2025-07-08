@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chleb_1_0: 4881552786773668925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

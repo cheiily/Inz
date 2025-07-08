@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      drozdze_1_0: 4297596954663129848
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

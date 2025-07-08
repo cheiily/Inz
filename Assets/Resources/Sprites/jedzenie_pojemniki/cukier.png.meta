@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cukier_0: -3536038851218745431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

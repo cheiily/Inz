@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      czosnek_0: -555417887070807605
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

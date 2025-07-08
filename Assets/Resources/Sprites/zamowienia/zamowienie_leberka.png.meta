@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zamowienie_leberka_0: -7641507272375894828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

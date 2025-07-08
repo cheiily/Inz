@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zamowienie_kluski_z_serem_0: 4679904608025263554
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

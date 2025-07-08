@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      marchewka_0: -4324453462150902798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

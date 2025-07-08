@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kolorowe_tlo_i_buzki_0: -1838566279021753007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

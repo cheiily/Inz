@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      buzka_meh_0: -2227123987940053681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

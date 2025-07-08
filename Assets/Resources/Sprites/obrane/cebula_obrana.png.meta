@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cebula_obrana_0: 8098215264763397179
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

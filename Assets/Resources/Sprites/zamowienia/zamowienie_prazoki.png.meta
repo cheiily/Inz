@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zamowienie_prazoki_0: -9089580316525833861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

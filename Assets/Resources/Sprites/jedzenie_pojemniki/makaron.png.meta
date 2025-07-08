@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      makaron_0: 3355823560125688459
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

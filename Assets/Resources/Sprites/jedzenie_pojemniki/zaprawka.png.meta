@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zaprawka_0: -5230584924102000288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

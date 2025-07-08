@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SPALONE_COS_0: -7135836193941119997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

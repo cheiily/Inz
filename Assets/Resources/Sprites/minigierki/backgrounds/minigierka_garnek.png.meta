@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      minigierka_garnek_0: 9061034567608789363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

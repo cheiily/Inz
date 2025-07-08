@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cebula_plus_jablko_0: 664362791331862716
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

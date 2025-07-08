@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      minigierka_smazenie_0: -5082358824121688177
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

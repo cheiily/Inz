@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      opis_pusty_0: -8933276159292916095
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

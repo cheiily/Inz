@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zamowienie_fifka_0: -2929327815317627247
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

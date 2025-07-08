@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tlo_cerata_0: -2866211286346123897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

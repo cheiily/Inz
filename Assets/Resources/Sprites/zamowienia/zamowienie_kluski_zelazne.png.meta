@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zamowienie_kluski_zelazne_0: 4605575304039267975
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

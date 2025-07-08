@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      obierak_0: 3497831685002598259
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zamowienie_bulka_z_mlekiem _0: -8828760626370826899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

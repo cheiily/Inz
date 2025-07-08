@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zamowienie_zurek_0: -4425273789419593390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      buzka_pusta_0: -3811198684117987707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

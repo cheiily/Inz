@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      palnik_0: -2706614461491855663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

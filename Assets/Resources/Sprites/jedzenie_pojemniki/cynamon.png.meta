@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cynamon_0: -3591026798781629602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

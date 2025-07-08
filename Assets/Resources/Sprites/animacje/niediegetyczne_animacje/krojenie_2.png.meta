@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      krojenie_2_0: 1752184199929436061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

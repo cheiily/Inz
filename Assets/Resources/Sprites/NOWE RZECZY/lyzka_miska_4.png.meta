@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lyzka_miska_4_0: -441311639914590510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

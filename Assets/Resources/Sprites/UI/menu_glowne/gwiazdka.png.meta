@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gwiazdka_0: -3270586831082108110
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

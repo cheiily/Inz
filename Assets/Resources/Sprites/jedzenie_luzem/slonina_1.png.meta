@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slonina_1_0: -3642125442875352871
+      slonina_1_1: 8297766555826167001
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

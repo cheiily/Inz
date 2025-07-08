@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mieszanie_garnek_3_0: -2967078294620673910
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

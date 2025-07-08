@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lisc_laurowy_0: -8676187491807071339
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tlo_i_buzki_0: 1588423783624329503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

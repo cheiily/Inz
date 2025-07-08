@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rodzynki_0: 6867660496637921651
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

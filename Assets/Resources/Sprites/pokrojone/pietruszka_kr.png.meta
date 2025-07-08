@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pietruszka_kr_0: 48739409918137826
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

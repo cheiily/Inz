@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      minigierka_deska_0: -7957527496001600556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

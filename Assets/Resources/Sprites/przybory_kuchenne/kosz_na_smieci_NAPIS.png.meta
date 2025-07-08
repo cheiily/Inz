@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kosz_na_smieci_NAPIS_0: -7427325227077934384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
