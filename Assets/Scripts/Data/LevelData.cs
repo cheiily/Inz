@@ -10,6 +10,10 @@ namespace Data {
             CLICKER_DIEGETIC
         }
 
+        public static bool IsDiegetic(PlayMode playMode) {
+            return playMode is not PlayMode.TIMER;
+        }
+
         public CustomerSpawningPattern customerSpawningPattern;
         public List<FoodProcessorPreset> availableProcessors;
         public Sprite recipeBook;

@@ -45,5 +45,7 @@ namespace Data {
 
         [Header("Diegetic UI")]
         public List<DiegeticAnimatorOverride> diegeticAnimOverrides;
+        public Sprite diegeticParticleSprite;
+
     }
 }

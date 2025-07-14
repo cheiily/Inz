@@ -31,12 +31,15 @@ namespace InzGame.DisplayHandlers {
         public CursorOverride _cursorOverride;
         public ChangeCursorOnHover _cursorManager;
 
+        private GameManager _gameManager;
+
         private void Awake() {
             _customer = GetComponent<CustomerInstance>();
             _slider = transform.GetComponentInChildren<Slider>();
             _animator = transform.parent.GetComponent<Animator>();
             _thresholdParam = Animator.StringToHash("Threshold");
-            _config = GameObject.FindWithTag("Manager").GetComponent<GameManager>().config;
+            _gameManager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
+            _config = _gameManager.config;
 
             _particleAnimator = GameObject.FindWithTag("CustomerParticles").transform.GetChild(_customer.seat).GetComponent<Animator>();
             _particleImages = _particleAnimator.gameObject.GetComponentsInChildren<Image>(true).ToList();
@@ -77,7 +80,25 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void PlayParticles(object sender, EventArgs _) {
-            _particleImages.ForEach(image => image.sprite = _config.moodSprites[_customer.currentThreshold]);
+            if ( LevelData.IsDiegetic(_gameManager.currentLevel.playMode) ) {
+                var numParticles =
+                    _customer.currentThreshold != 3 ?
+                        4 - _customer.currentThreshold
+                        : 0;
+                for (int i = 0; i < 4; i++) {
+                    if ( numParticles > 0 ) {
+                        _particleImages[i].sprite = _config.diegeticParticleSprite;
+                        _particleImages[i].color = Color.white;
+                    } else {
+                        _particleImages[i].sprite = null;
+                        _particleImages[i].color = Color.clear;
+                    }
+
+                    numParticles--;
+                }
+            } else {
+                _particleImages.ForEach(image => image.sprite = _config.moodSprites[_customer.currentThreshold]);
+            }
             _particleAnimator.gameObject.SetActive(true);
             // _particleAnimator.Play("Particles");
             _particleAnimator.SetTrigger(_particleParam);

@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour {
     public GameObject levelSelectUI;
     public GameObject prelevelUI;
 
+    public GameObject satisfactionMeter;
+    public GameObject satisfactionMeterDg;
+
     public event EventHandler<Tuple<float /* current */, float /* max */>> OnPointsAdded;
 
     public GameState _gameState;
@@ -98,6 +101,9 @@ public class GameManager : MonoBehaviour {
         gameState = GameState.PAUSED;
         prelevelUI.GetComponent<PrelevelUIManager>().SetFor(currentLevel.customerSpawningPattern.regular_spawnPoints.Count, currentLevel.recipeBook);
         prelevelUI.SetActive(true);
+
+        satisfactionMeter.SetActive(!LevelData.IsDiegetic(currentLevel.playMode));
+        satisfactionMeterDg.SetActive(LevelData.IsDiegetic(currentLevel.playMode));
 
         OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
     }
