@@ -53,3 +53,4 @@ MonoBehaviour:
     animatorOverrideController: {fileID: 22100000, guid: 5fe48c150d1c8fb429c6ce580d3c19b5, type: 2}
   - foodProcessorType: 4
     animatorOverrideController: {fileID: 22100000, guid: a60b8a9169f16d340aa3f5cbcab15fa4, type: 2}
+  diegeticParticleSprite: {fileID: -3585415044847892453, guid: 48f2760d12290e54ba9eff9749c74fbd, type: 3}
