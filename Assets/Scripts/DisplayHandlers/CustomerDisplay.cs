@@ -93,9 +93,7 @@ namespace InzGame.DisplayHandlers {
 
             // tweening alpha
             var thresholdProgress = 1 - patienceTuple.Item1;
-            personImage.color = new Color(1, 1, 1, 1 - thresholdProgress);
             personImageNext_Dg.color = new Color(1, 1, 1, thresholdProgress);
-            Debug.Log("Sum alpha: " + (personImage.color.a + personImageNext_Dg.color.a));
 
             _prevThreshold = patienceTuple.Item2;
         }
