@@ -57,6 +57,11 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void SetSliderValue(object sender, Tuple<float, int> patienceTuple) {
+            if ( PlayModeHelper.IsDiegetic(_gameManager.currentLevel.playMode) ) {
+                _slider.gameObject.SetActive(false);
+                return;
+            }
+
             _slider.value = patienceTuple.Item1;
             _slider.fillRect.GetComponent<Image>().color = _colors[ patienceTuple.Item2 ];
             _slider.handleRect.GetComponent<Image>().sprite = _config.moodSprites[ patienceTuple.Item2 ];
@@ -80,7 +85,7 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void PlayParticles(object sender, EventArgs _) {
-            if ( LevelData.IsDiegetic(_gameManager.currentLevel.playMode) ) {
+            if ( PlayModeHelper.IsDiegetic(_gameManager.currentLevel.playMode) ) {
                 var numParticles =
                     _customer.currentThreshold != 3 ?
                         4 - _customer.currentThreshold
