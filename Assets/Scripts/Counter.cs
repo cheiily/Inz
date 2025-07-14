@@ -49,9 +49,11 @@ public class Counter : MonoBehaviour {
         if ( person == 0 ) {
             customerDisplay.personSprites = maleSprites;
             customerDisplay.personImage.sprite = maleSprites[0];
+            customerDisplay.personImageNext_Dg.sprite = maleSprites[1];
         } else if ( person == 1 ) {
             customerDisplay.personSprites = femaleSprites;
             customerDisplay.personImage.sprite = femaleSprites[0];
+            customerDisplay.personImageNext_Dg.sprite = femaleSprites[1];
         }
         customerDisplay.orderImage.sprite = _config.elementProperties.GetFor(preset.order).sprite_order_bubble;
         customers[index] = customerInstance;

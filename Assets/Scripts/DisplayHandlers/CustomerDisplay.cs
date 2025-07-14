@@ -4,6 +4,7 @@ using System.Linq;
 using Data;
 using DG.Tweening;
 using Misc;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ using UnityEngine.UI;
 namespace InzGame.DisplayHandlers {
     public class CustomerDisplay : MonoBehaviour {
         public Image personImage;
+        public Image personImageNext_Dg;
         public Image orderImage;
         public List<Sprite> personSprites;
 
@@ -53,7 +55,11 @@ namespace InzGame.DisplayHandlers {
 
             _customer.OnPatienceChange += SetSliderValue;
             _customer.OnPatienceChange += SetAnimatorState;
-            _customer.OnPatienceChange += SetPersonImage;
+            if ( PlayModeHelper.IsDiegetic(_gameManager.currentLevel.playMode) ) {
+                _customer.OnPatienceChange += SetPersonImage_Dg;
+            } else {
+                _customer.OnPatienceChange += SetPersonImage;
+            }
         }
 
         public void SetSliderValue(object sender, Tuple<float, int> patienceTuple) {
@@ -76,6 +82,21 @@ namespace InzGame.DisplayHandlers {
                 return;
 
             personImage.sprite = personSprites[ patienceTuple.Item2 ];
+            _prevThreshold = patienceTuple.Item2;
+        }
+
+        public void SetPersonImage_Dg(object sender, Tuple<float, int> patienceTuple) {
+            if ( patienceTuple.Item2 != _prevThreshold && _customer.currentThreshold < _customer.thresholds.Count ) {
+                personImage.sprite = personSprites[ patienceTuple.Item2 ];
+                personImageNext_Dg.sprite = personSprites[ patienceTuple.Item2 + 1 ];
+            }
+
+            // tweening alpha
+            var thresholdProgress = 1 - patienceTuple.Item1;
+            personImage.color = new Color(1, 1, 1, 1 - thresholdProgress);
+            personImageNext_Dg.color = new Color(1, 1, 1, thresholdProgress);
+            Debug.Log("Sum alpha: " + (personImage.color.a + personImageNext_Dg.color.a));
+
             _prevThreshold = patienceTuple.Item2;
         }
 
