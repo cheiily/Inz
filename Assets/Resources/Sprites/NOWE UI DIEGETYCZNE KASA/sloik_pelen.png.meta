@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sloik_pelen_0: -2004360232763005998
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

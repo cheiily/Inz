@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aaf25f069c1aeb7499a2e421ce6ac685
+guid: 34931e6f4bb8e8d429f604218f965a61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1301854615560758598
-    second: sloik_przod_0
+      213: 7806114920366459256
+    second: julka_poziom_tutorial_przepisnik_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sloik_przod_0
+      name: julka_poziom_tutorial_przepisnik_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
-        width: 250
-        height: 424
+        x: 321
+        y: 15
+        width: 1328
+        height: 1018
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aba5c4aef12eeede0800000000000000
-      internalID: -1301854615560758598
+      spriteID: 879c1585924e45c60800000000000000
+      internalID: 7806114920366459256
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      sloik_przod_0: -1301854615560758598
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

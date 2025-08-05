@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: 100000000a0000000c0000000d0000000b000000
   output: 19
-  duration: 7
-  expiryDuration: 15
+  duration: 12
+  expiryDuration: 36
+  spritesExtraDisplay:
+  - {fileID: 2106482273, guid: 3545b74c72d1f084588b7ffe5c0ade46, type: 3}
+  - {fileID: 7854371791024772541, guid: ad7e0981b250e0a4287794a64f20efbf, type: 3}
+  - {fileID: -747557380, guid: f8c9b6caceeb68a48a6dbcae91f5572e, type: 3}

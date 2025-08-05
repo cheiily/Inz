@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35818f79434f8943858ce0d286fc7e9, type: 3}
+  m_Name: Julka_Lv1_NDT_Tut
+  m_EditorClassIdentifier: 
+  customerSpawningPattern: {fileID: 11400000, guid: b3888885e08cdee4399f9afbb1ae4301, type: 2}
+  availableProcessors:
+  - {fileID: 11400000, guid: d72c7a8477b562d41b078fea91434010, type: 2}
+  recipeBook: {fileID: 7806114920366459256, guid: 34931e6f4bb8e8d429f604218f965a61, type: 3}
+  playMode: 0

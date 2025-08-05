@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aaf25f069c1aeb7499a2e421ce6ac685
+guid: 0526e33450a43824d8cca2e8ba42cd36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1301854615560758598
-    second: sloik_przod_0
+      213: 6399011360762848780
+    second: sama-fifka_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sloik_przod_0
+      name: sama-fifka_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
-        width: 250
-        height: 424
+        x: 3
+        y: 1
+        width: 400
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aba5c4aef12eeede0800000000000000
-      internalID: -1301854615560758598
+      spriteID: c0665ffddeaddc850800000000000000
+      internalID: 6399011360762848780
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sloik_przod_0: -1301854615560758598
+      sama-fifka_0: 6399011360762848780
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

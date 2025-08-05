@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13d81558e8a284428bfbc45dc27e4c7, type: 3}
+  m_Name: Julka-GameConfiguration
+  m_EditorClassIdentifier: 
+  levelTutorial: {fileID: 0}
+  level1: {fileID: 11400000, guid: b039191ce9bc44e4f8b3606dcf0adba7, type: 2}
+  level2: {fileID: 11400000, guid: 4886650538820ad4193b9ab4f39077c9, type: 2}
+  gameVariantString: EASY(2.5) | UI Comparison - DC
+  bufferSize: 3
+  elementProperties: {fileID: 11400000, guid: 3e00747ff38097843b0c7ff0b2e5efe7, type: 2}
+  cursorDefault: {fileID: 2800000, guid: 27f587cfd0819cb419679d04a922900c, type: 3}
+  cursorDefaultHotspot: {x: 20, y: 15}
+  cursorHover: {fileID: 2800000, guid: 44a3bb7bed4a8ed45853c9e0995c1828, type: 3}
+  cursorHoverHotspot: {x: 15, y: 20}
+  cursorGrab: {fileID: 2800000, guid: 3e203f7e9add8f04384b1781b370cfe9, type: 3}
+  cursorGrabHotspot: {x: 20, y: 20}
+  evaluationMethod: 1
+  moodSprites:
+  - {fileID: 2686795930990171874, guid: 271091ecad8a5e34187757c7e3c8fcd1, type: 3}
+  - {fileID: -1469292499312139711, guid: b1f420ba3edf4f245b120b8822ac4ba3, type: 3}
+  - {fileID: -8301523043961844586, guid: 2c951853bc37d6f4887c6fd078b23e42, type: 3}
+  - {fileID: -8301523043961844586, guid: 2c951853bc37d6f4887c6fd078b23e42, type: 3}
+  entryWaitTime: 5
+  totalMoodThresholds:
+  - 0.25
+  - 0.5
+  - 0.75
+  totalMoodSprites:
+  - {fileID: -3772907141724194759, guid: 0f1a1c6e58c171a4597456a8eef0ebf3, type: 3}
+  - {fileID: -2227123987940053681, guid: 7388e8f1a9172a64b8f3cf3062f81ffc, type: 3}
+  - {fileID: -7854911812349493676, guid: 61a7eaeb271a20540b8d76c08b0ae7da, type: 3}
+  buzkaPusta: {fileID: -3811198684117987707, guid: 12722b35d22e3d240bb7e87017524fa6, type: 3}
+  itemJumpDuration: 0.25
+  itemJumpEase: 19
+  diegeticAnimOverrides:
+  - foodProcessorType: 0
+    animatorOverrideController: {fileID: 22100000, guid: 33da75a12e1344946b85b45061f2b358, type: 2}
+  - foodProcessorType: 1
+    animatorOverrideController: {fileID: 22100000, guid: 8a80f33398cb8e54387437dd970df070, type: 2}
+  - foodProcessorType: 2
+    animatorOverrideController: {fileID: 22100000, guid: 1563dd781fca6244b8c37a2a4a0a5353, type: 2}
+  - foodProcessorType: 3
+    animatorOverrideController: {fileID: 22100000, guid: 5fe48c150d1c8fb429c6ce580d3c19b5, type: 2}
+  - foodProcessorType: 4
+    animatorOverrideController: {fileID: 22100000, guid: a60b8a9169f16d340aa3f5cbcab15fa4, type: 2}
+  diegeticParticleSprite: {fileID: -3585415044847892453, guid: 48f2760d12290e54ba9eff9749c74fbd, type: 3}
