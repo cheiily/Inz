@@ -14,6 +14,7 @@ public class CustomerInstance : MonoBehaviour {
     public event EventHandler BeforeCustomerRemove;
     public event EventHandler OnCustomerRemove;
     private event EventHandler CustomerRemovePolicy;
+    public event EventHandler OnFirstClick;
 
     public CustomerPreset preset;
     public List<float> thresholds;
@@ -27,6 +28,8 @@ public class CustomerInstance : MonoBehaviour {
     public static int __id = 0;
     public int id;
     public int seat;
+
+    public bool _firstClick = true;
 
     private void Awake() {
         id = __id++;
@@ -109,5 +112,14 @@ public class CustomerInstance : MonoBehaviour {
     private IEnumerator PolicyExecutor_Delay(EventHandler policy, object sender, EventArgs args, float seconds) {
         yield return new WaitForSeconds(seconds);
         policy(sender, args);
+    }
+
+    public void OnClick() {
+        if (!_firstClick)
+            _elementConsumer.AcceptBuffer();
+        else {
+            OnFirstClick?.Invoke(this, EventArgs.Empty);
+            _firstClick = false;
+        }
     }
 }

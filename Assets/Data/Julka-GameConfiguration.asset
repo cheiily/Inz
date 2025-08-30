@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Julka-GameConfiguration
   m_EditorClassIdentifier: 
   levelTutorial: {fileID: 0}
-  level1: {fileID: 11400000, guid: b039191ce9bc44e4f8b3606dcf0adba7, type: 2}
-  level2: {fileID: 11400000, guid: 4886650538820ad4193b9ab4f39077c9, type: 2}
+  level1: {fileID: 11400000, guid: ea56d31637d61404592288b35ca952b8, type: 2}
+  level2: {fileID: 11400000, guid: dc1659a7b3f91094891bdf6e343f672e, type: 2}
   gameVariantString: EASY(2.5) | UI Comparison - DC
   bufferSize: 3
   elementProperties: {fileID: 11400000, guid: 3e00747ff38097843b0c7ff0b2e5efe7, type: 2}

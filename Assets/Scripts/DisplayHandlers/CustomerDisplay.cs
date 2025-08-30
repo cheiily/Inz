@@ -60,6 +60,12 @@ namespace InzGame.DisplayHandlers {
             } else {
                 _customer.OnPatienceChange += SetPersonImage;
             }
+
+            // only possible due to separate builds -> for dynamic check at call time
+            if (_gameManager.currentLevel.playMode == LevelData.PlayMode.CLICKER_DIEGETIC) {
+                orderImage.gameObject.SetActive(false);
+                _customer.OnFirstClick += ShowOrderImage;
+            }
         }
 
         public void SetSliderValue(object sender, Tuple<float, int> patienceTuple) {
@@ -141,6 +147,10 @@ namespace InzGame.DisplayHandlers {
 
             if (_cursorManager._pointerInside)
                 _cursorManager.SetEffectiveHoverCursor();
+        }
+
+        public void ShowOrderImage(object sender, EventArgs _) {
+            orderImage.gameObject.SetActive(true);
         }
     }
 }

@@ -411,6 +411,7 @@ MonoBehaviour:
   _config: {fileID: 0}
   id: 0
   seat: 0
+  _firstClick: 1
 --- !u!114 &1341611300032809578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,6 +855,18 @@ PrefabInstance:
     - target: {fileID: 1543816343604822235, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a
       value: 0.07058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543816343604822235, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4348804795411318275}
+    - target: {fileID: 1543816343604822235, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543816343604822235, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CustomerInstance, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5847695351064594390, guid: 11fc7c5f97631ca449a72a94d2fec49f, type: 3}
       propertyPath: m_Name
