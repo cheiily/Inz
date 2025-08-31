@@ -40,8 +40,8 @@ namespace InzGame.DisplayHandlers {
                     break;
                 }
                 case ParticleInstance.State.AWAITNG_CLICK: {
-                    // if ( _gameManager.playMode != LevelData.PlayMode.CLICKER_DIEGETIC )
-                        particle.state = ParticleInstance.State.CLICKED;
+                    // DC entry-point is via state-set (OnClick), this is for other modes
+                    DOVirtual.DelayedCall(particleTravelTimeSec, () => particle.state = ParticleInstance.State.CLICKED);
                     break;
                 }
                 case ParticleInstance.State.CLICKED: {
