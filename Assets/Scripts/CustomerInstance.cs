@@ -30,6 +30,7 @@ public class CustomerInstance : MonoBehaviour {
     public int seat;
 
     public bool _firstClick = true;
+    public GameManager _gameManager;
 
     private void Awake() {
         id = __id++;
@@ -63,8 +64,8 @@ public class CustomerInstance : MonoBehaviour {
             }
         };
 
-        var manager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
-        manager.OpenCustomerLog(this);
+        _gameManager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
+        _gameManager.OpenCustomerLog(this);
     }
 
     // Update is called once per frame
@@ -115,7 +116,7 @@ public class CustomerInstance : MonoBehaviour {
     }
 
     public void OnClick() {
-        if (!_firstClick)
+        if (!_firstClick || _gameManager.playMode != LevelData.PlayMode.CLICKER_DIEGETIC)
             _elementConsumer.AcceptBuffer();
         else {
             OnFirstClick?.Invoke(this, EventArgs.Empty);
