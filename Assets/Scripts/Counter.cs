@@ -73,7 +73,7 @@ public class Counter : MonoBehaviour {
         Debug.Log("Customer removed; numCustomers: " + numCustomers);
     }
 
-    public int FindFreeSeat(bool randomized = true) {
+    public int FindFreeSeat(bool randomized = false) {
         List<int> indices = new List<int>(size);
         for (int i = 0; i < size; i++) {
             indices.Add(i);

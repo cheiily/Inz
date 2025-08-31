@@ -26,9 +26,10 @@ namespace InzGame.DisplayHandlers {
         };
         public int _prevThreshold = 0;
 
-        public Animator _particleAnimator;
-        public List<Image> _particleImages;
-        public int _particleParam;
+        public ParticlePlayer _particlePlayer;
+        // public Animator _particleAnimator;
+        // public List<Image> _particleImages;
+        // public int _particleParam;
 
         public CursorOverride _cursorOverride;
         public ChangeCursorOnHover _cursorManager;
@@ -43,9 +44,10 @@ namespace InzGame.DisplayHandlers {
             _gameManager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
             _config = _gameManager.config;
 
-            _particleAnimator = GameObject.FindWithTag("CustomerParticles").transform.GetChild(_customer.seat).GetComponent<Animator>();
-            _particleImages = _particleAnimator.gameObject.GetComponentsInChildren<Image>(true).ToList();
-            _particleParam = Animator.StringToHash("PlayParticles");
+            _particlePlayer = GameObject.FindWithTag("CustomerParticles").transform.GetChild(_customer.seat).GetComponent<ParticlePlayer>();
+            // _particleAnimator = GameObject.FindWithTag("CustomerParticles").transform.GetChild(_customer.seat).GetComponent<Animator>();
+            // _particleImages = _particleAnimator.gameObject.GetComponentsInChildren<Image>(true).ToList();
+            // _particleParam = Animator.StringToHash("PlayParticles");
 
             _cursorOverride = GetComponentInChildren<CursorOverride>();
             _cursorManager = GetComponentInChildren<ChangeCursorOnHover>();
@@ -61,7 +63,7 @@ namespace InzGame.DisplayHandlers {
                 _customer.OnPatienceChange += SetPersonImage;
             }
 
-            // only possible due to separate builds -> for dynamic check at call time
+            // only possible due to separate builds -> for dynamic check at call time (also because object is awoken after level selection)
             if (_gameManager.currentLevel.playMode == LevelData.PlayMode.CLICKER_DIEGETIC) {
                 orderImage.gameObject.SetActive(false);
                 _customer.OnFirstClick += ShowOrderImage;
@@ -115,26 +117,42 @@ namespace InzGame.DisplayHandlers {
                     _customer.currentThreshold != 3 ?
                         4 - _customer.currentThreshold
                         : 0;
-                for (int i = 0; i < 4; i++) {
-                    if ( numParticles > 0 ) {
-                        _particleImages[i].sprite = _config.diegeticParticleSprite;
-                        _particleImages[i].color = Color.white;
-                    } else {
-                        _particleImages[i].sprite = null;
-                        _particleImages[i].color = Color.clear;
-                    }
-
-                    numParticles--;
-                }
+                _particlePlayer.PlayParticles(numParticles, _config.diegeticParticleSprite);
             } else {
-                _particleImages.ForEach(image => image.sprite = _config.moodSprites[_customer.currentThreshold]);
+                _particlePlayer.PlayParticles(4, _config.moodSprites[_customer.currentThreshold]);
             }
-            _particleAnimator.gameObject.SetActive(true);
-            // _particleAnimator.Play("Particles");
-            _particleAnimator.SetTrigger(_particleParam);
-            DOVirtual.DelayedCall(1.75f, () => _particleAnimator.gameObject.SetActive(false));
+
+            // if ( PlayModeHelper.IsDiegetic(_gameManager.currentLevel.playMode) ) {
+            //     var numParticles =
+            //         _customer.currentThreshold != 3 ?
+            //             4 - _customer.currentThreshold
+            //             : 0;
+            //     _gameManager.waitingParticles += numParticles;
+            //     for (int i = 0; i < 4; i++) {
+            //         if ( numParticles > 0 ) {
+            //             _particleImages[i].sprite = _config.diegeticParticleSprite;
+            //             _particleImages[i].color = Color.white;
+            //         } else {
+            //             _particleImages[i].sprite = null;
+            //             _particleImages[i].color = Color.clear;
+            //         }
+            //
+            //         numParticles--;
+            //     }
+            // } else {
+            //     _particleImages.ForEach(image => image.sprite = _config.moodSprites[_customer.currentThreshold]);
+            // }
+            // _particleAnimator.gameObject.SetActive(true);
+            // // _particleAnimator.Play("Particles");
+            // _particleAnimator.SetTrigger(_particleParam);
+            // // DOVirtual.DelayedCall(1.75f, () => _particleAnimator.gameObject.SetActive(false));
         }
 
+
+        // todo choose animator on run, per playmode
+        // todo add a button component to coin prefab & link click action
+        // todo monitor clicked particles and only end level once all have been collected
+        // todo rework particles to use tweening
 
         public void AdjustCursorOverrideUnityEvent() {
             if ( ElementConsumer._buffer.Contains(_customer.preset.order) ) {

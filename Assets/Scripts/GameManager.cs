@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
     public float currentLevelTime;
     public List<CustomerSpawningPattern.SpawnPoint> currentLevelSpawns = new List<CustomerSpawningPattern.SpawnPoint>();
     public float customerSpawnWaitTimer = 0;
+    public int waitingParticles = 0;
     public Image recipeImage;
 
     public GameObject summaryUI;
@@ -41,9 +42,7 @@ public class GameManager : MonoBehaviour {
 
     public GameState _gameState;
     public GameState gameState {
-        get {
-            return _gameState;
-        }
+        get => _gameState;
         set {
             _gameState = value;
             switch (value) {
@@ -67,6 +66,8 @@ public class GameManager : MonoBehaviour {
     public float _points = 0;
     public List<int> _currentLevel_thresholdToAmount;
     public int _waitingCustomers = 0;
+
+    public LevelData.PlayMode playMode => currentLevel.playMode;
 
     public void StartLevel() {
         foreach (var spawnPoint in currentLevel.customerSpawningPattern.regular_spawnPoints) {
@@ -136,7 +137,7 @@ public class GameManager : MonoBehaviour {
             }
             toRemove.ForEach(elem => currentLevelSpawns.Remove(elem));
 
-            if ( currentLevelSpawns.Count == 0 && counter.numCustomers == 0 ) {
+            if ( currentLevelSpawns.Count == 0 && counter.numCustomers == 0 && waitingParticles == 0 ) {
                 StartCoroutine(WaitThenOpenSummary());
             }
         }

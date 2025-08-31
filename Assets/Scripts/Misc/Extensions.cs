@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using InzGame;
+using UnityEngine;
 
 namespace Misc {
     public static class Extensions {
@@ -19,6 +20,14 @@ namespace Misc {
             if ( buffer.Contains(Element.NONE) )
                 return false;
             return buffer.Contains(element);
+        }
+
+        public static Vector3 Clamp(this Vector3 vec, Vector3 min, Vector3 max) {
+            return new Vector3(
+                Mathf.Clamp(vec.x, min.x, max.x),
+                Mathf.Clamp(vec.y, min.y, max.y),
+                Mathf.Clamp(vec.z, min.z, max.z)
+            );
         }
     }
 }
