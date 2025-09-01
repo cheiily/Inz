@@ -31,20 +31,19 @@ namespace InzGame.DisplayHandlers {
         public CursorOverride _cursorOverride;
         public ChangeCursorOnHover _cursorManager;
 
-        private GameManager _gameManager;
+        private SingletonWrapper<GameManager> __gameManager
+            = new(() => GameObject.FindWithTag("Manager").GetComponent<GameManager>());
+
+        private GameManager _gameManager => __gameManager.Get();
 
         private void Awake() {
             _customer = GetComponent<CustomerInstance>();
             _slider = transform.GetComponentInChildren<Slider>();
             _animator = transform.parent.GetComponent<Animator>();
             _thresholdParam = Animator.StringToHash("Threshold");
-            _gameManager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
             _config = _gameManager.config;
 
             _particlePlayer = GameObject.FindWithTag("CustomerParticles").transform.GetChild(_customer.seat).GetComponent<ParticlePlayer>();
-            // _particleAnimator = GameObject.FindWithTag("CustomerParticles").transform.GetChild(_customer.seat).GetComponent<Animator>();
-            // _particleImages = _particleAnimator.gameObject.GetComponentsInChildren<Image>(true).ToList();
-            // _particleParam = Animator.StringToHash("PlayParticles");
 
             _cursorOverride = GetComponentInChildren<CursorOverride>();
             _cursorManager = GetComponentInChildren<ChangeCursorOnHover>();
@@ -103,6 +102,17 @@ namespace InzGame.DisplayHandlers {
             _prevThreshold = patienceTuple.Item2;
         }
 
+        public void InitImages() {
+            if ( PlayModeHelper.IsDiegetic(_gameManager.playMode) ) {
+                personImage.sprite = personSprites[ 0 ];
+                personImageNext_Dg.sprite = personSprites[ 1 ];
+                personImageNext_Dg.color = new Color(1, 1, 1, 0);
+            } else {
+                personImage.sprite = personSprites[ 0 ];
+                personImageNext_Dg.color = new Color(1, 1, 1, 0);
+            }
+        }
+
         public void PlayCustomerLeave(object sender, EventArgs _) {
             // _animator.SetInteger(_thresholdParam, 3);
             _animator.Play("Leave");
@@ -120,9 +130,7 @@ namespace InzGame.DisplayHandlers {
                 _particlePlayer.PlayParticles(4, _config.moodSprites[_customer.currentThreshold], points / 4);
             }
         }
-
-        //todo fix NDT customers coming in pissed
-
+        
         public void AdjustCursorOverrideUnityEvent() {
             if ( ElementConsumer._buffer.Contains(_customer.preset.order) ) {
                 _cursorOverride.cursorHoverOverride = _config.cursorHover;

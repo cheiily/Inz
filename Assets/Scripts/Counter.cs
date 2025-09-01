@@ -20,8 +20,11 @@ public class Counter : MonoBehaviour {
     public CustomerInstance[] customers;
     public GameConfiguration _config;
 
+    public GameManager _gameManager;
+
     private void Awake() {
-        _config = GetComponent<GameManager>().config;
+        _gameManager = GetComponent<GameManager>();
+        _config = _gameManager.config;
         customers = new CustomerInstance[size];
 
         foreach (var anchor in anchors) {
@@ -45,16 +48,14 @@ public class Counter : MonoBehaviour {
         customerInstance.seat = index;
 
         var customerDisplay = customer.GetComponent<CustomerDisplay>();
-        int person = Random.Range(0, 2);
-        if ( person == 0 ) {
-            customerDisplay.personSprites = maleSprites;
-            customerDisplay.personImage.sprite = maleSprites[0];
-            customerDisplay.personImageNext_Dg.sprite = maleSprites[1];
-        } else if ( person == 1 ) {
-            customerDisplay.personSprites = femaleSprites;
-            customerDisplay.personImage.sprite = femaleSprites[0];
-            customerDisplay.personImageNext_Dg.sprite = femaleSprites[1];
-        }
+        customerDisplay.personSprites = Random.Range(0, 2) == 0
+            ? maleSprites
+            : femaleSprites;
+
+        customerDisplay.InitImages();
+        // customerDisplay.personImage.sprite = customerDisplay.personSprites[0];
+        // customerDisplay.personImageNext_Dg.sprite = customerDisplay.personSprites[1];
+
         customerDisplay.orderImage.sprite = _config.elementProperties.GetFor(preset.order).sprite_order_bubble;
         customers[index] = customerInstance;
         numCustomers++;
