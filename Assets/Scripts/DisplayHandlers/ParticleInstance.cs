@@ -26,6 +26,8 @@ namespace InzGame.DisplayHandlers {
             }
         }
 
+        public float animPoints = 0;
+
         public Image _image;
 
         public GameManager _gameManager;

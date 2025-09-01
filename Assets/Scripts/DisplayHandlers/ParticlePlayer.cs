@@ -56,11 +56,13 @@ namespace InzGame.DisplayHandlers {
                     particle.transform.position = particleOrigin.position;
                     particle.state = ParticleInstance.State.READY;
                     --_gameManager.waitingParticles;
+                    _gameManager.AddPoints(particle.animPoints);
+                    particle.animPoints = 0;
                     break;
             }
         }
 
-        public void PlayParticles(int numParticles, Sprite particleSprite) {
+        public void PlayParticles(int numParticles, Sprite particleSprite, float scorePerParticle) {
             var play = new List<ParticleInstance>();
             foreach (var particle in _particles) {
                 if (play.Count < numParticles && particle.state == ParticleInstance.State.READY)
@@ -69,6 +71,7 @@ namespace InzGame.DisplayHandlers {
 
             foreach (var particle in play) {
                 particle.SetSprite(particleSprite);
+                particle.animPoints = scorePerParticle;
                 Progress(particle);
             }
 

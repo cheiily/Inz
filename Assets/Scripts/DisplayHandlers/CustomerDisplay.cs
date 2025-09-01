@@ -27,9 +27,6 @@ namespace InzGame.DisplayHandlers {
         public int _prevThreshold = 0;
 
         public ParticlePlayer _particlePlayer;
-        // public Animator _particleAnimator;
-        // public List<Image> _particleImages;
-        // public int _particleParam;
 
         public CursorOverride _cursorOverride;
         public ChangeCursorOnHover _cursorManager;
@@ -112,47 +109,19 @@ namespace InzGame.DisplayHandlers {
         }
 
         public void PlayParticles(object sender, EventArgs _) {
+            var points = CustomerEvaluation.methods[ _gameManager.config.evaluationMethod ](_customer);
             if ( PlayModeHelper.IsDiegetic(_gameManager.currentLevel.playMode) ) {
                 var numParticles =
                     _customer.currentThreshold != 3 ?
                         4 - _customer.currentThreshold
                         : 0;
-                _particlePlayer.PlayParticles(numParticles, _config.diegeticParticleSprite);
+                _particlePlayer.PlayParticles(numParticles, _config.diegeticParticleSprite, points / numParticles);
             } else {
-                _particlePlayer.PlayParticles(4, _config.moodSprites[_customer.currentThreshold]);
+                _particlePlayer.PlayParticles(4, _config.moodSprites[_customer.currentThreshold], points / 4);
             }
-
-            // if ( PlayModeHelper.IsDiegetic(_gameManager.currentLevel.playMode) ) {
-            //     var numParticles =
-            //         _customer.currentThreshold != 3 ?
-            //             4 - _customer.currentThreshold
-            //             : 0;
-            //     _gameManager.waitingParticles += numParticles;
-            //     for (int i = 0; i < 4; i++) {
-            //         if ( numParticles > 0 ) {
-            //             _particleImages[i].sprite = _config.diegeticParticleSprite;
-            //             _particleImages[i].color = Color.white;
-            //         } else {
-            //             _particleImages[i].sprite = null;
-            //             _particleImages[i].color = Color.clear;
-            //         }
-            //
-            //         numParticles--;
-            //     }
-            // } else {
-            //     _particleImages.ForEach(image => image.sprite = _config.moodSprites[_customer.currentThreshold]);
-            // }
-            // _particleAnimator.gameObject.SetActive(true);
-            // // _particleAnimator.Play("Particles");
-            // _particleAnimator.SetTrigger(_particleParam);
-            // // DOVirtual.DelayedCall(1.75f, () => _particleAnimator.gameObject.SetActive(false));
         }
 
-
-        // todo choose animator on run, per playmode
-        // todo add a button component to coin prefab & link click action
-        // todo monitor clicked particles and only end level once all have been collected
-        // todo rework particles to use tweening
+        //todo fix NDT customers coming in pissed
 
         public void AdjustCursorOverrideUnityEvent() {
             if ( ElementConsumer._buffer.Contains(_customer.preset.order) ) {

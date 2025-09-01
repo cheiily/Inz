@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour {
 
     public void CloseCustomerLog(CustomerInstance customer) {
         var pts = CustomerEvaluation.Invoke(config.evaluationMethod, customer);
-        _points += pts;
+        // _points += pts;
         _currentLevel_thresholdToAmount[customer.currentThreshold]++;
 
         if (currentLevelID != 0) {
@@ -174,7 +174,7 @@ public class GameManager : MonoBehaviour {
             log.Set(entry);
         }
 
-        OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
+        // OnPointsAdded?.Invoke(this, new Tuple<float, float>(_points, currentLevel.customerSpawningPattern.regular_spawnPoints.Count * 100));
     }
 
     public void ExitGame() {
