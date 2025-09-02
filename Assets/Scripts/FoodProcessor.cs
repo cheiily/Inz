@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
+using DG.Tweening;
 using InzGame;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -73,6 +74,7 @@ public class FoodProcessor : MonoBehaviour {
 
     public float progress;
     public float progressSecPerTap = 1;
+    public float dgGracePeriodSec = 2;
 
     public List<Element> _buffer;
     public ElementConsumer _consumer;
@@ -104,9 +106,15 @@ public class FoodProcessor : MonoBehaviour {
             }
 
             _consumer.CustomRequirementCheck += delegate(List<Element> required, List<Element> bufferState) {
-                if ( status == Status.ACTIVE ) {
+                if ( status == Status.ACTIVE ) { // only comes here if it's a clicker
                     progress += progressSecPerTap;
                     OnClick?.Invoke(this, progress / currentAction.duration);
+                    return new List<Element>();
+                }
+
+                if ( status == Status.EXPIRING && playMode == LevelData.PlayMode.CLICKER_DIEGETIC ) {
+                    progress += progressSecPerTap;
+                    OnClick?.Invoke(this, progress / currentAction.expiryDuration);
                     return new List<Element>();
                 }
 
@@ -199,7 +207,12 @@ public class FoodProcessor : MonoBehaviour {
                 if ( playMode != LevelData.PlayMode.CLICKER_DIEGETIC ) {
                     status = currentAction.expiryDuration > 0 ? Status.EXPIRING : Status.DONE;
                 } else {
-                    status = Status.DONE;
+                    status = currentAction.expiryDuration > 0 ? Status.EXPIRING : Status.DONE;
+                    DOVirtual.DelayedCall(dgGracePeriodSec, () => {
+                        if ( status == Status.EXPIRING )
+                            status = Status.DONE;
+                    });
+                    // status = Status.DONE;
                 }
                 _buffer.Add(currentAction.output);
                 OnBufferChange?.Invoke(this, _buffer);

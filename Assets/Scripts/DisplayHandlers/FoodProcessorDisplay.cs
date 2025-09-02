@@ -20,6 +20,7 @@ namespace InzGame.DisplayHandlers {
         public CursorOverride _cursorOverride;
         public ChangeCursorOnHover _cursorManager;
         public HighlightProxy _highlightProxy;
+        public GameManager _gameManager;
 
         [Header("Common UI")]
         public Animator processorAnimator;
@@ -59,6 +60,7 @@ namespace InzGame.DisplayHandlers {
             _cursorOverride = GetComponent<CursorOverride>();
             _cursorManager = GetComponent<ChangeCursorOnHover>();
             _highlightProxy = GetComponent<HighlightProxy>();
+            _gameManager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
 
             foreach (Transform child in elemDisplayParent.transform) {
                 _bufferImages.Add(child.GetComponent<Image>());
@@ -81,6 +83,7 @@ namespace InzGame.DisplayHandlers {
 
             _processor.OnActionChange += DgUI_SetAction;
 
+            _processor.OnStatusChange += AdjustCursorOverride;
             _processor.OnStatusChange += SetAnimatorState;
             _processor.OnStatusChange += ToggleSlider;
             _processor.OnStatusChange += DgUI_HandleStateChange;
@@ -109,36 +112,7 @@ namespace InzGame.DisplayHandlers {
             }
 
             progressSlider.value = progressTuple.Item1;
-            // _progressSlider.fillRect.GetComponent<Image>().color = progressTuple.Item2 ? Color.red : Color.green;
         }
-
-        // public void SetBufferImages(object sender, List<Element> buffer) {
-        //     List<Image> displayBuffer;
-        //     if ( _processor.playMode == LevelData.PlayMode.TIMER ) {
-        //         displayBuffer = _bufferImages;
-        //         diegeticElemDisplayParent.SetActive(false);
-        //     } else {
-        //         displayBuffer = _diegeticBufferImages;
-        //         elemDisplayParent.SetActive(false);
-        //     }
-        //
-        //     for (int i = 0; i < 5; ++i) {
-        //         if ( i >= buffer.Count || buffer[ i ] is Element.NONE or Element.INVALID ) {
-        //             ClearImage(displayBuffer[ i ]);
-        //         } else {
-        //             if ( _processor.status is FoodProcessor.Status.DONE or FoodProcessor.Status.EXPIRING ) {
-        //                 ValidateAndSetSprite(displayBuffer[ i ], buffer[ i ]);
-        //                 continue;
-        //             }
-        //
-        //             var i1 = i;
-        //             // this is specifically bound to the item in order to easily cancel the tween when needed
-        //             _bufferImages[ i ].DOColor(_bufferImages[ i ].color, _config.itemJumpDuration)
-        //                               .From(_bufferImages[ i ].color)
-        //                               .OnComplete(() => ValidateAndSetSprite(displayBuffer[ i1 ], buffer[ i1 ]));
-        //         }
-        //     }
-        // }
 
         public void NDgUI_SetBufferImages(object sender, List<Element> buffer) {
             if ( _processor.playMode != LevelData.PlayMode.TIMER )
@@ -280,6 +254,9 @@ namespace InzGame.DisplayHandlers {
         public void AdjustCursorOverride(object sender, List<Element> elements) {
             AdjustCursorOverrideUnityEvent();
         }
+        public void AdjustCursorOverride(object sender, FoodProcessor.Status status) {
+            AdjustCursorOverrideUnityEvent();
+        }
 
         public void AdjustCursorOverrideUnityEvent(bool viaHover = false) {
             bool willSwapAction;
@@ -289,8 +266,9 @@ namespace InzGame.DisplayHandlers {
             matchingIn = _highlightProxy.HighlightCheck?.Invoke();
 
 
-            if ( ( _processor.status is FoodProcessor.Status.DONE or FoodProcessor.Status.EXPIRING ) ||
-                 (viaHover && _processor.status == FoodProcessor.Status.FREE && _processor._buffer.Count > 0 && willSwapAction) ) {
+            if ( _processor.status is FoodProcessor.Status.DONE
+                   || (_processor.status is FoodProcessor.Status.EXPIRING && _gameManager.playMode != LevelData.PlayMode.CLICKER_DIEGETIC)
+                   || (viaHover && _processor.status == FoodProcessor.Status.FREE && _processor._buffer.Count > 0 && willSwapAction) ) {
                 _cursorOverride.cursorHoverOverride = _config.cursorGrab;
                 _cursorOverride.cursorHotspot = _config.cursorGrabHotspot;
             } else if ((_processor._buffer.Count == 0 && _processor.mainBuffer.count == 0) || (!willSwapAction && (matchingIn == null || matchingIn.Count == 0))) {
