@@ -30,22 +30,32 @@ namespace InzGame.DisplayHandlers {
             _particles.ForEach(particle => particle.OnStateChange += ParticleStateCallback);
         }
 
-        public void Progress(ParticleInstance particle) {
+        public void Progress(ParticleInstance particle, bool force = false) {
             switch (particle.state) {
                 case ParticleInstance.State.READY: {
                     particle.gameObject.SetActive(true);
+                    particle.transform.DOKill();
                     particle.transform.DOMove(_particleMidpoint, particleTravelTimeSec)
                             .SetEase(particleTravelEase)
                             .OnComplete(() => particle.state = ParticleInstance.State.AWAITNG_CLICK);
                     break;
                 }
                 case ParticleInstance.State.AWAITNG_CLICK: {
-                    // DC entry-point is via state-set (OnClick), this is for other modes
-                    DOVirtual.DelayedCall(particleTravelTimeSec, () => particle.state = ParticleInstance.State.CLICKED);
+                    if (!force)
+                        // DC entry-point is via state-set (OnClick), this is for other modes
+                        DOVirtual.DelayedCall(particleTravelTimeSec, () => particle.state = ParticleInstance.State.CLICKED);
+                    else
+                        particle.state = ParticleInstance.State.CLICKED;
                     break;
                 }
                 case ParticleInstance.State.CLICKED: {
                     particle.transform.DOKill();
+
+                    if ( force ) {
+                        particle.state = ParticleInstance.State.IN_JAR;
+                        break;
+                    }
+
                     particle.transform.DOMove(particleDestination.position, particleTravelTimeSec)
                             .SetEase(particleTravelEase)
                             .OnComplete(() => particle.state = ParticleInstance.State.IN_JAR);
@@ -53,6 +63,7 @@ namespace InzGame.DisplayHandlers {
                 }
                 case ParticleInstance.State.IN_JAR:
                     particle.gameObject.SetActive(false);
+                    particle.transform.DOKill();
                     particle.transform.position = particleOrigin.position;
                     particle.state = ParticleInstance.State.READY;
                     --_gameManager.waitingParticles;
@@ -64,6 +75,13 @@ namespace InzGame.DisplayHandlers {
 
         public void PlayParticles(int numParticles, Sprite particleSprite, float scorePerParticle) {
             var play = new List<ParticleInstance>();
+
+            if (_gameManager.playMode == LevelData.PlayMode.CLICKER_DIEGETIC)
+                foreach (var particle in _particles) {
+                    while (particle.state != ParticleInstance.State.READY)
+                        Progress(particle, force: true);
+                }
+
             foreach (var particle in _particles) {
                 if (play.Count < numParticles && particle.state == ParticleInstance.State.READY)
                     play.Add(particle);
