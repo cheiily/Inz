@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      julka_poziom_1_przepisnik_0: -304726648023312194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

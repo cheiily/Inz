@@ -83,6 +83,8 @@ namespace InzGame.DisplayHandlers {
 
             _processor.OnActionChange += DgUI_SetAction;
 
+            _processor.OnGracePeriodStateChange += AdjustCursorOverride;
+
             _processor.OnStatusChange += AdjustCursorOverride;
             _processor.OnStatusChange += SetAnimatorState;
             _processor.OnStatusChange += ToggleSlider;
@@ -257,6 +259,9 @@ namespace InzGame.DisplayHandlers {
         public void AdjustCursorOverride(object sender, FoodProcessor.Status status) {
             AdjustCursorOverrideUnityEvent();
         }
+        public void AdjustCursorOverride(object sender, bool inGracePeriod) {
+            AdjustCursorOverrideUnityEvent();
+        }
 
         public void AdjustCursorOverrideUnityEvent(bool viaHover = false) {
             bool willSwapAction;
@@ -267,7 +272,8 @@ namespace InzGame.DisplayHandlers {
 
 
             if ( _processor.status is FoodProcessor.Status.DONE
-                   || (_processor.status is FoodProcessor.Status.EXPIRING && _gameManager.playMode != LevelData.PlayMode.CLICKER_DIEGETIC)
+                   || (_processor.status is FoodProcessor.Status.EXPIRING &&
+                       (_gameManager.playMode != LevelData.PlayMode.CLICKER_DIEGETIC || !_processor.dcGracePeriodActive))
                    || (viaHover && _processor.status == FoodProcessor.Status.FREE && _processor._buffer.Count > 0 && willSwapAction) ) {
                 _cursorOverride.cursorHoverOverride = _config.cursorGrab;
                 _cursorOverride.cursorHotspot = _config.cursorGrabHotspot;

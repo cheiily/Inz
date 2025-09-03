@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      julka_poziom_tutorial_przepisnik_0: 7806114920366459256
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -17,6 +17,7 @@ public class FoodProcessor : MonoBehaviour {
     public event EventHandler<CookingAction> OnActionChange;
     public event Action<List<Element> /*elements*/, List<int> /*indices*/> OnMoveToMainBuffer;
     public event EventHandler<FoodProcessor> OnInit;
+    public event EventHandler<bool> OnGracePeriodStateChange;
 
     public enum Status {
         FREE,
@@ -75,6 +76,7 @@ public class FoodProcessor : MonoBehaviour {
     public float progress;
     public float progressSecPerTap = 1;
     public float dgGracePeriodSec = 2;
+    public bool dcGracePeriodActive = false;
 
     public List<Element> _buffer;
     public ElementConsumer _consumer;
@@ -112,7 +114,7 @@ public class FoodProcessor : MonoBehaviour {
                     return new List<Element>();
                 }
 
-                if ( status == Status.EXPIRING && playMode == LevelData.PlayMode.CLICKER_DIEGETIC ) {
+                if ( status == Status.EXPIRING && playMode == LevelData.PlayMode.CLICKER_DIEGETIC && dcGracePeriodActive ) {
                     progress += progressSecPerTap;
                     OnClick?.Invoke(this, progress / currentAction.expiryDuration);
                     return new List<Element>();
@@ -208,9 +210,11 @@ public class FoodProcessor : MonoBehaviour {
                     status = currentAction.expiryDuration > 0 ? Status.EXPIRING : Status.DONE;
                 } else {
                     status = currentAction.expiryDuration > 0 ? Status.EXPIRING : Status.DONE;
+                    dcGracePeriodActive = true;
+                    OnGracePeriodStateChange?.Invoke(this, dcGracePeriodActive);
                     DOVirtual.DelayedCall(dgGracePeriodSec, () => {
-                        if ( status == Status.EXPIRING )
-                            status = Status.DONE;
+                        dcGracePeriodActive = false;
+                        OnGracePeriodStateChange?.Invoke(this, dcGracePeriodActive);
                     });
                     // status = Status.DONE;
                 }
