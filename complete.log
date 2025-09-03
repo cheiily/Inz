@@ -1,5 +1,5 @@
 {
-    "gameVariantString": "EASY(2.5) | UI Comparison",
+    "gameVariantString": "EASY(2.5) | UI Comparison - DT",
     "evaluationMethod": 1,
     "evaluationMethod_name": "Step",
     "levelLog": [
@@ -14,8 +14,8 @@
             "avgPts": 100.0,
             "avgThreshold": 0.0,
             "avgThresholdLength": 36.0,
-            "avgLifetime": 2.122490882873535,
-            "avgLifetimeThreshold": 0.05895807966589928,
+            "avgLifetime": 5.156543254852295,
+            "avgLifetimeThreshold": 0.14323730766773225,
             "customerLog": [
                 {
                     "id": 0,
@@ -26,9 +26,9 @@
                         36.0,
                         36.0
                     ],
-                    "time_entered": 7.141812324523926,
-                    "time_departed": 9.264303207397461,
-                    "lifetime": 2.122490882873535,
+                    "time_entered": 6.0925517082214359,
+                    "time_departed": 11.24909496307373,
+                    "lifetime": 5.156543254852295,
                     "points": 100.0,
                     "threshold": 0
                 }
